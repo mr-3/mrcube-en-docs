@@ -12,7 +12,7 @@ Contents:
    :maxdepth: 2
 
 =============
-Test Section
+Test
 =============
 
 Indices and tables
