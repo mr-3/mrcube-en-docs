@@ -3,22 +3,33 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to mrcube's documentation!
-==================================
+MR\ :sup:`3` \ Document
+==========================
 
-Contents:
+We have moved the contents of 
+http://mrcube.org/documentation/ to this site.
+
+We list points to be revised at TODO section.
 
 .. toctree::
-   :maxdepth: 2
+   :caption: User Documentation
 
-=============
-Test
-=============
+   about
+   install
+   rdf_and_rdfs_contents_management
+   mrcube_functions
+   mrcube_implementation
+   tutorial
 
-Indices and tables
-==================
+.. toctree::
+   :caption: Developer Documentation
 
+   plugin_development       
+
+索引
+----
 * :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+
+.. * :ref:`modindex`
+.. * :ref:`search`
 
