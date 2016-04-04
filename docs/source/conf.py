@@ -54,7 +54,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'mrcube'
+project = u'MRCube'
 copyright = u'2016, Takeshi Morita'
 author = u'Takeshi Morita'
 
@@ -135,12 +135,12 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = 'icons/mr3_128x128.png'
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-#html_favicon = None
+html_favicon = 'icons/mr3.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -230,7 +230,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'mrcube.tex', u'mrcube Documentation',
+    (master_doc, 'mrcube.tex', u'MRCube Documentation',
      u'Takeshi Morita', 'manual'),
 ]
 
@@ -260,7 +260,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'mrcube', u'mrcube Documentation',
+    (master_doc, 'MRCube', u'MRCube Documentation',
      [author], 1)
 ]
 
@@ -274,7 +274,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'mrcube', u'mrcube Documentation',
+    (master_doc, 'mrcube', u'MRCube Documentation',
      author, 'mrcube', 'One line description of project.',
      'Miscellaneous'),
 ]
