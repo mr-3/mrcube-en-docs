@@ -1,4 +1,4 @@
-MR\ :sup:`3` \の実装
+ユーザマニュアル
 ========================
 
 .. contents:: コンテンツ 
@@ -63,7 +63,30 @@ RDFエディタでは，RDFリソース，RDFリソースのタイプ，RDFプ�
 RDFエディタのツールバー
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-
+================================================== ===================================================================
+        アイコン                                      説明                                                             
+================================================== ===================================================================
+ .. figure:: figures/toolbar/move.gif               ノードを移動する                                           
+ .. figure:: figures/toolbar/connect.gif            ノードとノードを矢印で接続する                                     
+ .. figure:: figures/toolbar/link.png               RDFノードを選択時に，対応するRDFSノードを選択する状態
+ .. figure:: figures/toolbar/link_break.png         RDFノードを選択時に，対応するRDFSノードを選択しない状態
+ .. figure:: figures/toolbar/insert_resource.png    RDFリソースを挿入する      
+ .. figure:: figures/toolbar/insert_literal.png     RDFリテラルを挿入する                           
+ .. figure:: figures/toolbar/arrow_undo.png         アンドゥ
+ .. figure:: figures/toolbar/arrow_redo.png         リドゥ
+ .. figure:: figures/toolbar/copy.png               ノードをコピーする                                         
+ .. figure:: figures/toolbar/cut.png                ノードをカットする                                         
+ .. figure:: figures/toolbar/paste.png              ノードをペーストする                                        
+ .. figure:: figures/toolbar/delete.png             ノードを削除する                                          
+ .. figure:: figures/toolbar/find.png               リソース検索ダイアログを表示する                                  
+ .. figure:: figures/toolbar/zoom100.gif            標準の倍率にする                                          
+ .. figure:: figures/toolbar/zoom_in.png            拡大する                                              
+ .. figure:: figures/toolbar/zoom_out.png           縮小する                                              
+ .. figure:: figures/toolbar/zoom.png               全体が表示できる倍率にする                                     
+ .. figure:: figures/toolbar/shape_group.png        ノードのグループ化
+ .. figure:: figures/toolbar/shape_ungroup.png      ノードのグループ化解除
+ .. figure:: figures/toolbar/layout_rdf_graph.png   RDFグラフの自動整列を実行
+================================================== ===================================================================
 
 RDFエディタのポップアップメニュー
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -218,6 +241,28 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 クラスエディタのツールバー
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+======================================================= ===================================================================
+        アイコン                                          説明                                                             
+======================================================= ===================================================================
+ .. figure:: figures/toolbar/move.gif                    ノードを移動する                                           
+ .. figure:: figures/toolbar/connect.gif                 ノードとノードを矢印で接続する                                     
+ .. figure:: figures/toolbar/insert_class.png            RDFSクラスを挿入する    
+ .. figure:: figures/toolbar/arrow_undo.png              アンドゥ
+ .. figure:: figures/toolbar/arrow_redo.png              リドゥ
+ .. figure:: figures/toolbar/copy.png                    ノードをコピーする                                         
+ .. figure:: figures/toolbar/cut.png                     ノードをカットする                                         
+ .. figure:: figures/toolbar/paste.png                   ノードをペーストする                                        
+ .. figure:: figures/toolbar/delete.png                  ノードを削除する                                          
+ .. figure:: figures/toolbar/find.png                    リソース検索ダイアログを表示する                                  
+ .. figure:: figures/toolbar/zoom100.gif                 標準の倍率にする                                          
+ .. figure:: figures/toolbar/zoom_in.png                 拡大する                                              
+ .. figure:: figures/toolbar/zoom_out.png                縮小する                                              
+ .. figure:: figures/toolbar/zoom.png                    全体が表示できる倍率にする                                     
+ .. figure:: figures/toolbar/shape_group.png             ノードのグループ化
+ .. figure:: figures/toolbar/shape_ungroup.png           ノードのグループ化解除
+ .. figure:: figures/toolbar/layout_class_graph.png      RDFSクラスグラフの自動整列を実行
+======================================================= ===================================================================
+
 
 クラスエディタのポップアップメニュー
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -304,7 +349,28 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 
 プロパティエディタのツールバー
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  
+
+======================================================= ===================================================================
+        アイコン                                          説明                                                             
+======================================================= ===================================================================
+ .. figure:: figures/toolbar/move.gif                    ノードを移動する                                           
+ .. figure:: figures/toolbar/connect.gif                 ノードとノードを矢印で接続する                                     
+ .. figure:: figures/toolbar/insert_property.png         RDFSプロパティを挿入する    
+ .. figure:: figures/toolbar/arrow_undo.png              アンドゥ
+ .. figure:: figures/toolbar/arrow_redo.png              リドゥ
+ .. figure:: figures/toolbar/copy.png                    ノードをコピーする                                         
+ .. figure:: figures/toolbar/cut.png                     ノードをカットする                                         
+ .. figure:: figures/toolbar/paste.png                   ノードをペーストする                                        
+ .. figure:: figures/toolbar/delete.png                  ノードを削除する                                          
+ .. figure:: figures/toolbar/find.png                    リソース検索ダイアログを表示する                                  
+ .. figure:: figures/toolbar/zoom100.gif                 標準の倍率にする                                          
+ .. figure:: figures/toolbar/zoom_in.png                 拡大する                                              
+ .. figure:: figures/toolbar/zoom_out.png                縮小する                                              
+ .. figure:: figures/toolbar/zoom.png                    全体が表示できる倍率にする                                     
+ .. figure:: figures/toolbar/shape_group.png             ノードのグループ化
+ .. figure:: figures/toolbar/shape_ungroup.png           ノードのグループ化解除
+ .. figure:: figures/toolbar/layout_property_graph.png   RDFSプロパティグラフの自動整列を実行
+======================================================= ===================================================================
 
 プロパティエディタのポップアップメニュー
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -584,7 +650,21 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 
    設定ダイアログ: レンダリング    
 
-    
+整合性検証ダイアログ
+--------------------
+
+プラグイン管理ダイアログ
+------------------------
+
+プロジェクト情報表示ダイアログ
+------------------------------
+
+ログコンソール
+--------------
+
+MR3について
+-----------
+
 メニュー，ツールバー，ショートカットキー
 ----------------------------------------
 
@@ -686,26 +766,25 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
  .. figure:: figures/toolbar/open.png               MR\ :sup:`3` \のプロジェクトファイルを開く．                          
  .. figure:: figures/toolbar/save.png               MR\ :sup:`3` \のプロジェクトファイルを保存する．                       
  .. figure:: figures/toolbar/saveas.png             MR\ :sup:`3` \のプロジェクトファイルを別名で保存する．                  
- .. figure:: figures/toolbar/move.gif               ノードを移動する                                           
- .. figure:: figures/toolbar/connect.gif            ノードとノードを矢印で接続する                                     
- .. figure:: figures/toolbar/insert_resource.png    RDFリソースを挿入する      
- .. figure:: figures/toolbar/insert_class.png       RDFSクラスを挿入する    
- .. figure:: figures/toolbar/insert_property.png    RDFSプロパティを挿入する                         
- .. figure:: figures/toolbar/insert_literal.png     RDFリテラルを挿入する                           
- .. figure:: figures/toolbar/copy.png               ノードをコピーする                                         
- .. figure:: figures/toolbar/cut.png                ノードをカットする                                         
- .. figure:: figures/toolbar/paste.png              ノードをペーストする                                        
- .. figure:: figures/toolbar/delete.png             ノードを削除する                                          
+ .. figure:: figures/toolbar/import.png             インポートダイアログを表示する                                  
+ .. figure:: figures/toolbar/export.png             エクスポートダイアログを表示する                                  
  .. figure:: figures/toolbar/find.png               リソース検索ダイアログを表示する                                  
- .. figure:: figures/toolbar/zoom100.gif            標準の倍率にする                                          
- .. figure:: figures/toolbar/zoom_in.png            拡大する                                              
- .. figure:: figures/toolbar/zoom_out.png           縮小する                                              
- .. figure:: figures/toolbar/zoom.png               全体が表示できる倍率にする                                     
  .. figure:: figures/toolbar/rdf_editor.png         RDFエディタを前面に表示する                                   
  .. figure:: figures/toolbar/class_editor.png       クラスエディタを前面に表示する                                   
  .. figure:: figures/toolbar/property_editor.png    プロパティエディタを前面に表示する                                 
  .. figure:: figures/toolbar/attr_dialog.png        アトリビュートダイアログを前面に表示する                              
  .. figure:: figures/toolbar/namespace_table.png    名前空間テーブルを前面に表示する                                  
+ .. figure:: figures/toolbar/cpr.png                クラス，プロパティ，RDFエディタを表示する
+ .. figure:: figures/toolbar/cr.png                 クラス，RDFエディタを表示する
+ .. figure:: figures/toolbar/pr.png                 プロパティ，RDFエディタを表示する
+ .. figure:: figures/toolbar/arrow_left.png         前を検索 
+ .. figure:: figures/toolbar/arrow_right.png        次を検索
+ .. figure:: figures/toolbar/accept.png             整合性を検証する 
+ .. figure:: figures/toolbar/plugin.png             プラグイン管理ダイアログを表示する
+ .. figure:: figures/toolbar/information.png        プロジェクトの情報を表示する 
+ .. figure:: figures/toolbar/log_console.png        ログコンソールを表示する
+ .. figure:: figures/toolbar/cog.png                設定ダイアログを表示する
+ .. figure:: figures/toolbar/help.png               MR\ :sup:`3` \について表示する
 ================================================== ===================================================================
 
 ショートカットキー
@@ -752,6 +831,5 @@ Ctrl-V
     コピーまたは，カットされたノードをエディタにペーストする
 
 TODO
-----
-* 各エディタのツールバーアイコンの説明を追加
-* 全体のツールバーアイコンの説明を追加
+-----
+整合性検証，プラグイン管理，プロジェクト情報表示，ログコンソール，MR3についてのダイアログの説明を追加する．

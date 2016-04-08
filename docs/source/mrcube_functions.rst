@@ -11,7 +11,7 @@ Overview of MR\ :sup:`3` \ functions
 The details of each function are described below.
 
 .. _mrcube_function_overview:
-.. figure:: figures/function_overview.png
+.. figure:: figures/mrcube_function_overview.svg
    :scale: 80 %
    :alt: Overview of MR\ :sup:`3` \ functions
    :align: center
@@ -53,7 +53,7 @@ Replace RDFS Class
 RDFSクラス名を変更する場合，そのRDFSクラスを参照しているRDFリソースのタイプ名(URI) も同時に変更される． :numref:`rename-class`  は，RDFSクラス名を変更する場合の具体例を表している． :numref:`rename-class`  の左側はRDFSクラスex:書籍を変更する前の状態を表しており，右側がRDFSクラスex:書籍をex:書物に変更した後の状態を表している．以下，RDF(S)コンテンツ管理機能の具体例を表す図中のRDFSにおける矩形はクラス，楕円はプロパティ，矢印はクラスの上位・下位関係を表す．矢印は，下位クラスから上位クラスに向かって伸びている．同様に，図中のRDFにおける楕円はRDFリソース，矢印はRDFプロパティ，楕円右上のラベルは，RDFリソースのタイプを表す．ex:学問のすゝめとex:民情一新は，ex:書籍をタイプとするRDFリソースである．RDFSクラスex:書籍をex:書物に変更すると，ex:書籍に対応するRDFリソースのタイプにも自動的に変更が反映される．つまり，RDFリソースex:学問のすゝめおよびex:民情一新のタイプは，ex:書物に自動的に変更される．
    
 .. _rename-class:
-.. figure:: figures/rename_rdfs_class.png
+.. figure:: figures/rename_rdfs_class.svg
    :scale: 80 %
    :alt: RDFSクラス名の変更
    :align: center
@@ -68,7 +68,7 @@ RDFSクラスを削除する場合，そのRDFSクラスをタイプとするRDF
     RDFリソースのタイプが空の場合，rdfs:Resource クラスをタイプとして持つことになる．
 
 .. _remove-class:
-.. figure:: figures/remove_rdfs_class.png
+.. figure:: figures/remove_rdfs_class.svg
    :scale: 80 %
    :alt: RDFSクラスの削除
    :align: center
@@ -90,7 +90,7 @@ Replace RDFS Property
 RDFSプロパティ名を変更する場合，そのRDFSプロパティを参照しているRDFプロパティ名(URI）も同時に自動的に変更される． :numref:`rename-rdfs-property` は，RDFSプロパティ名を変更する場合の具体例を表している． :numref:`rename-rdfs-property` の左側はRDFSプロパティex:著者を変更する前の状態を表しており，右側はRDFSプロパティex:著者をex:著作者に変更した後の状態を表している．ex:学問のすゝめおよびex:民情一新は，ex:著者プロパティをもつRDFリソースである．ユーザがRDFSプロパティex:著者をex:著作者に変更すると，ex:著者と対応するRDFプロパティにも変更が反映される．つまり，RDFリソースex:学問のすゝめおよびex:民情一新がもつプロパティex:著者はex:著作者に自動的に変更される．
 
 .. _rename-rdfs-property:
-.. figure:: figures/rename_rdfs_property.png
+.. figure:: figures/rename_rdfs_property.svg
    :scale: 80 %
    :alt: RDFSプロパティ名の変更
    :align: center
@@ -105,7 +105,7 @@ RDFSプロパティを削除する場合，そのRDFSプロパティを参照し
    MR\ :sup:`3` \ では，初期のプロパティをmr3:nil としている．RDFSプロパティが定義されていない状態でRDFリソース間の関係を定義した場合，そのRDFリソース間の関係は初期のプロパティとなる．
 
 .. _remove-property:
-.. figure:: figures/remove_rdfs_property.png
+.. figure:: figures/remove_rdfs_property.svg
    :scale: 80 %
    :alt: RDFSプロパティの削除
    :align: center
@@ -128,7 +128,7 @@ When it is not clear which RDFS class corresponds to the type of an RDF resource
 :numref:`rename-resource-type` では，RDFSクラスex:書物が定義されていない状態で，ユーザがRDFリソースex:民情一新のタイプex:書籍をex:書物に変更している．ここでは，整合性を保つためにRDFSクラス名の変更をユーザが選択している．RDFSクラスex:書籍をex:書物に変更することにより，ex:学問のすゝめのタイプもex:書物に半自動的に変更される．
 
 .. _rename-resource-type:
-.. figure:: figures/rename_rdf_resource_type.png
+.. figure:: figures/rename_rdf_resource_type.svg
    :scale: 80 %
    :alt: 参照しているRDFSクラス名の変更
    :align: center
@@ -145,7 +145,7 @@ RDFSクラスの新規作成
     rdfs:subClassOfプロパティが定義されていないクラスは，暗黙的にrdfs:Resourceのサブクラスとなる．
 
 .. _make-class:
-.. figure:: figures/make_rdfs_class.png
+.. figure:: figures/make_rdfs_class.svg
    :scale: 80 %
    :alt: RDFSクラスの新規作成
    :align: center
@@ -168,7 +168,7 @@ When it is not clear which RDF property corresponds to the RDFS property replace
 :numref:`rename-rdf-property` では，RDFSプロパティex:著作者が定義されていない状態で，ユーザがRDFリソースex:民情一新が持つプロパティex:著者をex:著作者に変更している．ここでは，整合性を保つためにRDFSプロパティ名の変更をユーザが選択している．RDFSプロパティex:著者をex:著作者に変更することにより，ex:学問のすゝめが持つプロパティex:著者もex:著作者に半自動的に変更される．
 
 .. _rename-rdf-property:
-.. figure:: figures/rename_rdf_property.png
+.. figure:: figures/rename_rdf_property.svg
    :scale: 80 %
    :alt: 参照しているRDFSプロパティ名の変更
    :align: center
@@ -182,7 +182,7 @@ RDFSプロパティの新規作成
 :numref:`make-property` では，RDFSプロパティex:著作者が定義されていない状態で，ユーザがRDFリソースex:民情一新が持つプロパティex:著者をex:著作者に変更している．ここでは，整合性を保つためにRDFSプロパティの新規作成をユーザが選択している．RDFSプロパティex:著作者を新規に作成することによって，整合性を保つことができる．
 
 .. _make-property: 
-.. figure:: figures/make_rdfs_property.png
+.. figure:: figures/make_rdfs_property.svg
    :scale: 80 %
    :alt: RDFSプロパティの新規作成
    :align: center
@@ -199,7 +199,7 @@ When importing an RDF document, the type of RDF resource or an RDF property may 
 :numref:`import-rdf` shows an example of importing an RDF document. The left side of :numref:`import-rdf` depicts the state before importing the RDF document. The right side of :numref:`import-rdf` depicts the state after importing the RDF document. ex:Book, with the type of ex:The_Emotion_Machine and ex:The_Society_of_Mind, is not defined as an RDFS class. Also ex:author in the RDF model is not defined as an RDFS property. In order to maintain consistency, MR\ :sup:`3` \ creates a ex:Book class and ex:author property in the RDFS data graph automatically.
 
 .. _import-rdf:
-.. figure:: figures/import_rdf.png
+.. figure:: figures/import_rdf.svg
    :scale: 80 %
    :alt: Import RDF document
    :align: center

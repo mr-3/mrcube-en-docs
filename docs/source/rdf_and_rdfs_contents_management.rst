@@ -44,7 +44,7 @@ Since RDF and RDFS can be regarded as the relationship between a model and a met
 As a key concept in our research, we focus on the meta-model management, which is defined as the appropriate management of the correspondence between a model and its meta-model: especially, the management of the RDFS class and RDFS property in a meta-model, and the type of an RDF resource and RDF property in a model. :numref:`concept-of-mmm` sketches the concept of meta-model management.
 
 .. _concept-of-mmm:
-.. figure:: figures/concept_of_metamodel_management.png
+.. figure:: figures/concept_of_metamodel_management.svg
    :scale: 80 %
    :alt: Cocept of Meta-Model Management
    :align: center
@@ -58,7 +58,7 @@ From our experience, we consider that the actual construction of meta-models and
 :numref:`metamodel_management_scenario` shows an example of meta-model management process. The upper part of :numref:`metamodel_management_scenario` shows a meta-model modification process. The lower part of :numref:`metamodel_management_scenario`  shows a model modification process. C1, C2, and C3 in the meta-model depict RDFS classes. P1 in the meta-model depicts an RDFS property. R1 and R2 in the model depict RDF resources. C2 and C3 which are depicted the upper right of RDF resources in the model depict type of RDF resources. P1 in the model depicts an RDF property. In :numref:`metamodel_management_scenario`, at the beginning, P1 in the meta-model is modified to P1' by a user. Along with that, corresponding the RDF property in the model is also modified by a meta-model management facility automatically. Next, C2 which is the type of RDF resource R1 in the model is modified to C2' by a user. Along with that, corresponding the RDFS class in the meta-model is also modified by a meta-model management facility semi-automatically.
 
 .. _metamodel_management_scenario:
-.. figure:: figures/metamodel_management_scenario.png
+.. figure:: figures/metamodel_management_scenario.svg
    :scale: 80 %
    :alt: Meta-Model Management Scenarios
    :align: center
