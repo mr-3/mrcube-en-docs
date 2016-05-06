@@ -18,7 +18,7 @@ We list points to be revised at TODO section.
    install
    rdf_and_rdfs_contents_management
    mrcube_functions
-   mrcube_implementation
+   mrcube_user_manual
    tutorial
 
 .. toctree::
