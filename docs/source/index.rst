@@ -6,19 +6,14 @@
 MR\ :sup:`3` \ Document
 ==========================
 
-We have moved the contents of 
-http://mrcube.org/documentation/ to this site.
-
-We list points to be revised at TODO section.
-
 .. toctree::
    :caption: User Documentation
 
    about
    install
-   rdf_and_rdfs_contents_management
-   mrcube_functions
-   mrcube_user_manual
+   key_concepts
+   functions
+   user_manual
    tutorial
 
 .. toctree::

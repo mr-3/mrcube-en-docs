@@ -1,4 +1,4 @@
-RDF(S) Contents Management
+Key concepts
 ==========================
 
 .. contents:: Contents
@@ -6,30 +6,33 @@ RDF(S) Contents Management
 
 
 Model and Ontology
-==================
-MR\ :sup:`3` \における，モデルとオントロジーの関係は，次のように説明することができる．
+---------------------------
+In this section, we describe model and ontology in MR\ :sup:`3` \.
 
 .. index:: Model
 
 Model
-~~~~~
-Webコンテンツから些末な情報を排除し，機械処理させたい本質的なコンテンツをRDFにより記述したもの．具体的には，あるリソースがどのクラスに属するか，また，どのようなプロパティおよびプロパティ値を持つかをRDFにより記述したもの．モデルは，オントロジーによって提供されるモデル構成要素によって構成される．セマンティックWeb では，モデルはRDFコンテンツに相当する．また，モデルはOWL における事実(fact)と同義である．オントロジーによって提供される，RDFにおけるモデル構成要素は，RDFリソースにおけるrdf:type プロパティの値（RDFリソースのタイプ）およびRDF プロパティである．
+~~~~~~~~~~~~~~~~~
+
+Models are essential machine readable contents described by RDF and these are exclued trivial information from web contentns. Specifically, models include RDF triples and the subjects of the triples belong to one or more classes in RDFS. Models consist of elements provided by ontologies. The elements are types of resources and RDF properties. In the Semantic Web, the model is equivalent to RDF content (facts in OWL). 
+
 
 .. index:: Ontology
 
 Ontology
-~~~~~~~~
-クラスおよびプロパティとそれらの間の関係を定義したもの．セマンティックWebでは，オントロジーはRDFS およびOWLコンテンツに相当する．RDFSコンテンツでは，RDFコンテンツの構成要素である，RDF リソースのタイプをRDFS クラスとして，RDF プロパティをRDFSプロパティとして定義する．Webリソース，モデル，オントロジーの関係を :numref:`sw_paradigm` に示す．
+~~~~~~~~~~~~~~~~~
 
-各Web リソースには，それらの内容をモデル化したRDF データモデルを用意する．RDF データモデルをXML などの特定の構文で記述したものがRDF コンテンツである．RDF データモデル構築のために，領域オントロジーや汎用オントロジー（WordNet [Miller95]_ ，EDR 電子化辞書 [Yokoi95]_ など）を参照する． :numref:`sw_paradigm` 中のDomain B のように，複数のWeb リソースでも対象領域が同じであれば，同一の領域オントロジーを参照することが可能である．
+Ontologies are classes, properties, and relationships between classes or properties. In the Semantic Web, ontologies are equivalent to RDFS or OWL contents. Types of resources are defined by RDFS classes and RDF properties are defined by RDFS properties. Relationships among Web resources, models, and ontologies are shown in :numref:`sw_paradigm`.
+
+RDF data models are built from Web resources. RDF data models are described by RDF/XML format as RDF contents. Domain ontologies or general ontologies (WordNet [Miller95]_, EDR [Yokoi95]_, etc) are used to build RDF data models. Same domain ontologies can be used when multiple web resources belong to same domain. For example, two RDF models that belong to Domain B use an RDFS domain ontology in :numref:`sw_paradigm` .
 
 .. _sw_paradigm:
 .. figure:: figures/sw_paradigm.png
-   :scale: 80 %
-   :alt: セマンティックWeb におけるWeb リソース，モデル，オントロジーの関係
+   :scale: 100 %
+   :alt: Relationships among Web resources, models, and ontologies in the Semantic Web.
    :align: center
 
-   セマンティックWeb におけるWeb リソース，モデル，オントロジーの関係
+   Relationships among Web resources, models, and ontologies in the Semantic Web.
 
 
 Concept of Meta-Model Management

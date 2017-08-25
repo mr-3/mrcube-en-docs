@@ -1,8 +1,8 @@
 =================
-チュートリアル
+Tutorial
 =================
 
-.. contents:: コンテンツ 
+.. contents:: Contents
    :depth: 3
 
 チュートリアルでは，RDFPrimerの中で紹介されているRDF文書(Example 1: RDF/XML Describing Eric Miller)をMR\ :sup:`3` \ 1.0を用いて，２通りの方法（トップダウンとボトムアップ）で作成していく．本チュートリアルと同様のRDF文書作成動画はデモムービーのページから見ることができる．また，RDFSの置換例を示す．

@@ -1,7 +1,7 @@
-プラグイン開発
-==============
+Plugin Development
+=======================
 
-.. contents:: コンテンツ 
+.. contents:: Contentns
    :depth: 2
    
 MR\ :sup:`3` \のプラグイン作成に関するクラス(net.sourceforge.mr3.plugin.MR3Pluginクラス)及びプラグインの作成方法について説明する．また，プラグインのサンプルを示す．
