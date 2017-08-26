@@ -4,32 +4,32 @@ User manual
 .. contents:: Contents
    :depth: 4
 
-MR\ :sup:`3` \のアーキテクチャ
-------------------------------
+The architecture of MR\ :sup:`3` \
+------------------------------------------
  RDF(S)コンテンツ構築支援ツールの設計を基に，RDF(S)コンテンツ構築支援ツールMR\ :sup:`3` \ (Meta-Model Management based on RDFs Revision Reflection) の実装を行った． :numref:`mr3-architecture` にMR\ :sup:`3` \の実装アーキテクチャを示す．MR\ :sup:`3` \はGUIコンポーネントとしてJava Swingを用いて，Java言語で実装を行った． MR\ :sup:`3` \は，RDFおよびRDFSデータグラフを視覚化するためにJGraphライブラリを用いている．:numref:`mr3-architecture` のグラフィカルモデラの実装にはJGraphを用いている．また，MR\ :sup:`3` \は，セマンティックWeb コンテンツ（RDF，RDFS，OWLコンテンツ）のインポート，編集，エクスポートを行うために，Jena: A Semantic Web Frameworkを用いている． :numref:`mr3-architecture`  のパーサとジェネレータの実装にはJena APIを用いている．他のセマンティックWebアプリケーションと連携を行うことができるように， MR\ :sup:`3` \はプラグイン機構を備えている．MR\ :sup:`3` \はプラグイン開発のために主に2 種類のAPI を提供している．一つは，MR\ :sup:`3` \のデータグラフをJenaのモデルオブジェクトに変換するAPIであり，もう一つは，JenaのモデルオブジェクトをMR\ :sup:`3` \のデータグラフに変換するAPIである．これらのAPIを用いることで， MR\ :sup:`3` \で構築したRDFおよびRDFSコンテンツを別のセマンティックWeb アプリケーションに入力することや，逆に他のセマンティックWeb アプリケーションの出力をMR\ :sup:`3` \に入力することが可能となる．将来的には，RDFコンテンツとRDFSコンテンツ間の整合性管理に関するAPIも提供することを考えている．
 
 .. _mr3-architecture:
 
 .. figure:: figures/implementation_architecture_of_mr3.png
-   :scale: 80 %
-   :alt: MR\ :sup:`3` \の実装アーキテクチャ
+   :scale: 100 %
+   :alt: The architecture of MR\ :sup:`3` \
    :align: center
 
-   MR\ :sup:`3` \の実装アーキテクチャ
+   The architecture of MR\ :sup:`3` \
 
-MR\ :sup:`3` \のシステム構成図
-------------------------------
+The system overview of MR\ :sup:`3` \
+----------------------------------------
 
  :numref:`system-overview` にMR\ :sup:`3` \のシステム構成を示す． MR\ :sup:`3` \は，パーサモジュール，ジェネレータモジュール，RDF(S)コンテンツ管理モジュール，プラグイン，ユーザインタフェースから構成される．ユーザインタフェースには，プラグインインタフェースおよびグラフィカルモデラがあり，ユーザはグラフィカルモデラを介して，RDFおよびRDFSコンテンツを視覚的に編集することができる．また，ユーザは，プラグインインタフェースより，プラグインの機能にアクセスすることができる． MR\ :sup:`3` \の入力と出力はRDF(S)文書である．パーサはRDF(S)文書を解析して，Jena のモデルオブジェクトに変換し，その後，RDF(S)コンテンツ管理を行うことができるようにMR\ :sup:`3` \の内部データに変換する．ジェネレータは， MR\ :sup:`3` \の内部データをJena のモデルオブジェクトに変換し，その後，RDF(S)文書に変換する
 
 .. _system-overview:
 
 .. figure:: figures/system_overview_of_mr3.png
-   :scale: 80 %
-   :alt: MR\ :sup:`3` \のシステム構成
+   :scale: 100 %
+   :alt: The system overview of MR\ :sup:`3` \
    :align: center
 
-   MR\ :sup:`3` \のシステム構成
+   The system overview of MR\ :sup:`3` \
 
 MR\ :sup:`3` \の画面構成
 ------------------------
@@ -45,26 +45,26 @@ MR\ :sup:`3` \の画面構成
    MR\ :sup:`3` \のグラフィカルモデラのスクリーンショット
    
    
-.. index:: RDFエディタ
+.. index:: RDF Editor
 
-RDFエディタ
------------
+RDF Editor
+--------------
    
 RDFエディタでは，RDFリソース，RDFリソースのタイプ，RDFプロパティ，RDFリテラルの編集を行う．:numref:`rdf-editor` に示すように，RDFリソースは楕円，RDFプロパティは矢印，RDFリテラルは矩形でRDFエディタ内に表示される．RDFリソースのタイプはRDFリソースの右上に表示される．
 
 .. _rdf-editor:
 .. figure:: figures/rdf_editor.png
    :scale: 40 %
-   :alt: RDFエディタ
+   :alt: RDF Editor
    :align: center
 
-   RDFエディタ
+   RDF Editor
 
-RDFエディタのツールバー
+Toolbar of RDF Editor
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ================================================== ===================================================================
-        アイコン                                      説明                                                             
+        Icon                                          Function                                                             
 ================================================== ===================================================================
  .. figure:: figures/toolbar/move.gif               ノードを移動する                                           
  .. figure:: figures/toolbar/connect.gif            ノードとノードを矢印で接続する                                     
@@ -88,20 +88,20 @@ RDFエディタのツールバー
  .. figure:: figures/toolbar/layout_rdf_graph.png   RDFグラフの自動整列を実行
 ================================================== ===================================================================
 
-RDFエディタのポップアップメニュー
+Popup menu of RDF editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 RDFエディタ内で，右クリックするとポップアップメニューが表示される．ポップアップメニューは，ノードを選択している場合としていない場合で表示内容が異なる．ポップアップメニューは，以下のとおり．
 
 .. figure:: figures/popup_menu_rdf_editor.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: ノードが選択されていない状態
    :align: center
 
    ノードが選択されていない状態
 
 .. figure:: figures/popup_menu_selected_rdf_editor.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: ノードが選択された状態
    :align: center
 
@@ -137,7 +137,7 @@ RDFリソースのURI を設定したい場合には， :numref:`attr-rdf-res-ur
 
 .. _attr-rdf-res-uri:
 .. figure:: figures/attribute_dialog_rdf_resource_uri.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFリソースのURI）
    :align: center
 
@@ -149,7 +149,7 @@ RDFリソースのタイプを設定したい場合には， :numref:`attr-rdf-r
 
 .. _attr-rdf-res-type:
 .. figure:: figures/attribute_dialog_rdf_resource_type.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFリソースのタイプ）
    :align: center
 
@@ -157,7 +157,7 @@ RDFリソースのタイプを設定したい場合には， :numref:`attr-rdf-r
 
 .. _rdf-res-type-selection-dialog:
 .. figure:: figures/rdf_resource_type_selection_dialog.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: RDFリソースタイプ選択ダイアログ
    :align: center
 
@@ -165,7 +165,7 @@ RDFリソースのタイプを設定したい場合には， :numref:`attr-rdf-r
 
 .. _rdf-and-rdfs-management-dialog:
 .. figure:: figures/rdf_and_rdfs_management_dialog.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: RDF(S)コンテンツ管理ダイアログ
    :align: center
 
@@ -176,7 +176,7 @@ RDFリソースに対して，rdfs:label プロパティを用いてRDFリソー
 
 .. _attr-rdf-res-label:
 .. figure:: figures/attribute_dialog_rdf_resource_label.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFリソースのラベル）
    :align: center
 
@@ -187,7 +187,7 @@ RDFリソースに対して，rdfs:comment プロパティを用いてRDFリソ�
 
 .. _attr-rdf-res-comment:
 .. figure:: figures/attribute_dialog_rdf_resource_comment.png
-   :scale: 40 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFリソースのコメント）
    :align: center
 
@@ -201,7 +201,7 @@ RDFエディタ内のRDFプロパティを選択すると，アトリビュー�
 
 .. _attr-rdf-property:
 .. figure:: figures/attribute_dialog_rdf_property.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFプロパティ）
    :align: center
 
@@ -216,33 +216,33 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 
 .. _attr-rdf-literal:
 .. figure:: figures/attribute_dialog_rdf_literal.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFリテラル）
    :align: center
 
    アトリビュートダイアログ（RDFリテラル）
 
 
-.. index:: クラスエディタ
+.. index:: Class Editor
 
-クラスエディタ
+Class Editor
 --------------
 
 クラスエディタでは，RDFSクラスの階層関係およびRDFSクラスの属性編集を行うことができる． :numref:`class-editor` にクラスエディタのスクリーンショットを示す
 
 .. _class-editor:
 .. figure:: figures/class_editor.png
-   :scale: 40 %
-   :alt: クラスエディタ
+   :scale: 60 %
+   :alt: Class Editor
    :align: center
    
-   クラスエディタ
+   Class Editor
 
-クラスエディタのツールバー
+Toolbar of Class Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ======================================================= ===================================================================
-        アイコン                                          説明                                                             
+        Icon                                             Function                                                             
 ======================================================= ===================================================================
  .. figure:: figures/toolbar/move.gif                    ノードを移動する                                           
  .. figure:: figures/toolbar/connect.gif                 ノードとノードを矢印で接続する                                     
@@ -264,20 +264,20 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 ======================================================= ===================================================================
 
 
-クラスエディタのポップアップメニュー
+Popup menu of Class Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 クラスエディタ内で，右クリックするとポップアップメニューが表示される．ポップアップメニューは，ノードを選択している場合としていない場合で表示内容が異なる．ポップアップメニューは，以下のとおり．
 
 .. figure:: figures/popup_menu_class_editor.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: ノードが選択されていない状態
    :align: center
    
    ノードが選択されていない状態
    
 .. figure:: figures/popup_menu_selected_class_editor.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: ノードが選択された状態
    :align: center
    
@@ -308,7 +308,7 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 
 .. _attr-class-basic:
 .. figure:: figures/attribute_dialog_rdfs_class_basic.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFSクラスの基本）
    :align: center
    
@@ -316,7 +316,7 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
  
 .. _attr-class-instance:
 .. figure:: figures/attribute_dialog_rdfs_class_instance.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFSクラスのインスタンス）
    :align: center
    
@@ -324,7 +324,7 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
   
 .. _attr-class-upper-class:
 .. figure:: figures/attribute_dialog_rdfs_class_upper_class.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFSクラスの上位クラス）
    :align: center
    
@@ -334,24 +334,24 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 .. index:: プロパティエディタ
 
 
-プロパティエディタ
+Property Editor
 ------------------
 
 プロパティエディタでは，RDFS プロパティの階層関係およびRDFS プロパティの属性編集を行うことができる． :numref:`property-editor` にプロパティエディタのスクリーンショットを示す．
 
 .. _property-editor:
 .. figure:: figures/property_editor.png
-   :scale: 40 %
-   :alt: プロパティエディタ
+   :scale: 60 %
+   :alt: Property Editor
    :align: center
    
-   プロパティエディタ
+   Property Editor
 
-プロパティエディタのツールバー
+Toolbar of Property Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ======================================================= ===================================================================
-        アイコン                                          説明                                                             
+        Icon                                             Function                                                             
 ======================================================= ===================================================================
  .. figure:: figures/toolbar/move.gif                    ノードを移動する                                           
  .. figure:: figures/toolbar/connect.gif                 ノードとノードを矢印で接続する                                     
@@ -372,20 +372,20 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
  .. figure:: figures/toolbar/layout_property_graph.png   RDFSプロパティグラフの自動整列を実行
 ======================================================= ===================================================================
 
-プロパティエディタのポップアップメニュー
+Popup menu of Property Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 プロパティエディタ内で，右クリックするとポップアップメニューが表示される．ポップアップメニューは，ノードを選択している場合としていない場合で表示内容が異なる．ポップアップメニューは，以下のとおり．
 
 .. figure:: figures/popup_menu_selected_property_editor.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: ノードが選択されていない状態
    :align: center
    
    ノードが選択されていない状態
    
 .. figure:: figures/popup_menu_selected_property_editor.png
-   :scale: 50 %
+   :scale: 60 %
    :alt: ノードが選択された状態
    :align: center
    
@@ -416,7 +416,7 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 
 .. _attr-property-region:
 .. figure:: figures/attribute_dialog_rdfs_property_region.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFSプロパティの範囲）
    :align: center
    
@@ -424,7 +424,7 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
   
 .. _attr-property-instance:
 .. figure:: figures/attribute_dialog_rdfs_property_instance.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFSプロパティのインスタンス）
    :align: center
    
@@ -432,7 +432,7 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
   
 .. _attr-property-upper-property:
 .. figure:: figures/attribute_dialog_rdfs_property_upper_property.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: アトリビュートダイアログ（RDFSプロパティの上位クラス）
    :align: center
    
@@ -441,23 +441,23 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 
 .. index:: リソース検索ダイアログ
 
-リソース検索ダイアログ
-----------------------
+Resource Search Dialog
+--------------------------
  
  「リソース検索」ダイアログでは，RDF エディタ，クラスエディタ，プロパティエディタ内に定義されているRDF(S) 要素の検索を行うことができる． :numref:`resource-search-dialog` にリソース検索ダイアログを示す．「グラフタイプ」内の「RDF」，「クラス」，「プロパティ」チェックボックスのいずれか一つを選択し，検索範囲を設定する．「URI」テキストフィールドに検索したいURI を入力すると，「グラフタイプ」内で選択されたチェックボックスの検索範囲内でリソースを検索する．該当するリソース一覧が， :numref:`resource-search-dialog` 下部の「検索結果」リストに表示される．「検索結果」リストの項目を選択すると，選択したリソースを含むエディタ内のノードへジャンプし，アトリビュートダイアログにそのリソースの属性が表示される．「ラベル」と「コメント」テキストフィールドには，それぞれ，「rdfs:label」プロパティ値と「rdfs:comment」プロパティ値を対象に検索を行うことができる．表示方法は，「URI」テキストフィールドにおける検索と同様である．
 
  .. _resource-search-dialog:
  .. figure:: figures/resource_search_dialog.png
-   :scale: 80 %
-   :alt: リソース検索ダイアログ
+   :scale: 100 %
+   :alt: Resource search dialog
    :align: center
 
-   リソース検索ダイアログ
+   Resource search dialog
  
-.. index:: 名前空間テーブル
+.. index:: Namespace Table
 
-名前空間テーブル
-----------------
+Namespace Table
+-------------------
  
 名前空間テーブルでは，名前空間URI を名前空間接頭辞に置換して表示するために，名前空間接頭辞と名前空間URI の管理を行う． :numref:`namespace-table` に名前空間テーブルのスクリーンショットを示す．「接頭辞」テキストフィールドに名前空間接頭辞を，「名前空間」テキストフィールドに名前空間URI を入力して，「追加」ボタンを押すと名前空間接頭辞と名前空間URI の対応がテーブルに追加される．対応を削除したい場合には，削除したいテーブルの行を選択し，「削除」ボタンを押す．「有効」チェックボックスをチェックすると，URI表示にしている場合に名前空間URI が名前空間接頭辞で置換される．
 
@@ -465,42 +465,42 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 
 .. _namespace-table:
 .. figure:: figures/namespace_table.png
-   :scale: 80 %
-   :alt: 名前空間テーブル
+   :scale: 100 %
+   :alt: Namespace Table
    :align: center
 
-   名前空間テーブル
+   Namespace Table
  
 
-.. index:: 削除ダイアログ
+.. index:: Remove Dialog
 
-削除ダイアログ
---------------
+Remove Dialog
+-----------------
 
 削除対象のRDFSクラスを，RDFリソースのタイプまたはRDFプロパティの定義域または値域が参照している場合，そのRDFSクラスを削除すると整合性を保つことができない．RDFプロパティが削除対象のRDFSプロパティを参照している場合も同様である．これらの場合，RDF(S)コンテンツ管理機能によって， :numref:`remove-dialog` に示す「削除」ダイアログが表示される． :numref:`remove-dialog` 上部の「削除」リストには，削除対象のRDFSクラスのうち，削除すると整合性を保つことができないRDFSクラスまたはRDFSプロパティのリストが表示される． :numref:`remove-dialog` 下部の参照リスト内の「RDF」タブには，削除対象のRDFSクラスをタイプとして参照しているRDFリソースのリストまたは，削除対象のRDFSプロパティを参照しているRDFプロパティのリストが表示される．「プロパティ」タブには，定義域または値域として，削除対象のRDFSクラスを参照しているRDFSプロパティの一覧が表示される．参照リストの「削除」チェックボックスは，RDFSクラスまたは，RDFSプロパティの参照をやめるかどうかの決定に用いる．「削除」チェックボックスをチェックした状態で「適用」ボタンをクリックすると，削除対象のRDFSクラスまたはRDFSプロパティへの参照がたたれる．「削除」チェックボックスのチェックをはずした項目については，「適用」ボタンを押したときに整合性のチェックを行う．「全選択」ボタンは，すべての「削除」チェックボックスにチェックをつける．「全解除」ボタンは，すべての「削除」チェックボックスのチェックをはずす．「反転」ボタンは，現在チェックされているものとされていないものを反転する．「ジャンプ」ボタンは，選択したリソースへジャンプする．RDFリソースのタイプ，定義域，値域を変更したい場合は，ジャンプボタンで該当するリソースへジャンプして変更を行うことができる．
 
 .. _remove-dialog:
 .. figure:: figures/remove_dialog.png
-   :scale: 80 %
-   :alt: 削除ダイアログ
+   :scale: 100 %
+   :alt: Remove Dialog
    :align: center
 
-   削除ダイアログ
+   Remove Dialog
  
 
-.. index:: インポートダイアログ
+.. index:: Import Dialog
 
-インポートダイアログ
+Import Dialog
 --------------------
  インポートダイアログでは，RDF/XML, N3, N-Triple, Turtle 形式で記述されたRDF(S)文書をMR\ :sup:`3` \にインポートすることができる． :numref:`import-dialog` にインポートダイアログのスクリーンショットを示す．また，以下ではインポートダイアログの各部分（ :numref:`import-dialog` 内の 1 から 13）について説明する．
 
  .. _import-dialog:
  .. figure:: figures/import_dialog.png
-   :scale: 80 %
-   :alt: インポートダイアログ
+   :scale: 100 %
+   :alt: Import Dialog
    :align: center
 
-   インポートダイアログ
+   Import Dialog
  
 #. コンテナリスト
      RDF，N3, N-Triple，Turtle 形式で記述されたRDF(S) 文書が保存されたフォルダまたはURI のリストを表示する．
@@ -530,20 +530,20 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
     インポートを中止し，インポートダイアログを閉じる．
 
 
-.. index:: エクスポートダイアログ
+.. index:: Export Dialog
 
-エクスポートダイアログ
+Export Dialog
 ----------------------
 エクスポートダイアログでは， MR\ :sup:`3` \ で構築したRDF(S) データグラフをRDF/XML, N3, N-Triple, Turtle 形式でRDF(S) 文書にエクスポートすることができる． :numref:`export-dialog` にエクスポートダイアログのスクリーンショットを示す．また，以下ではエクスポートダイアログの各部分（ :numref:`export-dialog` 内の1 から8）について説明する．
 
 .. _export-dialog:
 
 .. figure:: figures/export_dialog.png
-   :scale: 80 %
-   :alt:  エクスポートダイアログ
+   :scale: 100 %
+   :alt:  Export Dialog
    :align: center
 
-   エクスポートダイアログ
+   Export Dialog
 
 #. 構文
     RDF(S) 文書としてエクスポートしたい構文（RDF/XML，N-Triple，Turtle，N3 など）を選択する．
@@ -563,55 +563,55 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
     エクスポートされるRDF(S) 文書の内容が表示される． 
 
     
-.. index:: 設定ダイアログ
+.. index:: Config Dialog
 
-設定ダイアログ
---------------
+Config Dialog
+----------------
 
 設定ダイアログでは，基本，ディレクトリ，プロキシ，メタクラス，レイアウト，レンダリングについて設定を行うことができる．
 
-基本
-~~~~
+Basic
+~~~~~~~~~
 
 設定ダイアログの「基本」項目（ :numref:`config-basic` ）では，言語，UI 言語，出力エンコーディング，フォント，ベースURI，ログファイルの設定ができる．言語はラベル表示を行う際に優先して表示する言語を設定できる．UI 言語は，メニューなどに表示する言語を設定できる．言語は，ja（日本語），en（英語），zh（中国語）を選択できる．出力エンコーディングは，エクスポート時にRDF(S)文書を保存するファイルエンコーディングを設定する．フォントは，各エディタ内のノード内の文字列を表示する際のフォントを設定する．ベースURI には，エクスポート時の初期の名前空間URI を設定する．ログファイルには，MR\ :sup:`3` \使用中の各種ログを保存するファイルを設定する．
 
 .. _config-basic:
 
 .. figure:: figures/config_dialog_basic.png
-   :scale: 80 %
-   :alt: 設定ダイアログ: 基本
+   :scale: 100 %
+   :alt: Config Dialog: Basic
    :align: center
 
-   設定ダイアログ: 基本
+   Config Dialog: Basic
 
-ディレクトリ
+Directory
 ~~~~~~~~~~~~
 
 設定ダイアログの「ディレクトリ」項目（ :numref:`config-directory` ）では，作業ディレクトリ，プラグインディレクトリ，リソースディレクトリを設定ができる．作業ディレクトリには，インポートダイアログにおいて，RDF(S)文書を含むフォルダを選択する際に最初に開くフォルダを設定する．プラグインディレクトリには， MR\ :sup:`3` \のプラグインが保存されているフォルダを設定する．リソースディレクトリは， MR\ :sup:`3` \のプロパティファイル（メニューなどに表示する言語ごとの設定ファイル）が保存されているフォルダを設定する．
 
 .. _config-directory:
 .. figure:: figures/config_dialog_directory.png
-   :scale: 80 %
-   :alt: 設定ダイアログ: ディレクトリ
+   :scale: 100 %
+   :alt: Config Dialog: Directory
    :align: center
 
-   設定ダイアログ: ディレクトリ
+   Config Dialog: Directory
    
-プロキシ
+Proxy
 ~~~~~~~~
 
 設定ダイアログの「プロキシ」項目（ :numref:`config-proxy` ）では，プロキシサーバを利用している場合に，プロキシサーバのホスト名とポート番号の設定を行うことができる．インポートダイアログからURI を指定して，RDF(S)文書をインポートする場合に設定が必要となる場合がある．   
 
 .. _config-proxy:
 .. figure:: figures/config_dialog_proxy.png
-   :scale: 80 %
-   :alt: 設定ダイアログ: プロキシ
+   :scale: 100 %
+   :alt: Config Dialog: Proxy
    :align: center
 
-   設定ダイアログ: プロキシ
+   Config Dialog: Proxy
 
-メタクラス
-~~~~~~~~~~
+Meta Class
+~~~~~~~~~~~~~~
 
 設定ダイアログの「メタクラス」項目（ :numref:`config-metaclass` ）では，「クラスクラス」および「プロパティクラス」の設定をすることができる．「クラスクラス」に設定したクラスをrdf:typeプロパティの値とするリソースを， MR\ :sup:`3` \はクラスとして認識し，クラスエディタにインポートすることができる．同様に，「プロパティクラス」に設定したクラスをrdf:type プロパティの値とするリソースを， MR\ :sup:`3` \はプロパティとして認識し，プロパティエディタにインポートすることができる．
 
@@ -619,36 +619,36 @@ RDFエディタ内のRDFリテラルを選択すると，アトリビュート�
 
 .. _config-metaclass:
 .. figure:: figures/config_dialog_metaclass.png
-   :scale: 80 %
-   :alt: 設定ダイアログ: メタクラス
+   :scale: 100 %
+   :alt: Config Dialog; Meta Class
    :align: center
 
-   設定ダイアログ: メタクラス
+   Config Dialog: Meta Class
 
-レイアウト
+Layout
 ~~~~~~~~~~
 
 設定ダイアログの「レイアウト」項目（ :numref:`config-layout` ）では，各エディタ内のデータグラフのレイアウト方法を設定する．
 
 .. _config-layout:
 .. figure:: figures/config_dialog_layout.png
-   :scale: 80 %
-   :alt: 設定ダイアログ: レイアウト
+   :scale: 100 %
+   :alt: Config Dialog: Layout
    :align: center
 
-   設定ダイアログ: レイアウト
+   Config Dialog: Layout
 
-レンダリング
+Rendering
 ~~~~~~~~~~~~
 設定ダイアログの「レンダリング」項目（ :numref:`config-rendering` ）では，RDFリソース，RDFリテラル，RDFSクラス，RDFSプロパティの各ノードの色や，ノード選択時の色，エディタウィンドウの背景職をカスタマイズすることができる．「ノードに色をつける」チェックボックスのチェックをはずすと，すべてのノードが無色となる．「アンチエイリアス」チェックボックスにチェックをいれると各ノードの縁が滑らかに表示される．
 
 .. _config-rendering:
 .. figure:: figures/config_dialog_rendering.png
-   :scale: 80 %
-   :alt: 設定ダイアログ: レンダリング
+   :scale: 100 %
+   :alt: Config Dialog: Rendering
    :align: center
 
-   設定ダイアログ: レンダリング    
+   Config Dialog: Rendering
 
 
 拡張機能
@@ -661,7 +661,7 @@ jarファイルを読み込んで，プラグインリストを表示する．�
 
 .. _plugin-dialog:
 .. figure:: figures/plugin_dialog.png
-   :scale: 80 %
+   :scale: 100 %
    :alt:  拡張機能
    :align: center
 
@@ -675,7 +675,7 @@ jarファイルを読み込んで，プラグインリストを表示する．�
 
 .. _validator-dialog:
 .. figure:: figures/validator_dialog.png
-   :scale: 80 %
+   :scale: 100 %
    :alt:  整合性検証
    :align: center
 
@@ -689,7 +689,7 @@ jarファイルを読み込んで，プラグインリストを表示する．�
 
 .. _project-info-dialog:
 .. figure:: figures/project_info_dialog.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: プロジェクト情報
    :align: center
 
@@ -704,7 +704,7 @@ jarファイルを読み込んで，プラグインリストを表示する．�
 
 .. _log-console:
 .. figure:: figures/log_console.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: ログ・コンソール
    :align: center
 
@@ -716,20 +716,18 @@ MR3について
 
 .. _about-mr3:
 .. figure:: figures/about_dialog.png
-   :scale: 80 %
+   :scale: 100 %
    :alt: MR3について
    :align: center
 
    MR3について
 
-メニュー，ツールバー，ショートカットキー
-----------------------------------------
 
-メニュー
-~~~~~~~~
+Menu
+---------------
 
-ファイル
-""""""""
+File
+~~~~~~~~~~
 
 ファイル->新規
     MR\ :sup:`3` \のプロジェクトを新規に開く．現在の作成中のプロジェクトは，保存するか破棄するかを選択する．
@@ -748,8 +746,8 @@ MR3について
 ファイル->終了
     プログラムを終了する．
 
-編集
-""""
+Edit
+~~~~~~~~~
 編集->検索
     リソース検索ダイアログを表示する．    
 
@@ -762,8 +760,8 @@ MR3について
 編集->設定
     設定ダイアログを表示し，各種設定を行う．
 
-表示
-""""
+Display
+~~~~~~~~
 
 表示->URI表示
     各エディタのノード内に表示されるラベルを，URI形式で表示する．名前空間テーブルで接頭辞の表示を有効にしている場合，名前空間を接頭辞に置き換えて表示する．
@@ -780,8 +778,8 @@ MR3について
 表示->フォント設定
     エディタ上に表示される文字のフォントを変更．
 
-ウィンドウ
-""""""""""
+Window
+~~~~~~~~~~
 
 ウィンドウ->RDFエディタオーバービューを表示
     RDFエディタの全体を表示する．表示されるウィンドウ内の赤色の四角をドラッグすることで，RDFエディタ内の移動を行うことができ る．また，四角の右下部分をドラッグして，四角の大きさを変更することにより，拡大・縮小を行うことができる．大きくすると拡大し，小さくすると縮小す る．
@@ -807,15 +805,15 @@ MR3について
 ウィンドウ->ウィンドウを再配置
     RDFエディタ，クラスエディタ，プロパティエディタを初期位置に戻す．
 
-ヘルプ
-""""""
+Help
+~~~~~~~~~
 
 ヘルプ->About MR\ :sup:`3` \
     MR\ :sup:`3` \のバージョン，HPのURL等を表示する．
  
  
-ツールバー
-~~~~~~~~~~
+Toolbar
+------------------
 
 ================================================== ===================================================================
         アイコン                                      説明                                                             
@@ -845,11 +843,11 @@ MR3について
  .. figure:: figures/toolbar/help.png               MR\ :sup:`3` \について表示する
 ================================================== ===================================================================
 
-ショートカットキー
-~~~~~~~~~~~~~~~~~~
+Shortcut keys
+-------------------
 
 全体で使えるショートカットキー
-""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ctrl-N
     MR\ :sup:`3` \のプロジェクトを新規に開く．現在の作成中のプロジェクトは，保存するか破棄するかを選択する．
 Ctrl-O
@@ -876,7 +874,7 @@ Alt+F
     リソース検索ダイアログを前面に表示
 
 エディタ内で使えるショートカットキー
-""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ctrl-A
     エディタ内のノードをすべて選択する
 Delete
