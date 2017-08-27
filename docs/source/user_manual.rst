@@ -4,53 +4,60 @@ User manual
 .. contents:: Contents
    :depth: 4
 
-The architecture of MR\ :sup:`3` \
+.. |MR3| replace:: MR\ :sup:`3` \
+
+Implementation architecture
 ------------------------------------------
- RDF(S)コンテンツ構築支援ツールの設計を基に，RDF(S)コンテンツ構築支援ツールMR\ :sup:`3` \ (Meta-Model Management based on RDFs Revision Reflection) の実装を行った． :numref:`mr3-architecture` にMR\ :sup:`3` \の実装アーキテクチャを示す．MR\ :sup:`3` \はGUIコンポーネントとしてJava Swingを用いて，Java言語で実装を行った． MR\ :sup:`3` \は，RDFおよびRDFSデータグラフを視覚化するためにJGraphライブラリを用いている．:numref:`mr3-architecture` のグラフィカルモデラの実装にはJGraphを用いている．また，MR\ :sup:`3` \は，セマンティックWeb コンテンツ（RDF，RDFS，OWLコンテンツ）のインポート，編集，エクスポートを行うために，Jena: A Semantic Web Frameworkを用いている． :numref:`mr3-architecture`  のパーサとジェネレータの実装にはJena APIを用いている．他のセマンティックWebアプリケーションと連携を行うことができるように， MR\ :sup:`3` \はプラグイン機構を備えている．MR\ :sup:`3` \はプラグイン開発のために主に2 種類のAPI を提供している．一つは，MR\ :sup:`3` \のデータグラフをJenaのモデルオブジェクトに変換するAPIであり，もう一つは，JenaのモデルオブジェクトをMR\ :sup:`3` \のデータグラフに変換するAPIである．これらのAPIを用いることで， MR\ :sup:`3` \で構築したRDFおよびRDFSコンテンツを別のセマンティックWeb アプリケーションに入力することや，逆に他のセマンティックWeb アプリケーションの出力をMR\ :sup:`3` \に入力することが可能となる．将来的には，RDFコンテンツとRDFSコンテンツ間の整合性管理に関するAPIも提供することを考えている．
+
+:numref:`mr3-architecture` shows the system architecture of |MR3| from the aspect of system implementation. |MR3| is implemented in Java language, using the Java Swing user interface. |MR3| uses JGraph for RDF(S) graph visualization, and Apache Jena for enabling the use of Semantic Web standards such as RDF, RDFS, and OWL. The Parser and Generator in |MR3| are implemented using Jena APIs. By using these libraries, |MR3| is implemented as an environment for graphical representation of Semantic Web descriptions. Additionally, |MR3| also has a plug-in facility to extend its functionality. At present, |MR3| offers two kinds of APIs for plug-in development: one for changing the |MR3| data graph into a model object of Jena, and one for changing the model object of Jena into a |MR3| data graph. 
+
 
 .. _mr3-architecture:
 
-.. figure:: figures/implementation_architecture_of_mr3.png
-   :scale: 100 %
-   :alt: The architecture of MR\ :sup:`3` \
+.. figure:: figures/implementation_architecture_of_mr3.svg
+   :scale: 50 %
+   :alt: Implementation architecture of |MR3|
    :align: center
 
-   The architecture of MR\ :sup:`3` \
+   Implementation architecture of |MR3|
 
-The system overview of MR\ :sup:`3` \
+System overview
 ----------------------------------------
 
- :numref:`system-overview` にMR\ :sup:`3` \のシステム構成を示す． MR\ :sup:`3` \は，パーサモジュール，ジェネレータモジュール，RDF(S)コンテンツ管理モジュール，プラグイン，ユーザインタフェースから構成される．ユーザインタフェースには，プラグインインタフェースおよびグラフィカルモデラがあり，ユーザはグラフィカルモデラを介して，RDFおよびRDFSコンテンツを視覚的に編集することができる．また，ユーザは，プラグインインタフェースより，プラグインの機能にアクセスすることができる． MR\ :sup:`3` \の入力と出力はRDF(S)文書である．パーサはRDF(S)文書を解析して，Jena のモデルオブジェクトに変換し，その後，RDF(S)コンテンツ管理を行うことができるようにMR\ :sup:`3` \の内部データに変換する．ジェネレータは， MR\ :sup:`3` \の内部データをJena のモデルオブジェクトに変換し，その後，RDF(S)文書に変換する
+:numref:`system-overview` shows the system overview of |MR3| . |MR3| consists of the Parser module, Generator module, Meta-Model Management module, Plug-ins, and User Interface. The user edits the RDFs description visually via the User Interface, which also includes the Graphical Modeler and Plug-in interfaces. The Graphical Modeler provides access to the basic functions of |MR3| , while the Plug-in Interface provides access to the functions of the plug-ins. The input and output of |MR3| are RDFs documents. The Parser analyzes input RDFs documents and makes further operations possible by transforming the RDFs document into a Jena model. Then, the Parser changes the Jena model into an internal data expression, and meta-model management is performed. Plug-ins are built using APIs provided by |MR3| . The Generator changes the internal data expression into a Jena model. Finally, the Jena model is changed into an RDFs document.
 
 .. _system-overview:
 
-.. figure:: figures/system_overview_of_mr3.png
-   :scale: 100 %
-   :alt: The system overview of MR\ :sup:`3` \
+.. figure:: figures/system_overview_of_mr3.svg
+   :scale: 50 %
+   :alt: System overview of |MR3| 
    :align: center
 
-   The system overview of MR\ :sup:`3` \
+   System overview of |MR3| 
 
-MR\ :sup:`3` \の画面構成
-------------------------
+Overview of the Graphical modeler
+---------------------------------------
 
- :numref:`mr3-screenshot` にMR\ :sup:`3` \のグラフィカルモデラのスクリーンショットを示す．グラフィカルモデラは，RDFエディタ，クラスエディタ，プロパティエディタ，アトリビュートダイアログ，名前空間テーブル，削除ダイアログ，リソース検索ダイアログ，インポートダイアログ，エクスポートダイアログ，設定ダイアログから構成される．
+:numref:`mr3-screenshot` shows a typical screen showing the Graphical Modeler interface of |MR3| . The Graphical Modeler consists of five main windows; RDF Editor, Class Editor, Property Editor, Attribute Dialog, and Namespace Table. 
+
+The details of the graphical modeler are shown in the following sections.
 
  .. _mr3-screenshot:
  .. figure:: figures/screenshot_of_mr3.png
    :scale: 50 %
-   :alt: MR\ :sup:`3` \のグラフィカルモデラのスクリーンショットs
+   :alt: Typical screen with Graphical Modeler interface of |MR3|
    :align: center
 
-   MR\ :sup:`3` \のグラフィカルモデラのスクリーンショット
-   
+   Typical screen with Graphical Modeler interface of |MR3|
    
 .. index:: RDF Editor
 
 RDF Editor
 --------------
-   
-RDFエディタでは，RDFリソース，RDFリソースのタイプ，RDFプロパティ，RDFリテラルの編集を行う．:numref:`rdf-editor` に示すように，RDFリソースは楕円，RDFプロパティは矢印，RDFリテラルは矩形でRDFエディタ内に表示される．RDFリソースのタイプはRDFリソースの右上に表示される．
+
+The RDF Editor allows the user to express the relationship between an RDF resource, RDF property, and RDF literal using a directed graph, and also allows the attributes of each element to be edited. The attributes of an RDF resource consist of a URI, the URI type, and the RDF resource type. The RDF resource type can be chosen using the Class Editor. The URI type can be chosen from either a URI or can be set as anonymous. 
+
+As shown in :numref:`rdf-editor`, RDF resources are represented as ellipses, RDF properties are represented as arrows, and RDF literals are represented as rectangles in the RDF editor . Types of RDF resources are shown at the upper right part of the RDF resources.
 
 .. _rdf-editor:
 .. figure:: figures/rdf_editor.png
@@ -62,6 +69,8 @@ RDFエディタでは，RDFリソース，RDFリソースのタイプ，RDFプ�
 
 Toolbar of RDF Editor
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+Icons in the toolbar in the RDF editor and the corresponding functions are shown in the following table.
 
 ================================================== ===================================================================
         Icon                                          Function                                                             
