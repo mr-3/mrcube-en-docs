@@ -75,177 +75,192 @@ Icons in the toolbar in the RDF editor and the corresponding functions are shown
 ================================================== ===================================================================
         Icon                                          Function                                                             
 ================================================== ===================================================================
- .. figure:: figures/toolbar/move.gif               ノードを移動する                                           
- .. figure:: figures/toolbar/connect.gif            ノードとノードを矢印で接続する                                     
- .. figure:: figures/toolbar/link.png               RDFノードを選択時に，対応するRDFSノードを選択する状態
- .. figure:: figures/toolbar/link_break.png         RDFノードを選択時に，対応するRDFSノードを選択しない状態
- .. figure:: figures/toolbar/insert_resource.png    RDFリソースを挿入する      
- .. figure:: figures/toolbar/insert_literal.png     RDFリテラルを挿入する                           
- .. figure:: figures/toolbar/arrow_undo.png         アンドゥ
- .. figure:: figures/toolbar/arrow_redo.png         リドゥ
- .. figure:: figures/toolbar/copy.png               ノードをコピーする                                         
- .. figure:: figures/toolbar/cut.png                ノードをカットする                                         
- .. figure:: figures/toolbar/paste.png              ノードをペーストする                                        
- .. figure:: figures/toolbar/delete.png             ノードを削除する                                          
- .. figure:: figures/toolbar/find.png               リソース検索ダイアログを表示する                                  
- .. figure:: figures/toolbar/zoom100.gif            標準の倍率にする                                          
- .. figure:: figures/toolbar/zoom_in.png            拡大する                                              
- .. figure:: figures/toolbar/zoom_out.png           縮小する                                              
- .. figure:: figures/toolbar/zoom.png               全体が表示できる倍率にする                                     
- .. figure:: figures/toolbar/shape_group.png        ノードのグループ化
- .. figure:: figures/toolbar/shape_ungroup.png      ノードのグループ化解除
- .. figure:: figures/toolbar/layout_rdf_graph.png   RDFグラフの自動整列を実行
+ .. figure:: figures/toolbar/move.gif               Move nodes
+ .. figure:: figures/toolbar/connect.gif            Connect nodes
+ .. figure:: figures/toolbar/link.png               Select a corresponding RDFS class or property
+ .. figure:: figures/toolbar/link_break.png         Don't select a corresponding RDFS class or property
+ .. figure:: figures/toolbar/insert_resource.png    Insert an RDF resource
+ .. figure:: figures/toolbar/insert_literal.png     Insert an RDF literal
+ .. figure:: figures/toolbar/arrow_undo.png         Undo
+ .. figure:: figures/toolbar/arrow_redo.png         Redo
+ .. figure:: figures/toolbar/copy.png               Copy nodes
+ .. figure:: figures/toolbar/cut.png                Cut nodes
+ .. figure:: figures/toolbar/paste.png              Paste nodes
+ .. figure:: figures/toolbar/delete.png             Remov nodes
+ .. figure:: figures/toolbar/find.png               Show resource find dialog
+ .. figure:: figures/toolbar/zoom100.gif            Set default magnification
+ .. figure:: figures/toolbar/zoom_in.png            Expand the RDF editor
+ .. figure:: figures/toolbar/zoom_out.png           Reduce the RDF editor
+ .. figure:: figures/toolbar/zoom.png               Set appropriate magnification
+ .. figure:: figures/toolbar/shape_group.png        Group nodes
+ .. figure:: figures/toolbar/shape_ungroup.png      Ungroup nodes
+ .. figure:: figures/toolbar/layout_rdf_graph.png   Automatically layout the RDF graph
 ================================================== ===================================================================
 
 Popup menu in the RDF editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-RDFエディタ内で，右クリックするとポップアップメニューが表示される．ポップアップメニューは，ノードを選択している場合としていない場合で表示内容が異なる．ポップアップメニューは，以下のとおり．
+When users right click in the RDF editor, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. Popup menus are shown as follows.
 
 .. figure:: figures/popup_menu_rdf_editor.png
    :scale: 60 %
-   :alt: ノードが選択されていない状態
+   :alt: Popup menu when nodes in the RDF Editor are not selected.
    :align: center
 
-   ノードが選択されていない状態
+   Popup menu when nodes in the RDF Editor are not selected.
 
 .. figure:: figures/popup_menu_selected_rdf_editor.png
    :scale: 60 %
-   :alt: ノードが選択された状態
+   :alt: Popup menu when nodes in the RDF Editor are selected.
    :align: center
 
-   ノードが選択された状態
+   Popup menu when nodes in the RDF Editor are selected.
 
-RDFリソースの挿入
-    マウスの右クリックで指定した位置にRDFリソースを挿入する．
-リテラルの挿入
-    マウスの右クリックで指定した位置にリテラルを挿入する．
-接続モード
-    接続モードにきりかえる．接続モードでRDFリソースから別のRDFリソースまたは，RDFリテラルにドラッグ＆ドロップを行うと，リソース間をプロパティで接続することができる．
-RDFからクラスへ変換
-    RDFリソースをRDFSクラスに変換する．
-RDFからプロパティへ変換
-    RDFリソースをRDFSプロパティに変換する．
-コピー
-    RDFリソース，プロパティ，リテラルをコピーする．
-カット
-    RDFリソース，プロパティ，リテラルをカットする．
-ペースト
-    RDFリソース，プロパティ，リテラルをペーストする．
-削除
-    RDFリソース，プロパティ，リテラルを削除する．
-アトリビュートダイアログを表示
-    アトリビュートダイアログを表示する 
+Insert RDF Resource
+    Insert an RDF resource to the position that mouse is right clicked.
+Insert RDF Literal
+    Insert an RDF literal to the position that mouse is right clicked.
+Connect Mode
+    Change the mode to connect mode from move mode. When the mode is connect mode, users can connect an RDF resource and another RDF resource or a literal by dragging and dropping. 
+Move Mode
+    Change the mode to move mode from connect mode. When the mode is move mode, users can move nodes in the RDF editor.
+Transform from RDF to Class
+    Transform the selected RDF resource to an RDFS class.
+Transform from RDF to Property
+    Transform the selected RDF resource to an RDFS property.
+Copy
+    Copy selected RDF resources, properties, or literals
+Cut
+    Cut selected RDF resources, properties, or literals
+Paste
+    Paste selected RDF resources, properties, or literals
+Remove
+    Remove selected RDF resources, properties or literals
+Show Attribute Dialog
+    Show the Attribute Dialog
 
 Editing attributes of RDF resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-RDFエディタ内のRDFリソースを選択すると，アトリビュートダイアログにRDFリソースの属性が表示される（ :numref:`attr-rdf-res-uri` から :numref:`attr-rdf-literal` ）．RDFリソースの属性編集では，RDFリソースのURI，RDFリソースのタイプ，RDFリソースが空白ノード(blank node) かどうかの選択，RDFリソースのラベルおよびコメントを編集することができる．ここで，空白ノードとは，URI により名前付けしないRDFリソースを表す．空白ノードは外部から参照することはできない．しかし，ステートメントにおける主語または目的語になることができ，URI により名前付けしにくいRDFリソースを記述したり，複数のRDFプロパティを構造化したRDFコンテンツを表現するために用いられる．
+When users select an RDF resource in the RDF editor, the attributes of the RDF resource are shown in the Attribute Dialog ( :numref:`attr-rdf-res-uri` to :numref:`attr-rdf-literal` ). The attributes of RDF resources are URI, rdf:type, blank node or note, rdfs:label, and rdfs:comment. Here the blank nodes are RDF resources that are not named by URIs. Blank nodes can not be acceced from external documents.  However, the blank nodes can be subjects or objects of statements. They are used to represent RDF resources that are difficult to name or structure RDF contents.
 
-RDFリソースのURI を設定したい場合には， :numref:`attr-rdf-res-uri` に示すように，アトリビュートダイアログ左側の一覧から「URI」を選択する．「接頭辞」コンボボックスには，名前空間テーブルに登録されている名前空間接頭辞の一覧が表示される．「接頭辞」コンボボックスから名前空間接頭辞を選択すると，対応する名前空間が「RDFリソース」テキストフィールドに出力される．ユーザは，「RDFリソース」テキストフィールドに設定したいRDFリソースのURI を入力する．RDFリソースを空白ノードとしたい場合には，「ブランク」チェックボックスにチェックをいれる．
+If users would like to set a URI of an RDF resource, they should select URI from the left side menus in the Attribute Dialog as shown in :numref:`attr-rdf-res-uri`. Prefixes that are registered in the Namespace Table are shown in The prefix combo box. When users select one of the prefixes in the combo box, the corresponding namespace is shown in the RDF Resource text field. The users can input any URI in the text field. If the users would like to set an RDF resource as a blank node, the users should check the blank checkbox. 
 
 .. _attr-rdf-res-uri:
 .. figure:: figures/attribute_dialog_rdf_resource_uri.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFリソースのURI）
+   :alt: Attribute Dialog (URI of an RDF resource)
    :align: center
 
-   アトリビュートダイアログ（RDFリソースのURI）
+   Attribute Dialog (URI of an RDF resource)
 
+If the users would like to set a type to an RDF resource, the users should select the Type from the left side menu in the Attribute Dialog as shown in :numref:`attr-rdf-res-type`. The isType checkbox should be checked when the users input the type of an RDF resource. If the users would like to empty the type of an RDF resource, they should uncheck the isType checkbox. 
 
-RDFリソースのタイプを設定したい場合には， :numref:`attr-rdf-res-type` に示すように，アトリビュートダイアログ左側の一覧から「タイプ」を選択する．RDFリソースタイプを入力するには，「タイプ」チェックボックスをチェックする．RDFリソースのタイプを空にするには，「タ
-イプ」チェックボックスのチェックをはずす．「タイプ選択」ボタンをクリックすると， :numref:`rdf-res-type-selection-dialog` に示す「RDFリソースタイプ選択」ダイアログが表示される．「RDFリソースタイプ選択」ダイアログには，クラスエディタで構築したクラス階層が表示される．RDFリソースのタイプとしたいクラスを選択すると，「RDFリソースタイプ選択」ダイアログのURI ラベルに，選択したクラスのURI が表示される．「了解」ボタンをクリックすると，アトリビュートダイアログの「接頭辞」コンボボックスと「リソースタイプID」テキストフィールドに，「RDFリソースタイプ選択」ダイアログで選択したURI が設定される．クラスエディタで定義されていないクラスのURI をRDFリソースのタイプとして入力した場合，RDF(S)コンテンツ管理機能が働き， :numref:`rdf-and-rdfs-management-dialog` に示す「RDF(S)コンテンツ管理」ダイアログが表示される．RDF(S)コンテンツ管理ダイアログでは，RDFSクラス名の変更またはRDFSクラスの新規作成のどちらかをユーザは選択することができる．「ジャンプクラス」ボタンをクリックすると，そのRDFリソースのタイプと対応するクラスエディタ内のRDFSクラスへジャンプする．また，アトリビュートダイアログにそのRDFSクラスの属性が表示される．
+When the users click the Select Type button, Select Resource Type Dialog are shown as shown in :numref:`rdf-res-type-selection-dialog`. The class hierarchy that is build in the Class editor is shown in the Select Resource Type Dialog. When the users select an RDFS class in the dialog, the namespace and ID of the selected class are set in the Attribute Dialog.
+
+When the users input a URI that is not defined in the Class editor, RDF(S) contents management dialog is shown as shown in :numref:`rdf-and-rdfs-management-dialog`. In the RDF(S) contents management dialog, the users can select Rename or Create. 
+
+When the users click the JumpClass button, the type of an RDF resource is selected and the attributes of the type of the RDF resource are shown in the Attribute Dialog. 
 
 .. _attr-rdf-res-type:
 .. figure:: figures/attribute_dialog_rdf_resource_type.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFリソースのタイプ）
+   :alt: Attribute Dialog (type of RDF resource)
    :align: center
 
-   アトリビュートダイアログ（RDFリソースのタイプ）
+   Attribute Dialog (type of RDF resource)
 
 .. _rdf-res-type-selection-dialog:
 .. figure:: figures/rdf_resource_type_selection_dialog.png
    :scale: 100 %
-   :alt: RDFリソースタイプ選択ダイアログ
+   :alt: RDF Resource Type Selection Dialog
    :align: center
 
-   RDFリソースタイプ選択ダイアログ
+   RDF Resource Type Selection Dialog
 
 .. _rdf-and-rdfs-management-dialog:
 .. figure:: figures/rdf_and_rdfs_management_dialog.png
    :scale: 100 %
-   :alt: RDF(S)コンテンツ管理ダイアログ
+   :alt: RDF(S) contents management dialog
    :align: center
 
-   RDF(S)コンテンツ管理ダイアログ
+   RDF(S) contents management dialog
 
 
-RDFリソースに対して，rdfs:label プロパティを用いてRDFリソースのラベルを記述したい場合には， :numref:`attr-rdf-res-label` に示すように，アトリビュートダイアログ左側の一覧から「ラベル」を選択する．「言語」テキストフィールドに言語を，「ラベル」テキストフィールドにラベルを入力し，「追加」ボタンを押すと，アトリビュートダイアログ中央のテーブルに言語とラベルが追加される．テーブルの行を選択し，「削除」ボタンを押すと選択したラベルを削除することができる．
+If the users would like to define the rdfs:label of an RDF resource, the users should select Label in the left side menu in the Attribute Dialog as shown in :numref:`attr-rdf-res-label`. After inputting language in the Lang text field and label in the Label text field, the language and the label are added in the table in the Attribute Dialog. If the users select a line in the table and click remove button, the selected label is removed.
 
 .. _attr-rdf-res-label:
 .. figure:: figures/attribute_dialog_rdf_resource_label.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFリソースのラベル）
+   :alt: Attribute Dialog (Label of an RDF resource)
    :align: center
 
-   アトリビュートダイアログ（RDFリソースのラベル）
+   Attribute Dialog (Label of an RDF resource)
 
 
-RDFリソースに対して，rdfs:comment プロパティを用いてRDFリソースのコメントを記述したい場合には， :numref:`attr-rdf-res-comment` に示すように，アトリビュートダイアログ左側の一覧から「コメント」を選択する．「追加」ボタンを押すと，「コメント編集」ダイアログが表示される．「言語」テキストフィールドに言語を，「ラベル」テキストフィールドにラベルを入力し，「了解」ボタンを押すと，アトリビュートダイアログ中央のテーブルに言語とコメントが追加される．テーブルの行を選択し，「編集」ボタンを押すと「コメント編集」ダイアログが表示され，コメントを編集することができる．テーブルの行を選択し，「削除」ボタンを押すと選択したコメントを削除することができる．
+If the users would like to define the rdfs:comment of an RDF resource, the users should select Comment in the left side menu in the Attribute Dialog as shown in :numref:`attr-rdf-res-comment`. After clicking the Add button, the Edit Comment Dialog is shown. 
+
+First input language in the Lang text field and comment in the Comment text area. Then, click OK button. After that, the language and the label are added in the table in the Attribute Dialog. If the users select a line in the table and click Edit button, the users can edit the selected comment and the language. In the same way, if the user select a line in the table and click Remove button, the selected label is removed.
 
 .. _attr-rdf-res-comment:
 .. figure:: figures/attribute_dialog_rdf_resource_comment.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFリソースのコメント）
+   :alt: Attribute Dialog (Comment of an RDF resource)
    :align: center
 
-   アトリビュートダイアログ（RDFリソースのコメント）
-
+   Attribute Dialog (Comment of an RDF resource)
 
 Editing attributes of RDF properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If the users select an RDF property in the RDF Editor, the attributes of the RDF property are shown in the Attribute Dialog (:numref:`attr-rdf-property`). The users can edit the URI of the selected RDF property. 
 
-RDFエディタ内のRDFプロパティを選択すると，アトリビュートダイアログにRDFプロパティの属性が表示される（ :numref:`attr-rdf-property` ）．RDFプロパティの属性編集では，RDFプロパティのURI を編集することができる．「コンテナ」チェックボックスにチェックをして，数値を入力するとrdf: 1…rdf: n プロパティの入力を行うことができる．「プロパティの接頭辞のみ表示」チェックボックスにチェックをいれると，プロパティエディタで定義されているプロパティがもつ名前空間URI に対応する名前空間接頭辞のみを「接頭辞」コンボボックスから選択可能となる．チェックをはずすと，名前空間テーブルに登録されているすべての接頭辞を選択可能となる．
+If the users check the isContainer checkbox and input a number, the users can set rdf:_1 to n property that is corresponding to the inputted number.
+
+If the user check the Show Property Prefix Only checkbox, the users can only select prefixes that are only used in the defined RDFS properties. If the user uncheck the checkbox, the users can select all of the prefixes that are defined in the Namespace Table.
+
 
 .. _attr-rdf-property:
 .. figure:: figures/attribute_dialog_rdf_property.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFプロパティ）
+   :alt: Attribute Dialog (RDF Property)
    :align: center
 
-   アトリビュートダイアログ（RDFプロパティ）
+   Attribute Dialog (RDF Property)
 
+When the users input a URI which is not defined in the Property Editor, RDF(S) contents management dialog is shown as shown in :numref:`rdf-and-rdfs-management-dialog`. In the RDF(S) contents management dialog, the users can select rename the RDFS property or create an RDFS property. 
 
-プロパティエディタで定義されていないプロパティのURI を入力した場合，RDF(S)コンテンツ管理機能が働き， :numref:`rdf-and-rdfs-management-dialog` に示す「RDF(S)コンテンツ管理」ダイアログが表示される．RDF(S)コンテンツ管理ダイアログでは，RDFSプロパティ名の変更またはRDFSプロパティの新規作成のどちらかをユーザは選択することができる．プロパティエディタ内で定義されているプロパティの中で，名前空間接頭辞に対応する名前空間URI をもつプロパティのID が「プロパティID」リストに表示される．「プロパティ」ボタンをクリックすると，選択したRDFプロパティに対応するプロパティエディタ内のRDFSプロパティにジャンプし，アトリビュートダイアログにそのRDFSプロパティの属性が表示される．
+When the users select one of the prefixes in the dialog, IDs of RDFS properties that are defined in the Property Editor and the namespace is correspond to the selected prefix are shown in the Property ID list. 
+
+When the users select one of the Property IDs and click (Jump) Property button, the RDFS property is selected and the attributes of the RDFS property are shown in the Attribute Dialog.
 
 
 Editing attributes of RDF literals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-RDFエディタ内のRDFリテラルを選択すると，アトリビュートダイアログにRDFリテラルの属性が表示される（ :numref:`attr-rdf-literal` ）．RDFリテラルの編集では，リテラルの内容，言語属性（xml:lang 属性），データタイプの編集を行うことができる．「リテラル」テキストエリアには，リテラルの内容を入力する．「言語」テキストフィールドには，リテラルの記述言語を入力する．リテラルのデータタイプを設定したい場合には，「タイプ」チェックボックスにチェックを入れて，「タイプ」コンボボックスからデータタイプを選択することができる．リテラルのデータタイプを必要としない場合には，「タイプ」チェックボックスのチェックをはずす．言語とリテラルのタイプは排他的であり，どちらか一方しか設定することはできない
+When the users select an RDF literal in the RDF Editor, the attributes of the RDF literal are shown in the Attribute Dialog. (:numref:`attr-rdf-literal`) The users can edit the contents of the literal, the attribute of language (xml:lang), and the data type of the literal. In the Literal text are, the users can input the contents of the literal. The users can also input language in the Lang text field. If the users set the data type of the literal, the users should check isType checkbox and select one of the types in the Type combobox. Language attribute and data type attribute are exclusive and the users only select one of them. 
+
 
 .. _attr-rdf-literal:
 .. figure:: figures/attribute_dialog_rdf_literal.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFリテラル）
+   :alt: Attribute Dialog (RDF Literal)
    :align: center
 
-   アトリビュートダイアログ（RDFリテラル）
+   Attribute Dialog (RDF Literal)
 
 
 .. index:: Class Editor
 
 Class Editor
 --------------
+The Class Editor allows the users to edit the attributes of RDFS classes and the relationships between the classes.
 
-クラスエディタでは，RDFSクラスの階層関係およびRDFSクラスの属性編集を行うことができる． :numref:`class-editor` にクラスエディタのスクリーンショットを示す
+:numref:`class-editor` shows an screenshot of the Class Editor
 
 .. _class-editor:
 .. figure:: figures/class_editor.png
    :scale: 60 %
-   :alt: Class Editor
+   :alt: An screenshot of the Class Editor
    :align: center
    
-   Class Editor
+   An screenshot of the Class Editor
 
 Toolbar in the Class Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,108 +269,112 @@ Icons in the toolbar in the Class editor and the corresponding functions are sho
 ======================================================= ===================================================================
         Icon                                             Function                                                             
 ======================================================= ===================================================================
- .. figure:: figures/toolbar/move.gif                    ノードを移動する                                           
- .. figure:: figures/toolbar/connect.gif                 ノードとノードを矢印で接続する                                     
- .. figure:: figures/toolbar/insert_class.png            RDFSクラスを挿入する    
- .. figure:: figures/toolbar/arrow_undo.png              アンドゥ
- .. figure:: figures/toolbar/arrow_redo.png              リドゥ
- .. figure:: figures/toolbar/copy.png                    ノードをコピーする                                         
- .. figure:: figures/toolbar/cut.png                     ノードをカットする                                         
- .. figure:: figures/toolbar/paste.png                   ノードをペーストする                                        
- .. figure:: figures/toolbar/delete.png                  ノードを削除する                                          
- .. figure:: figures/toolbar/find.png                    リソース検索ダイアログを表示する                                  
- .. figure:: figures/toolbar/zoom100.gif                 標準の倍率にする                                          
- .. figure:: figures/toolbar/zoom_in.png                 拡大する                                              
- .. figure:: figures/toolbar/zoom_out.png                縮小する                                              
- .. figure:: figures/toolbar/zoom.png                    全体が表示できる倍率にする                                     
- .. figure:: figures/toolbar/shape_group.png             ノードのグループ化
- .. figure:: figures/toolbar/shape_ungroup.png           ノードのグループ化解除
- .. figure:: figures/toolbar/layout_class_graph.png      RDFSクラスグラフの自動整列を実行
+ .. figure:: figures/toolbar/move.gif                    Move nodes
+ .. figure:: figures/toolbar/connect.gif                 Connect nodes
+ .. figure:: figures/toolbar/insert_class.png            Insert an RDFS class
+ .. figure:: figures/toolbar/arrow_undo.png              Undo
+ .. figure:: figures/toolbar/arrow_redo.png              Redo
+ .. figure:: figures/toolbar/copy.png                    Copy nodes
+ .. figure:: figures/toolbar/cut.png                     Cut nodes
+ .. figure:: figures/toolbar/paste.png                   Paste nodes
+ .. figure:: figures/toolbar/delete.png                  Remove nodes
+ .. figure:: figures/toolbar/find.png                    Show resource search dialog
+ .. figure:: figures/toolbar/zoom100.gif                 Set default magnification
+ .. figure:: figures/toolbar/zoom_in.png                 Expand the Class Editor
+ .. figure:: figures/toolbar/zoom_out.png                Reduct the Class Editor
+ .. figure:: figures/toolbar/zoom.png                    Set appropriate magnification
+ .. figure:: figures/toolbar/shape_group.png             Group nodes
+ .. figure:: figures/toolbar/shape_ungroup.png           Ungroup nodes
+ .. figure:: figures/toolbar/layout_class_graph.png      Automatically layout the RDFS class graph
 ======================================================= ===================================================================
 
 
 Popup menu in the Class Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-クラスエディタ内で，右クリックするとポップアップメニューが表示される．ポップアップメニューは，ノードを選択している場合としていない場合で表示内容が異なる．ポップアップメニューは，以下のとおり．
+When users right click in the Class editor, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. The popup menus are shown as follows.
 
 .. figure:: figures/popup_menu_class_editor.png
    :scale: 60 %
-   :alt: ノードが選択されていない状態
+   :alt: Popup menu when nodes in the Class Editor are not selected.
    :align: center
    
-   ノードが選択されていない状態
+   Popup menu when nodes in the Class Editor are not selected.
    
 .. figure:: figures/popup_menu_selected_class_editor.png
    :scale: 60 %
-   :alt: ノードが選択された状態
+   :alt: Popup menu when nodes in the Class Editor are selected.
    :align: center
    
-   ノードが選択された状態
+   Popup menu when nodes in the Class Editor are selected.
 
-クラスの挿入
-    マウスの右クリックで指定した場所にクラスを挿入する．他のクラスを選択した状態でクラスの挿入を行うと，選択したクラスのサブクラスとして，新規クラスが挿入される．
-接続モード
-    接続モードに切り替える．下位クラスから上位クラスにドラッグ＆ドロップをすることで，上位・下位関係を定義できる．
-クラスからRDFへ変換
-    RDFSクラスからRDFリソースへ変換する．
-クラスからプロパティへ変換
-    RDFSクラスからRDFSプロパティへ変換する．
-コピー
-    クラスとクラス間の関係をコピーする．
-カット
-    クラスとクラス間の関係をカットする．
-ペースト
-    クラスとクラス間の関係をカットする．
-削除
-    クラスとクラス間の関係を削除する．
-アトリビュートダイアログを表示
-    アトリビュートダイアログを表示する．
+Insert Class
+    Insert an RDFS class to the position that the mouse is right clicked. If one or more RDFS classes are selected, an RDFS class is inserted as the sub classes of the selected classes.
+Connect Mode
+   Change the mode to connect mode from move mode. When the mode is connect mode, users can connect classes by dragging and dropping.
+Move Mode
+    Change the mode to move mode from connect mode. When the mode is move mode, users can move nodes in the Class editor.
+Transform from Class to RDF
+    Transform the selected RDFS classes to RDF resources. 
+Transform from Class to Property
+    Transform the selected RDFS classes to RDFS properties.
+Copy
+    Copy selected RDFS classes and the relationships between the classes.
+Cut
+    Cut selected RDFS classes and the relationships between the classes.
+Paste
+    Paste copied RDFS classes and the relationships between the classes.
+Remove
+    Remove selected RDFS classes and the relationships between the classes.
+Show Attribute Dialog
+    Show the Attribute Dialog
 
 Editing attributes of the Class editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-クラスエディタ内のRDFSクラスを選択すると，RDFSクラスの属性がアトリビュートダイアログに表示される（ :numref:`attr-class-basic` から :numref:`attr-class-upper-class` ）．アトリビュートダイアログ左側のリストから「基本」，「ラベル」，「コメント」，「インスタンス」，「上位クラス」項目を選択し，RDFSクラスの属性の編集を行う．「基本」では，リソースタイプおよびURI を編集することができる（ :numref:`attr-class-basic` ）．リソースタイプで選択できる項目は，「設定」ダイアログのクラスクラスリストから追加および削除を行うことができる．「ラベル」では，rdfs:label プロパティの編集を行うことができる．「コメント」では，rdfs:commentの編集を行うことができる．ラベルとコメントの編集方法は，RDFリソースと同様である．「インスタンス」には選択したRDFSクラスのインスタンスのリストが表示される（ :numref:`attr-class-instance` ）．リスト中の項目をクリックすると対応するRDFエディタ内のRDFリソースにジャンプし，そのRDFリソースの属性がアトリビュートダイアログに表示される．「上位クラス」には，選択したRDFSクラスの上位クラスのリストが表示される（ :numref:`attr-class-upper-class` ）．
+When the users select an RDFS class in the Class Editor, the attributes of the RDFS class are shown in the Attribute Dialog (:numref:`attr-class-basic` to :numref:`attr-class-upper-class`). The users can edit the attributes of an RDFS class by selecting Base, Label, Comment, Instances, or UpperClasses items from the left side menu in the Attribute Dialog.
+
+When the users select the Base item, the type of an RDFS class and the URI can be edited (:numref:`attr-class-basic`).  The types can be defined class class list in the Config Dialog. When the users select the Label item, the value of rdfs:label property can be edited. When the users select the Comment item, the value of rdfs:comment property can be edited. The methods for editing rdfs:label and rdfs:comment are same as RDF resource. When the users select the Instances item, the instances of the selected RDFS class are shown in the list (:numref:`attr-class-instance`). When the users select the one of the items in the list, corresponding RDF resource is selected and the attributes of the RDF resource are shown in the Attribute Dialog. When the users select the UpperClasses item, the uppser classes of the selected RDFS class are shown in the list (:numref:`attr-class-upper-class`).
 
 .. _attr-class-basic:
 .. figure:: figures/attribute_dialog_rdfs_class_basic.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFSクラスの基本）
+   :alt: Attribute Dialog (Base of RDFS class)
    :align: center
    
-   アトリビュートダイアログ（RDFSクラスの基本）
+   Attribute Dialog (Base of RDFS class)
  
 .. _attr-class-instance:
 .. figure:: figures/attribute_dialog_rdfs_class_instance.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFSクラスのインスタンス）
+   :alt: Attribute Dialog (Instances of the RDFS class)
    :align: center
-   
-   アトリビュートダイアログ（RDFSクラスのインスタンス）
+
+   Attribute Dialog (Instances of the RDFS class)
   
 .. _attr-class-upper-class:
 .. figure:: figures/attribute_dialog_rdfs_class_upper_class.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFSクラスの上位クラス）
+   :alt: Attribute Dialog (Upper classes of the RDFS class)
    :align: center
-   
-   アトリビュートダイアログ（RDFSクラスの上位クラス）
+
+   Attribute Dialog (Upper classes of the RDFS class)
 
 
-.. index:: プロパティエディタ
+.. index:: Property Editor
 
 
 Property Editor
 ------------------
+The Property Editor allows the users to edit the attributes of RDFS properties and the relationships between the properties.
 
-プロパティエディタでは，RDFS プロパティの階層関係およびRDFS プロパティの属性編集を行うことができる． :numref:`property-editor` にプロパティエディタのスクリーンショットを示す．
+:numref:`property-editor` shows an screenshot of the Property Editor
 
 .. _property-editor:
 .. figure:: figures/property_editor.png
    :scale: 60 %
-   :alt: Property Editor
+   :alt: An screenshot of the Property Editor
    :align: center
    
-   Property Editor
+   An screenshot of the Property Editor
 
 Toolbar in the Property Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -364,123 +383,119 @@ Icons in the toolbar in the Property editor and the corresponding functions are 
 ======================================================= ===================================================================
         Icon                                             Function                                                             
 ======================================================= ===================================================================
- .. figure:: figures/toolbar/move.gif                    ノードを移動する                                           
- .. figure:: figures/toolbar/connect.gif                 ノードとノードを矢印で接続する                                     
- .. figure:: figures/toolbar/insert_property.png         RDFSプロパティを挿入する    
- .. figure:: figures/toolbar/arrow_undo.png              アンドゥ
- .. figure:: figures/toolbar/arrow_redo.png              リドゥ
- .. figure:: figures/toolbar/copy.png                    ノードをコピーする                                         
- .. figure:: figures/toolbar/cut.png                     ノードをカットする                                         
- .. figure:: figures/toolbar/paste.png                   ノードをペーストする                                        
- .. figure:: figures/toolbar/delete.png                  ノードを削除する                                          
- .. figure:: figures/toolbar/find.png                    リソース検索ダイアログを表示する                                  
- .. figure:: figures/toolbar/zoom100.gif                 標準の倍率にする                                          
- .. figure:: figures/toolbar/zoom_in.png                 拡大する                                              
- .. figure:: figures/toolbar/zoom_out.png                縮小する                                              
- .. figure:: figures/toolbar/zoom.png                    全体が表示できる倍率にする                                     
- .. figure:: figures/toolbar/shape_group.png             ノードのグループ化
- .. figure:: figures/toolbar/shape_ungroup.png           ノードのグループ化解除
- .. figure:: figures/toolbar/layout_property_graph.png   RDFSプロパティグラフの自動整列を実行
+ .. figure:: figures/toolbar/move.gif                    Move nodes
+ .. figure:: figures/toolbar/connect.gif                 Connect nodes
+ .. figure:: figures/toolbar/insert_property.png         Insert an RDFS property
+ .. figure:: figures/toolbar/arrow_undo.png              Undo
+ .. figure:: figures/toolbar/arrow_redo.png              Redo
+ .. figure:: figures/toolbar/copy.png                    Copy nodes
+ .. figure:: figures/toolbar/cut.png                     Cut nodes
+ .. figure:: figures/toolbar/paste.png                   Paste nodes
+ .. figure:: figures/toolbar/delete.png                  Remove nodes
+ .. figure:: figures/toolbar/find.png                    Show Resource Search Dialog
+ .. figure:: figures/toolbar/zoom100.gif                 Set default magnification
+ .. figure:: figures/toolbar/zoom_in.png                 Expand the Property Editor
+ .. figure:: figures/toolbar/zoom_out.png                Reduce the Property Editor
+ .. figure:: figures/toolbar/zoom.png                    Set appropriate magnification
+ .. figure:: figures/toolbar/shape_group.png             Group nodes
+ .. figure:: figures/toolbar/shape_ungroup.png           Ungroup nodes
+ .. figure:: figures/toolbar/layout_property_graph.png   Automatically layout the RDFS property graph
 ======================================================= ===================================================================
 
 Popup menu in the Property Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-プロパティエディタ内で，右クリックするとポップアップメニューが表示される．ポップアップメニューは，ノードを選択している場合としていない場合で表示内容が異なる．ポップアップメニューは，以下のとおり．
+When users right click in the Property editor, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. The popup menus are shown as follows.
 
 .. figure:: figures/popup_menu_selected_property_editor.png
    :scale: 60 %
-   :alt: ノードが選択されていない状態
+   :alt: Popup menu when nodes in the Property Editor are not selected.
    :align: center
    
-   ノードが選択されていない状態
+   Popup menu when nodes in the Property Editor are not selected.
    
 .. figure:: figures/popup_menu_selected_property_editor.png
    :scale: 60 %
-   :alt: ノードが選択された状態
+   :alt: Popup menu when nodes in the Property Editor are selected.
    :align: center
    
-   ノードが選択された状態
+   Popup menu when nodes in the Property Editor are selected.
 
-プロパティの挿入
-    マウスの右クリックで指定した場所にプロパティを挿入する．他のクラスを選択した状態でプロパティの挿入を行うと，選択したプロパティのサブプロパティとして，新規プロパティが挿入される．
-接続モード
-    接続モードに切り替える．下位プロパティから上位プロパティにドラッグ＆ドロップをすることで，上位・下位関係を定義できる．
-プロパティからRDFへ変換
-    RDFSプロパティからRDFリソースへ変換する．
-プロパティからクラスへ変換
-    RDFSプロパティからRDFSクラスへ変換する．
-コピー
-    プロパティとプロパティ間関係をコピーする．
-カット
-    プロパティとプロパティ間関係をカットする．
-ペースト
-    プロパティとプロパティ間関係をペーストする．
-削除
-    プロパティとプロパティ間関係を削除する．
-アトリビュートダイアログを表示
-    アトリビュートダイアログを表示する．
+Insert Property
+    Insert an RDFS property to the position that the mouse is right clicked. If one or more RDFS properties are selected, an RDFS property is inserted as the sub properties of the selected properties.
+Connect Mode
+   Change the mode to connect mode from move mode. When the mode is connect mode, users can connect propertie by dragging and dropping.
+Move Mode
+    Change the mode to move mode from connect mode. When the mode is move mode, users can move nodes in the Property editor.
+Transform from Property to RDF
+    Transform the selected RDFS properties to RDF resources
+Transform from Property to Class
+    Transform the seledcted RDFS properties to RDFS classes
+Copy
+    Copy the selected RDFS properties and the relationships between the properties
+Cut
+    Cut the selected RDFS properties and the relationships between the properties
+Paste
+    Paste the copied RDFS properties and the relationships between the properties
+Remove
+    Remove the selected RDFS properties and the relationships between the properties
+Show Attribute Dialog
+    Show the Attribute Dialog
 
 Editing attributes of the Property editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-プロパティエディタ内のRDFS プロパティを選択すると，RDFS プロパティの属性がアトリビュートダイアログに表示される（ :numref:`attr-property-region` ， :numref:`attr-property-instance` ， :numref:`attr-property-upper-property` ）．アトリビュートダイアログ左側のリストには，「基本」，「ラベル」，「コメント」，「範囲」，「インスタンス」，「上位プロパティ」項目が表示される．「基本」，「ラベル」，「コメント」の編集項目はRDFSクラスと同様である．「基本」のリソースタイプは，「設定」ダイアログのプロパティクラスリストから追加および削除を行うことができる．「範囲」にはRDFS プロパティの定義域および値域をクラスエディタから選択できる（ :numref:`attr-property-region` ）．「インスタンス」には選択したRDFS プロパティを有するRDF リソースのリストが表示される（ :numref:`attr-property-instance` ）．リスト中の項目をクリックした際の動作は，RDFS クラスの場合と同様である．「上位プロパティ」には選択したRDFS プロパティの上位プロパティが表示される（ :numref:`attr-property-upper-property` ）．
+When the users select an RDFS property in the Property Editor, the attributes of the RDFS property are shown in the Attribute Dialog (:numref:`attr-property-region`  to :numref:`attr-property-upper-property`).  The users can edit the attributes of an RDFS property by selecting Base, Label, Comment, Region, Instance, or SuperProperties items in the left side menu of the Attribute Dialog. Base, Label, and Comment items are same as RDFS Class. The type list in the Base item can be defined in the property class list in the Config Dialog. When the users select Region item, domains and ranges of the selected RDFS property can be edited (:numref:`attr-property-region`). When the users select Instances item, RDF resource list that have the selected RDFS property is shown in the Attribute Dialog (:numref:`attr-property-instance`). When the users select the one of the items in the list, the RDF resource is selected and the attributes of the RDF resource are shown in the Attribute Dialog. When the users select SuperProperties item, super properties of the selected RDFS property are shown in the list (:numref:`attr-property-upper-property`).
 
 .. _attr-property-region:
 .. figure:: figures/attribute_dialog_rdfs_property_region.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFSプロパティの範囲）
+   :alt: Attribute Dialog (Rnage of RDFS property)
    :align: center
    
-   アトリビュートダイアログ（RDFSプロパティの範囲）
+   Attribute Dialog (Range of RDFS property)
   
 .. _attr-property-instance:
 .. figure:: figures/attribute_dialog_rdfs_property_instance.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFSプロパティのインスタンス）
+   :alt: Attribute Dialog (Instances of RDFS property)
    :align: center
    
-   アトリビュートダイアログ（RDFSプロパティのインスタンス）
+   Attribute Dialog (Instances of RDFS property)
   
 .. _attr-property-upper-property:
 .. figure:: figures/attribute_dialog_rdfs_property_upper_property.png
    :scale: 100 %
-   :alt: アトリビュートダイアログ（RDFSプロパティの上位クラス）
+   :alt: Attribute Dialog (Super properties of RDFS property)
    :align: center
    
-   アトリビュートダイアログ（RDFSプロパティの上位クラス）
+   Attribute Dialog (Super properties of RDFS property)
 
-
-.. index:: リソース検索ダイアログ
+.. index:: Resource Search Dialog
 
 Resource Search Dialog
 --------------------------
- 
- 「リソース検索」ダイアログでは，RDF エディタ，クラスエディタ，プロパティエディタ内に定義されているRDF(S) 要素の検索を行うことができる． :numref:`resource-search-dialog` にリソース検索ダイアログを示す．「グラフタイプ」内の「RDF」，「クラス」，「プロパティ」チェックボックスのいずれか一つを選択し，検索範囲を設定する．「URI」テキストフィールドに検索したいURI を入力すると，「グラフタイプ」内で選択されたチェックボックスの検索範囲内でリソースを検索する．該当するリソース一覧が， :numref:`resource-search-dialog` 下部の「検索結果」リストに表示される．「検索結果」リストの項目を選択すると，選択したリソースを含むエディタ内のノードへジャンプし，アトリビュートダイアログにそのリソースの属性が表示される．「ラベル」と「コメント」テキストフィールドには，それぞれ，「rdfs:label」プロパティ値と「rdfs:comment」プロパティ値を対象に検索を行うことができる．表示方法は，「URI」テキストフィールドにおける検索と同様である．
+The users can find resources (RDF resources, RDF properties, RDFS classes, and RDFS properties) by using Resource Search Dialog. :numref:`resource-search-dialog` shows a screenshot of the Resource Search Dialog. The users can set search scope by checking the Graph Type (RDF, Class, or Property). When the users set a URI in the URI text field, resources that partially match the URI are shown in the Find Result list in the Resource Search Dialog. When the users select the one of the items in the list, corresponding resource is selected and the attributes of the resource are shown in the Attribute Dialog. The users can set the value of rdfs:label and rdfs:comment in the Label or Comment text field. 
 
  .. _resource-search-dialog:
  .. figure:: figures/resource_search_dialog.png
    :scale: 100 %
-   :alt: Resource search dialog
+   :alt: A screenshot of the Resource search dialog
    :align: center
 
-   Resource search dialog
+   A screenshot of the Resource search dialog
  
 .. index:: Namespace Table
 
 Namespace Table
 -------------------
- 
-名前空間テーブルでは，名前空間URI を名前空間接頭辞に置換して表示するために，名前空間接頭辞と名前空間URI の管理を行う． :numref:`namespace-table` に名前空間テーブルのスクリーンショットを示す．「接頭辞」テキストフィールドに名前空間接頭辞を，「名前空間」テキストフィールドに名前空間URI を入力して，「追加」ボタンを押すと名前空間接頭辞と名前空間URI の対応がテーブルに追加される．対応を削除したい場合には，削除したいテーブルの行を選択し，「削除」ボタンを押す．「有効」チェックボックスをチェックすると，URI表示にしている場合に名前空間URI が名前空間接頭辞で置換される．
-
-「有効」チェックボックスのチェックをはずすと名前空間接頭辞が名前空間URI に置換される．RDF(S) 要素のURI を入力する際に名前空間テーブルが参照される．RDF(S) 要素のURI を入力するためには，名前空間接頭辞とID（ローカル名）を入力する必要がある．名前空間テーブルに登録されている名前空間接頭辞をコンボボックスから選択することができる．入力したいURI の名前空間URI および，その名前空間接頭辞をあらかじめ名前空間テーブルに登録する必要がある．名前空間接頭辞を選択すると対応する名前空間URIが「名前空間」ラベルに表示される．
+The users can register perfixes and the corresponding namespaces in the Namespace Table. :numref:`namespace-table` shows a screenshot of the Namespace Table. When the users set a prefix in the Prefix text field, set a namespace in the NameSpace text field, and click Add button, the prefix and the namespace are added in the table in the Namespace Table. If the users would like to remove the prefix and the corresponding namespace, select the line in the table and click Remove button. If the users check the available checkbox, namespaces of resources in each editor are replaced with the corresponding prefix (This function is only available when the Display->URI menu is selected.). When the users set a URI of an resource, the Namespace Table is referred and the users can select the registered prefixes in the Attribute Dialog. When the users select one of the prefixes, the corresponding namespace is shown in the Namespace label or RDF Resource text field.
 
 .. _namespace-table:
 .. figure:: figures/namespace_table.png
    :scale: 100 %
-   :alt: Namespace Table
+   :alt: A screenshot of the Namespace Table
    :align: center
 
-   Namespace Table
+   A screenshot of the Namespace Table
  
 
 .. index:: Remove Dialog
@@ -503,76 +518,74 @@ Remove Dialog
 
 Import Dialog
 --------------------
- インポートダイアログでは，RDF/XML, N3, N-Triple, Turtle 形式で記述されたRDF(S)文書をMR\ :sup:`3` \にインポートすることができる． :numref:`import-dialog` にインポートダイアログのスクリーンショットを示す．また，以下ではインポートダイアログの各部分（ :numref:`import-dialog` 内の 1 から 13）について説明する．
+The users can import RDF(S) documents described as RDF/XML, N3, N-Triple, or Turtle format to |MR3| by using Import Dialog. :numref:`import-dialog` shows a screenshot of the Import Dialog. The parts of the Import Dialog (1 to 13 in :numref:`import-dialog`) are shown below.
 
  .. _import-dialog:
- .. figure:: figures/import_dialog.png
+ .. figure:: figures/import_dialog.svg
    :scale: 100 %
-   :alt: Import Dialog
+   :alt: A screenshot of the Import Dialog
    :align: center
 
-   Import Dialog
+   A screenshot of the Import Dialog
  
-#. コンテナリスト
-     RDF，N3, N-Triple，Turtle 形式で記述されたRDF(S) 文書が保存されたフォルダまたはURI のリストを表示する．
-#. フォルダ追加
-     「1. コンテナリスト」にフォルダを追加する．
-#. URI 追加
-     「1. コンテナリスト」にURI を追加する．    
-#. 削除
-     「1. コンテナリスト」内の選択したフォルダまたはURI を削除する．    
-#. 構文
-     インポートしたいRDF(S) 文書の構文(RDF/XML, N3, N-Triple, Turtle) を選択する．
-#. データタイプ
-     インポートしたい文書のタイプ(RDF, RDFS, OWL) を選択する．    
-#. インポート方法
-     編集中のRDF(S) コンテンツにインポートしたいRDF(S) 文書の内容をマージするか，または，編集中のRDF(S) コンテンツをインポートしたいRDF(S) 文書の内容に置換するかを選択する．    
-#. 検索
-     「検索」テキストフィールドに入力したキーワードによって，「9. インポートファイル」内に表示されているファイルを絞り込む．    
-#. インポートファイル
-     「1. コンテナリスト」内で選択されたフォルダ内のファイル一覧を表示する．    
-#. 拡張子
-    拡張子によって，「9. インポートファイル」内に表示されているファイルを絞り込む．
-#. 再読み込み
-    「1. コンテナリスト」で選択されているフォルダの内容を再読込し，最新のファイル一覧を「9. インポートファイル」に表示する．    
-#. インポート
-    設定した条件（構文，データタイプ，インポート方法，インポートファイル）でRDF(S) 文書をMR\ :sup:`3` \ にインポートする．    
-#. 取消し
-    インポートを中止し，インポートダイアログを閉じる．
-
+#. Directory or URI
+     Directories that RDF(S) documents are saved or URIs that are RDF(S) documents are shown in the list.
+#. Add Dir
+     Add a directory in the Directory or URI list.
+#. Add URI
+     Add a URI in the Directory or URI list.
+#. Remove
+     Remove the selected directory or URI in the Directory or URI list.
+#. Syntax
+     Select a syntax (RDF/XML, N3, N-Triple, or Turtle) of an RDF(S) document that the users would like to import
+#. Data Type
+     Select a data type (RDF, RDFS, or OWL) of an RDF(S) document that the users would like to import
+#. Import Method
+     If the users select Merge, an RDF(S) document is merged to the current project. If the users select Replace, an RDF(S) document is replaced with the current project. 
+#. Find Resource
+     The files in the Import File List are filtered by inputted keyword in the Find Resource text field.
+#. Import File List
+     Files in the selected directory in the Directory or URI list are shown in the Import File List.
+#. Extension
+    The files in the Import File List are filtered by selected extensions. 
+#. Reload
+    Reload the directories in the directory or URI list and the lates files are shown in the Import File List.
+#. Import
+    Import an RDF(S) document to |MR3| based on the set condition (syntax, data type, import method, and import file).
+#. Cancel
+    Close the Import Dialog.
 
 .. index:: Export Dialog
 
 Export Dialog
 ----------------------
-エクスポートダイアログでは， MR\ :sup:`3` \ で構築したRDF(S) データグラフをRDF/XML, N3, N-Triple, Turtle 形式でRDF(S) 文書にエクスポートすることができる． :numref:`export-dialog` にエクスポートダイアログのスクリーンショットを示す．また，以下ではエクスポートダイアログの各部分（ :numref:`export-dialog` 内の1 から8）について説明する．
+The users can export RDF(S) data graphs in |MR3| to an RDF(S) document as RDF/XML, N3, N-Triple, or Turtle syntax. :numref:`export-dialog` shows a screenshot of the Export Dialog. The parts of the Export Dialog (1 to 8 in :numref:`export-dialog`) are described below.
 
 .. _export-dialog:
 
-.. figure:: figures/export_dialog.png
+.. figure:: figures/export_dialog.svg
    :scale: 100 %
-   :alt:  Export Dialog
+   :alt:  A screenshot of the Export Dialog
    :align: center
 
-   Export Dialog
+   A screenshot of the Export Dialog
 
-#. 構文
-    RDF(S) 文書としてエクスポートしたい構文（RDF/XML，N-Triple，Turtle，N3 など）を選択する．
-#. データタイプ
-    各チェックボックスでチェックされたエディタ内のデータグラフをRDF(S) 文書にエクスポートする．（例：クラスとプロパティにチェックをつけた場合，クラスエディタとプロパティエディタ内のデータグラフをRDF(S) 文書にエクスポートする．）
-#. オプション
-    「Encode(UTF-8)」チェックボックスにチェックをいれた場合，エクスポート時にURI の規則を定めるRFC3986 に基づいて，各要素のURI 文字列に含まれる非予約文字データをURLエンコードする．「Selected」チェックボックスにチェックをいれた場合，範囲選択されているサブデータグラフをエクスポートする．「Abbrev」チェックボックスにチェックをいれた場合，省略表記方法でエクスポートする．「XMLbase」チェックボックスにチェックをいれると，XMLBase 宣言がRDF(S) 文書内に追加される．
-#. ファイル
-    設定した条件（構文，データタイプ，オプション）で，RDF(S) 文書にエクスポートする．
-#. 画像
-    「3. データタイプ」の「RDF」，「クラス」，「プロパティ」チェックボックスのうちどれか1 つを選択し，「画像」ボタンを押すと，選択されたエディタのデータグラフをpng 形式でファイルに保存することができる．
-#. 再読み込み
-    設定した条件で最新のデータグラフを「8. ソース表示」に表示する．
-#. 取消し
-    エクスポートを中止し，エクスポートダイアログを閉じる．
-#. ソース表示
-    エクスポートされるRDF(S) 文書の内容が表示される． 
-
+#. Syntax
+    Select a syntax (RDF/XML，N-Triple，Turtle，N3, etc) of an RDF(S) document that the users would like to export.
+#. Data Type
+    If the users check the RDF, Class, or Property checkbox, data graphs in the selected editor are exported to an RDF(S) document. (For example, if the users checks Class and Property, classes and properties are exported as an RDF(S) document.)
+#. Option
+    If the users check Encode(UTF-8) checkbox, URIs of resources are encoded based on RFC3986.  If the users check Selected checkbox, only selected nodes are exported. If the users check Abbrev checkbox, data graphs are exported as RDF/XML Abbreviation syntax. If the users check XMLbase checkbox, XMLBase declaration is added in the RDF(S) document.
+#. File
+    Export an RDF(S) document based on the set condition (syntax, data type, and options).
+#. Image
+    If the users select one of the data types (RDF, Class, or Property) and click Image button, the selected data graph is saved as an image file. 
+#. Reload
+    The latest data graph are exported based on the set condition and the source is shown in the 8 part.
+#. Cancel
+    Close the Export Dialog.
+#. Show the source of RDFs models
+    The users can confirm the source of an RDF(S) document that will be exported.
     
 .. index:: Config Dialog
 
@@ -662,13 +675,12 @@ Rendering
    Config Dialog: Rendering
 
 
-拡張機能
+Plug-ins
 ---------
 「ツール」メニューの「拡張機能」を選択すると，:numref:`plugin-dialog` に示すダイアログが表示される．
 「拡張機能」には，設定ダイアログの「ディレクトリ」項目のプラグインディレクトリに指定したディレクトリに含まれる
 jarファイルを読み込んで，プラグインリストを表示する．プラグインを選択すると，説明が画面下部に表示され，
 「実行」ボタンを押すと，プラグインが実行される．プラグイン作成方法については，:doc:`plugin_development` 参照いただきたい．
-
 
 .. _plugin-dialog:
 .. figure:: figures/plugin_dialog.png
@@ -678,7 +690,7 @@ jarファイルを読み込んで，プラグインリストを表示する．�
 
    拡張機能
 
-整合性検証
+Validator
 -----------
 「ツール」メニューの「整合性検証」を選択すると，:numref:`validator-dialog` に示すダイアログが表示される．
 「整合性検証」では，Jenaの `org.apache.jena.reasoner.ValidityReport <https://jena.apache.org/documentation/javadoc/jena/org/apache/jena/reasoner/ValidityReport.html>`_ を利用し，リテラルのデータ型がプロパティの値域の定義に基いて定義されているかどうかなどを検証することができる．
@@ -687,12 +699,12 @@ jarファイルを読み込んで，プラグインリストを表示する．�
 .. _validator-dialog:
 .. figure:: figures/validator_dialog.png
    :scale: 100 %
-   :alt:  整合性検証
+   :alt:  Validator
    :align: center
 
-   整合性検証
+   Validator
 
-プロジェクト情報
+Project Info
 ------------------
 「ツール」メニューの「プロジェクト情報」を選択すると，:numref:`project-info-dialog` に示すダイアログが表示される．
 「プロジェクト情報」には，現在のプロジェクト名，インポート時間，モデルのリソース数，モデルのリテラル数，モデルのステートメント数，
@@ -701,10 +713,10 @@ jarファイルを読み込んで，プラグインリストを表示する．�
 .. _project-info-dialog:
 .. figure:: figures/project_info_dialog.png
    :scale: 100 %
-   :alt: プロジェクト情報
+   :alt: Project Info
    :align: center
 
-   プロジェクト情報
+   Project Info
 
 
 ログ・コンソール
@@ -721,17 +733,17 @@ jarファイルを読み込んで，プラグインリストを表示する．�
 
    ログ・コンソール
 
-MR3について
+About MR3
 -----------
 「ヘルプ」メニューの「MR3について」を選択すると，:numref:`about-mr3` に示すダイアログが表示される．
 
 .. _about-mr3:
 .. figure:: figures/about_dialog.png
    :scale: 100 %
-   :alt: MR3について
+   :alt: About MR3
    :align: center
 
-   MR3について
+   About MR3
 
 
 Menu
@@ -740,36 +752,32 @@ Menu
 File
 ~~~~~~~~~~
 
-ファイル->新規
+File->New Projedct
     MR\ :sup:`3` \のプロジェクトを新規に開く．現在の作成中のプロジェクトは，保存するか破棄するかを選択する．
-ファイル->開く
+File->Open Projedct
     MR\ :sup:`3` \のプロジェクトファイルを開く．
-ファイル->保存
+File->Save Projedct
     MR\ :sup:`3` \のプロジェクトファイルを保存する．
-ファイル->名前をつけて保存
+File->Save As Projedct
     MR\ :sup:`3` \のプロジェクトファイルを別名で保存する．
-ファイル->インポート
+File->Import
     インポートダイアログを表示．
-ファイル->エクスポート
+File->Export
     エクスポートダイアログを表示．
-ファイル->プラグイン
-    プラグインのメニューが表示される．
-ファイル->終了
+File->Exit
     プログラムを終了する．
 
 Edit
 ~~~~~~~~~
-編集->検索
+Edit->Find Resource
     リソース検索ダイアログを表示する．    
 
-編集->選択->RDFエディタのノードをすべて選択
+Edit->Select->Select All RDF Nodes
     　
-編集->選択->クラスエディタのノードをすべて選択
-     　   
-編集->選択->プロパティエディタのノードをすべて選択
+Edit->Select->Select All Class Nodes
+
+Edit->Select->Select All Property Nodes
       　  
-編集->設定
-    設定ダイアログを表示し，各種設定を行う．
 
 Display
 ~~~~~~~~
@@ -827,31 +835,31 @@ Toolbar
 ------------------
 
 ================================================== ===================================================================
-        アイコン                                      説明                                                             
+        Icon                                         Function                                                             
 ================================================== ===================================================================
- .. figure:: figures/toolbar/new.png                MR\ :sup:`3` \のプロジェクトを新規に開く                             
- .. figure:: figures/toolbar/open.png               MR\ :sup:`3` \のプロジェクトファイルを開く．                          
- .. figure:: figures/toolbar/save.png               MR\ :sup:`3` \のプロジェクトファイルを保存する．                       
- .. figure:: figures/toolbar/saveas.png             MR\ :sup:`3` \のプロジェクトファイルを別名で保存する．                  
- .. figure:: figures/toolbar/import.png             インポートダイアログを表示する                                  
- .. figure:: figures/toolbar/export.png             エクスポートダイアログを表示する                                  
- .. figure:: figures/toolbar/find.png               リソース検索ダイアログを表示する                                  
- .. figure:: figures/toolbar/rdf_editor.png         RDFエディタを前面に表示する                                   
- .. figure:: figures/toolbar/class_editor.png       クラスエディタを前面に表示する                                   
- .. figure:: figures/toolbar/property_editor.png    プロパティエディタを前面に表示する                                 
- .. figure:: figures/toolbar/attr_dialog.png        アトリビュートダイアログを前面に表示する                              
- .. figure:: figures/toolbar/namespace_table.png    名前空間テーブルを前面に表示する                                  
- .. figure:: figures/toolbar/cpr.png                クラス，プロパティ，RDFエディタを表示する
- .. figure:: figures/toolbar/cr.png                 クラス，RDFエディタを表示する
- .. figure:: figures/toolbar/pr.png                 プロパティ，RDFエディタを表示する
- .. figure:: figures/toolbar/arrow_left.png         前を検索 
- .. figure:: figures/toolbar/arrow_right.png        次を検索
- .. figure:: figures/toolbar/accept.png             整合性を検証する 
- .. figure:: figures/toolbar/plugin.png             プラグイン管理ダイアログを表示する
- .. figure:: figures/toolbar/information.png        プロジェクトの情報を表示する 
- .. figure:: figures/toolbar/log_console.png        ログコンソールを表示する
- .. figure:: figures/toolbar/cog.png                設定ダイアログを表示する
- .. figure:: figures/toolbar/help.png               MR\ :sup:`3` \について表示する
+ .. figure:: figures/toolbar/new.png                New |MR3| project
+ .. figure:: figures/toolbar/open.png               Open |MR3| project file
+ .. figure:: figures/toolbar/save.png               Save |MR3| project file
+ .. figure:: figures/toolbar/saveas.png             Save as |MR3| project file
+ .. figure:: figures/toolbar/import.png             Show Import Dialog
+ .. figure:: figures/toolbar/export.png             Show Export Dialog
+ .. figure:: figures/toolbar/find.png               Show Resource Search Dialog
+ .. figure:: figures/toolbar/rdf_editor.png         Show RDF Editor to the front
+ .. figure:: figures/toolbar/class_editor.png       Show Class Editor to the front
+ .. figure:: figures/toolbar/property_editor.png    Show Property Editor to the front
+ .. figure:: figures/toolbar/attr_dialog.png        Show Attribute Dialog to the front
+ .. figure:: figures/toolbar/namespace_table.png    Show Namespace Table to the front
+ .. figure:: figures/toolbar/cpr.png                Show Class, Property, and RDF Editors
+ .. figure:: figures/toolbar/cr.png                 Show Class and RDF Editors
+ .. figure:: figures/toolbar/pr.png                 Show Property and RDF Editors
+ .. figure:: figures/toolbar/arrow_left.png         Find previous
+ .. figure:: figures/toolbar/arrow_right.png        Find next
+ .. figure:: figures/toolbar/accept.png             Validate RDFs contents
+ .. figure:: figures/toolbar/plugin.png             Show Plugin Management Dialog
+ .. figure:: figures/toolbar/information.png        Show Project Information
+ .. figure:: figures/toolbar/log_console.png        Show Log Console
+ .. figure:: figures/toolbar/cog.png                Show Config Dialog
+ .. figure:: figures/toolbar/help.png               Show about |MR3|
 ================================================== ===================================================================
 
 Shortcut keys
