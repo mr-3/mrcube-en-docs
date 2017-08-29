@@ -502,8 +502,13 @@ The users can register perfixes and the corresponding namespaces in the Namespac
 
 Remove Dialog
 -----------------
+If an RDFS class is referred by a type of a resource or a domain or a range of a property, it is inconsistency when the RDFS class is removed. If an RDFS property is reffered in the RDF editor, it is inconsistency when the RDFS property is removed. In these cases, when the users remove those RDFS classes or properties, the Remove Dialog as shown in :numref:`remove-dialog` is shown before removing them actually.
 
-削除対象のRDFSクラスを，RDFリソースのタイプまたはRDFプロパティの定義域または値域が参照している場合，そのRDFSクラスを削除すると整合性を保つことができない．RDFプロパティが削除対象のRDFSプロパティを参照している場合も同様である．これらの場合，RDF(S)コンテンツ管理機能によって， :numref:`remove-dialog` に示す「削除」ダイアログが表示される． :numref:`remove-dialog` 上部の「削除」リストには，削除対象のRDFSクラスのうち，削除すると整合性を保つことができないRDFSクラスまたはRDFSプロパティのリストが表示される． :numref:`remove-dialog` 下部の参照リスト内の「RDF」タブには，削除対象のRDFSクラスをタイプとして参照しているRDFリソースのリストまたは，削除対象のRDFSプロパティを参照しているRDFプロパティのリストが表示される．「プロパティ」タブには，定義域または値域として，削除対象のRDFSクラスを参照しているRDFSプロパティの一覧が表示される．参照リストの「削除」チェックボックスは，RDFSクラスまたは，RDFSプロパティの参照をやめるかどうかの決定に用いる．「削除」チェックボックスをチェックした状態で「適用」ボタンをクリックすると，削除対象のRDFSクラスまたはRDFSプロパティへの参照がたたれる．「削除」チェックボックスのチェックをはずした項目については，「適用」ボタンを押したときに整合性のチェックを行う．「全選択」ボタンは，すべての「削除」チェックボックスにチェックをつける．「全解除」ボタンは，すべての「削除」チェックボックスのチェックをはずす．「反転」ボタンは，現在チェックされているものとされていないものを反転する．「ジャンプ」ボタンは，選択したリソースへジャンプする．RDFリソースのタイプ，定義域，値域を変更したい場合は，ジャンプボタンで該当するリソースへジャンプして変更を行うことができる．
+Removed RDFS classes or properties are shown in the upper part of :numref:`remove-dialog`. RDF resources that referred the removed RDFS classes as their type are shown in the RDF tab in the lower part of :numref:`remove-dialog`. RDF properties that referred the removed RDFS properties are also shown in the RDF tab. RDFS properties that refer removed RDFS classes as their domains or ranges are shown in the Property tab in the lower part of :numref:`remove-dialog`.
+
+If the users check the Delete Checkboxes and click Apply button, RDF resources, RDF properties, and RDFS properties that listed in the lower part of the Remove Dialog stop referring to the removed RDFS classes or RDFS properties. Then, the RDFS classes and RDFS properties are actually removed. 
+
+If the users select one of the RDF resources, RDF properties, or RDFS properties, attributes of the selected resource are shown in the Attribute Dialog. Then, the users can edit the attributes to maintain consistency.
 
 .. _remove-dialog:
 .. figure:: figures/remove_dialog.png
@@ -591,13 +596,11 @@ The users can export RDF(S) data graphs in |MR3| to an RDF(S) document as RDF/XM
 
 Config Dialog
 ----------------
-
-設定ダイアログでは，基本，ディレクトリ，プロキシ，メタクラス，レイアウト，レンダリングについて設定を行うことができる．
+The users can set configurations about basic, directory, proxy, meta class, layout, and rendering in the Config Dialog.
 
 Basic
 ~~~~~~~~~
-
-設定ダイアログの「基本」項目（ :numref:`config-basic` ）では，言語，UI 言語，出力エンコーディング，フォント，ベースURI，ログファイルの設定ができる．言語はラベル表示を行う際に優先して表示する言語を設定できる．UI 言語は，メニューなどに表示する言語を設定できる．言語は，ja（日本語），en（英語），zh（中国語）を選択できる．出力エンコーディングは，エクスポート時にRDF(S)文書を保存するファイルエンコーディングを設定する．フォントは，各エディタ内のノード内の文字列を表示する際のフォントを設定する．ベースURI には，エクスポート時の初期の名前空間URI を設定する．ログファイルには，MR\ :sup:`3` \使用中の各種ログを保存するファイルを設定する．
+When the users select the Basic item as shown in :numref:`config-basic`, language, UI language, output encoding, font, base URI, and log file can be set. If a resource has many multilingual labels, the users should select the prior language. The prior language of labels can be set in the Lang text field. Labels with prior language are shown in each resource when the user select display->label menu. Language of UI such as menu can be set in the UI Lang list. The users can select ja (Japanese), en (English), or zh (Chinsese) from the UI Lang list. Output encoding can be used to export an RDF(S) document. The font of resources can be set by clicking Font Setting button and selecting a font from the font selecting dialog. Default namespace is set based on the Base URI. The directory that a log file is saved can be set by clicking Browse button and selecting the directory from the directory selection dialog.
 
 .. _config-basic:
 
@@ -610,8 +613,7 @@ Basic
 
 Directory
 ~~~~~~~~~~~~
-
-設定ダイアログの「ディレクトリ」項目（ :numref:`config-directory` ）では，作業ディレクトリ，プラグインディレクトリ，リソースディレクトリを設定ができる．作業ディレクトリには，インポートダイアログにおいて，RDF(S)文書を含むフォルダを選択する際に最初に開くフォルダを設定する．プラグインディレクトリには， MR\ :sup:`3` \のプラグインが保存されているフォルダを設定する．リソースディレクトリは， MR\ :sup:`3` \のプロパティファイル（メニューなどに表示する言語ごとの設定ファイル）が保存されているフォルダを設定する．
+When the users select the Directory item as shown in :numref:`config-directory`, work directory, plugins directory, and resources directory can be set. The work directory is a directory that is opened firstly when the users import an RDF(S) document. The plugins directory is a directory that plug-ins of |MR3| are saved. The resources directory is a directory that property files are saved. The property files are defined labels that displayed in |MR3| for each language.
 
 .. _config-directory:
 .. figure:: figures/config_dialog_directory.png
@@ -623,8 +625,7 @@ Directory
    
 Proxy
 ~~~~~~~~
-
-設定ダイアログの「プロキシ」項目（ :numref:`config-proxy` ）では，プロキシサーバを利用している場合に，プロキシサーバのホスト名とポート番号の設定を行うことができる．インポートダイアログからURI を指定して，RDF(S)文書をインポートする場合に設定が必要となる場合がある．   
+When the users select the Proxy item as shown in :numref:`config-proxy`, a host name and a port number of a proxy server can be set. This configuration is necessary to import an RDF(S) document from a URI when the user's environment is under a proxy server.
 
 .. _config-proxy:
 .. figure:: figures/config_dialog_proxy.png
@@ -636,10 +637,9 @@ Proxy
 
 Meta Class
 ~~~~~~~~~~~~~~
+When the users select the Meta Class item as shown in :numref:`config-metaclass`, Class Class and Property Class can be set. If the users set a Class Class, |MR3| regards resources that have the Class Class as their type as classes. If the users set a Property Class, |MR3| regards resources that have the Property Class as their type as properties. These classes and properties are imported in the RDFS class editor or RDFS property editor. 
 
-設定ダイアログの「メタクラス」項目（ :numref:`config-metaclass` ）では，「クラスクラス」および「プロパティクラス」の設定をすることができる．「クラスクラス」に設定したクラスをrdf:typeプロパティの値とするリソースを， MR\ :sup:`3` \はクラスとして認識し，クラスエディタにインポートすることができる．同様に，「プロパティクラス」に設定したクラスをrdf:type プロパティの値とするリソースを， MR\ :sup:`3` \はプロパティとして認識し，プロパティエディタにインポートすることができる．
-
-初期状態では，「クラスクラス」にはrdfs:Class が設定されている．また，「プロパティクラス」には，rdf:Property が設定されている．owl:Class やowl:ObjectProperty をタイプとするリソースを，クラスまたはプロパティとしてMR\ :sup:`3` \にインポートしたい場合には， :numref:`config-metaclass` の「Class Class」タブまたは「Property Class」タブで設定を行う
+In the initial setting, rdfs:Class is defined in Class Class and rdf:Property is defined in Property Class. If the users would like to import OWL classes and properties, owl:Class must be set as Class Class, owl:ObjectProperty and owl:DatatypeProperty must be set as Property Class.
 
 .. _config-metaclass:
 .. figure:: figures/config_dialog_metaclass.png
@@ -651,8 +651,7 @@ Meta Class
 
 Layout
 ~~~~~~~~~~
-
-設定ダイアログの「レイアウト」項目（ :numref:`config-layout` ）では，各エディタ内のデータグラフのレイアウト方法を設定する．
+When the users select the Layout item as shown in :numref:`config-layout`, methods for layout for each editor can be set.
 
 .. _config-layout:
 .. figure:: figures/config_dialog_layout.png
@@ -664,7 +663,7 @@ Layout
 
 Rendering
 ~~~~~~~~~~~~
-設定ダイアログの「レンダリング」項目（ :numref:`config-rendering` ）では，RDFリソース，RDFリテラル，RDFSクラス，RDFSプロパティの各ノードの色や，ノード選択時の色，エディタウィンドウの背景職をカスタマイズすることができる．「ノードに色をつける」チェックボックスのチェックをはずすと，すべてのノードが無色となる．「アンチエイリアス」チェックボックスにチェックをいれると各ノードの縁が滑らかに表示される．
+When the users select Rendering item as shown in :numref:`config-rendering`, colors of each node (RDF resources, RDF literals, RDFS classes, and RDFS properties), colors of each selected node, and background color of each editor can be set. If the users uncheck the Color checkbox, all of the nodes become colorless. If the users check the Antialias checkbox, an edge of each node become smooth.
 
 .. _config-rendering:
 .. figure:: figures/config_dialog_rendering.png
@@ -675,26 +674,21 @@ Rendering
    Config Dialog: Rendering
 
 
-Plug-ins
+Plugins
 ---------
-「ツール」メニューの「拡張機能」を選択すると，:numref:`plugin-dialog` に示すダイアログが表示される．
-「拡張機能」には，設定ダイアログの「ディレクトリ」項目のプラグインディレクトリに指定したディレクトリに含まれる
-jarファイルを読み込んで，プラグインリストを表示する．プラグインを選択すると，説明が画面下部に表示され，
-「実行」ボタンを押すと，プラグインが実行される．プラグイン作成方法については，:doc:`plugin_development` 参照いただきたい．
+When the users select Plugins sub menu in the Tool menu, the dialog as shown in :numref:`plugin-dialog` is shown. |MR3| loads jar files in the plug-ins directory that is set in the Config Dialog. The plugins are shown in the list. If the users select one of the plugins, the description of the plugin is shown at the bottom of the dialog. If the users click Exec button, the selected plugin is executed. Please refer to :doc:`plugin_development` to build |MR3| plugins.
 
 .. _plugin-dialog:
 .. figure:: figures/plugin_dialog.png
    :scale: 100 %
-   :alt:  拡張機能
+   :alt:  Plugins
    :align: center
 
-   拡張機能
+   Plugins
 
 Validator
 -----------
-「ツール」メニューの「整合性検証」を選択すると，:numref:`validator-dialog` に示すダイアログが表示される．
-「整合性検証」では，Jenaの `org.apache.jena.reasoner.ValidityReport <https://jena.apache.org/documentation/javadoc/jena/org/apache/jena/reasoner/ValidityReport.html>`_ を利用し，リテラルのデータ型がプロパティの値域の定義に基いて定義されているかどうかなどを検証することができる．
-
+When the users select Validator sub menu in the Tool menu, the dialog as shown in :numref:`validator-dialog` is shown. |MR3| uses Apache Jena's validation API (`org.apache.jena.reasoner.ValidityReport <https://jena.apache.org/documentation/javadoc/jena/org/apache/jena/reasoner/ValidityReport.html>`_ ) and it is enabled to check if the data type of literals are defined based on a range of property.
 
 .. _validator-dialog:
 .. figure:: figures/validator_dialog.png
@@ -706,9 +700,7 @@ Validator
 
 Project Info
 ------------------
-「ツール」メニューの「プロジェクト情報」を選択すると，:numref:`project-info-dialog` に示すダイアログが表示される．
-「プロジェクト情報」には，現在のプロジェクト名，インポート時間，モデルのリソース数，モデルのリテラル数，モデルのステートメント数，
-クラス数，プロパティ数，すべてのリソース数，すべてのリテラル数，すべてのステートメント数が表示される．
+When the users select Project Info sub menu in the Tool menu, the dialog as shown in :numref:`project-info-dialog` is shown. The current project name, the number of RDF resources, the number of RDF literals, the number of RDF statements, the number of classes, the number of properties, the number of all resources, the number of all literals, the number of all statements are shown in the dialog.
 
 .. _project-info-dialog:
 .. figure:: figures/project_info_dialog.png
@@ -719,23 +711,21 @@ Project Info
    Project Info
 
 
-ログ・コンソール
+Log Console
 -----------------
-「ツール」メニューの「ログ・コンソールを表示」を選択すると，:numref:`log-console` に示すダイアログが表示される．
-ログ・コンソールには，標準出力と標準エラー出力への出力結果が確認できる．
-
+When the users select Show Log Console sub menu in the Tool menu, the dialog as shown in :numref:`log-console` is shown. The users can confirm the standard output and the standard error in the dialog. 
 
 .. _log-console:
 .. figure:: figures/log_console.png
    :scale: 100 %
-   :alt: ログ・コンソール
+   :alt: Log Console
    :align: center
 
-   ログ・コンソール
+   Log Console
 
 About MR3
 -----------
-「ヘルプ」メニューの「MR3について」を選択すると，:numref:`about-mr3` に示すダイアログが表示される．
+When the users select About MR3 sub menu in the Help menu, the dialog as shown in :numref:`about-mr3` is shown. The developer, version, license, project web site, contact, and libraries used in |MR3| are shown in the dialog.
 
 .. _about-mr3:
 .. figure:: figures/about_dialog.png
@@ -751,85 +741,84 @@ Menu
 
 File
 ~~~~~~~~~~
-
-File->New Projedct
-    MR\ :sup:`3` \のプロジェクトを新規に開く．現在の作成中のプロジェクトは，保存するか破棄するかを選択する．
-File->Open Projedct
-    MR\ :sup:`3` \のプロジェクトファイルを開く．
-File->Save Projedct
-    MR\ :sup:`3` \のプロジェクトファイルを保存する．
-File->Save As Projedct
-    MR\ :sup:`3` \のプロジェクトファイルを別名で保存する．
+File->New Project
+    Create new |MR3| project. The users should select save the current project or delete it.
+File->Open Project
+    Open |MR3| project file
+File->Save Project
+    Save |MR3| project file
+File->Save As Project
+    Save As |MR3| project file
 File->Import
-    インポートダイアログを表示．
+    Show Import Dialog
 File->Export
-    エクスポートダイアログを表示．
+    Show Export Dialog
 File->Exit
-    プログラムを終了する．
+    Exit |MR3|
 
 Edit
 ~~~~~~~~~
 Edit->Find Resource
-    リソース検索ダイアログを表示する．    
+    Show Find Resource Dialog
 
-Edit->Select->Select All RDF Nodes
+**Edit->Select->Select All RDF Nodes**
     　
-Edit->Select->Select All Class Nodes
+**Edit->Select->Select All Class Nodes**
 
-Edit->Select->Select All Property Nodes
+**Edit->Select->Select All Property Nodes**
       　  
 
-Display
+View
 ~~~~~~~~
-
-表示->URI表示
-    各エディタのノード内に表示されるラベルを，URI形式で表示する．名前空間テーブルで接頭辞の表示を有効にしている場合，名前空間を接頭辞に置き換えて表示する．
-表示->ID表示
-    各エディタのノード内に表示されるラベルを，ID形式で表示する．
-表示->ラベル表示
-    各エディタのノード内に表示されるラベルを，rdfs:labelで定義されたラベルで表示する．rdfs:labelが定義されていない場合には，URI形式で表示する．
-表示->リソースタイプの表示・非表示
-    RDFリソースのタイプ（矩形）の表示・非表示を行う．
-表示->ツールチップの表示・非表示
-    ツールチップの表示・非表示を行う．
-表示->グループ化・非グループ化
-    RDFリソースとRDFリソースのタイプのグループ化・グループ化解除を行う．
-表示->フォント設定
-    エディタ上に表示される文字のフォントを変更．
+View->URI View
+    URIs of resources are shown in each editor. If namespaces are defined in the Namespace Table, the corresponding prefixes are replaced with the namespaces.
+View->ID View
+    IDs of resources are shown in each editor.
+View->Label View
+    Values of rdfs:label properties are shown in each editor. If a resource does not have rdfs:label property, the URI of the resource is shown instead of the value of rdfs:label property.
+View->Show Resource Type
+    If the users check the Show Resource Type, the type of RDF resources are shown at the top right of each resource.
+View->Show RDF Property Label
+    If the users check the Show RDF Property Label, the label of properties are shown. If it is not checked, the label properties are not shown in the RDF editor.
+View->Show ToolTips
+    If the users check the Show ToolTips, tooltips are shown when the users mouse over the resources.
+View->Apply Layout->RDF
+    Automatically layout the RDF graph
+View->Apply Layout->Class
+    Automatically layout the Class graph
+View->Apply Layout->Property
+    Automatically layout the Property graph
 
 Window
 ~~~~~~~~~~
-
-ウィンドウ->RDFエディタオーバービューを表示
-    RDFエディタの全体を表示する．表示されるウィンドウ内の赤色の四角をドラッグすることで，RDFエディタ内の移動を行うことができ る．また，四角の右下部分をドラッグして，四角の大きさを変更することにより，拡大・縮小を行うことができる．大きくすると拡大し，小さくすると縮小す る．
-ウィンドウ->クラスエディタオーバービューを表示
-    クラスエディタの全体を表示する．機能は，RDFエディタと同様．
-ウィンドウ->プロパティエディタオーバービューを表示
-    プロパティエディタの全体を表示する．機能は，RDFエディタと同様．
+Window->Show RDF Editor Overview
+    The overview of the RDF editor is shown in the dialog. When the users drag a red rectangle, part of the RDF graph in the red rectangle are shown in the RDF editor. The users can change the size of the red rectangle by dragging the right down part. It is enabled to expand and reduce the editor.
+Window->Show Class Editor Overview
+    The overview of the Class editor is shown in the dialog. The functions of the dialog is as same as RDF Editor Overview.
+Window->Show Property Editor Overview
+    The overview of the Property editor is shown in the dialog. The functions of the dialog is as same as RDF Editor Overview.
     
-ウィンドウ->RDFエディタを前面に表示
+**Window->To Front RDF Editor**
         
-ウィンドウ->クラスエディタを前面に表示
+**Window->To Front Class Editor**
     
-ウィンドウ->プロパティエディタを前面に表示
+**Window->To Front Property Editor**
     
-ウィンドウ->アトリビュートダイアログを前面に表示
+**Window->Show Attribute Dialog**
     
-ウィンドウ->名前空間テーブルを前面に表示
+**Window->Show Namespace Table**
     
-ウィンドウ->ソースダイアログを前面に表示
-    
-ウィンドウ->ログコンソールを表示
-    MR\ :sup:`3` \の標準出力・標準エラー出力を表示するウィンドウを表示する．主にデバッグ用．
-ウィンドウ->ウィンドウを再配置
-    RDFエディタ，クラスエディタ，プロパティエディタを初期位置に戻す．
+Window->Layout->Deploy Windows (C,P,R)
+    The RDF editor, the Property editor, and the Class editor are shown.
+Window->Layout->Deploy Windows (C,R)
+    The Class editor and the RDF editor are shown.
+Window->Layout->Deploy Windows (P,R)
+    The Property editor and the RDF editor are shown.
 
 Help
 ~~~~~~~~~
-
-ヘルプ->About MR\ :sup:`3` \
-    MR\ :sup:`3` \のバージョン，HPのURL等を表示する．
- 
+Help->About MR\ :sup:`3` \
+    The developer, version, license, project web site, contact, and libraries used in |MR3| are shown in the dialog.
  
 Toolbar
 ------------------
@@ -865,43 +854,41 @@ Toolbar
 Shortcut keys
 -------------------
 
-全体で使えるショートカットキー
+Shortcut keys that can be used in |MR3|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ctrl-N
-    MR\ :sup:`3` \のプロジェクトを新規に開く．現在の作成中のプロジェクトは，保存するか破棄するかを選択する．
+    Create new |MR3| project. The users should select save the current project or delete it.
 Ctrl-O
-    MR\ :sup:`3` \のプロジェクトファイルを開く．
+    Open |MR3| project file
 Ctrl-S
-    MR\ :sup:`3` \のプロジェクトファイルを保存する．
+    Save |MR3| project file
 Ctrl+Shift+S
-    MR\ :sup:`3` \のプロジェクトファイルを別名で保存する．
+    Save as |MR3| project file
 Ctrl+Q
-    メニューの終了のショートカット
+    Exit |MR3|
 Alt+R
-    RDFエディタを前面に表示
+    Show the RDF Editor to the front
 Alt+C
-    クラスエディタを前面に表示
+    Show the Class Editor to the front
 Alt+P
-    プロパティエディタを前面に表示
+    Show the Property Editor to the front
 Alt+A
-    アトリビュートダイアログを前面に表示
-Alt+S
-    ソースダイアログを前面に表示
+    Show the Attribute Dialog
 Alt+N
-    名前空間テーブルを前面に表示
+    Show the Namespace Table
 Alt+F
-    リソース検索ダイアログを前面に表示
+    Show the Find Resource Dialog
 
-エディタ内で使えるショートカットキー
+Shortcut keys that can be used in editors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ctrl-A
-    エディタ内のノードをすべて選択する
+    Select all of the nodes in a editor
 Delete
-    エディタ内の選択されたノードを削除する
+    Delete selected nodes in a editor
 Ctrl-C
-    エディタ内の選択されたノードをコピーする
+    Copy selected nodes in a editor
 Ctrl-X
-    エディタ内の選択されたノードをカットする
+    Cut selected nodes in a editor
 Ctrl-V
-    コピーまたは，カットされたノードをエディタにペーストする
+    Paste nodes that are copied or cut.
 
