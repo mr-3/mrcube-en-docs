@@ -4,6 +4,8 @@ Functions
 .. contents:: Contents
    :depth: 4
 
+.. |MR3| replace:: MR\ :sup:`3` \
+
 Overview of MR\ :sup:`3` \ functions
 ------------------------------------
 :numref:`mrcube_function_overview` shows a functional outline of MR\ :sup:`3` \. The goal of MR\ :sup:`3` \ is to represent complicated models in a form that is as easy as possible for users to understand. MR\ :sup:`3` \ provides three main functions: (1) graphical editing of RDF descriptions, (2) graphical editing of RDFS descriptions, and (3) meta-model management facilities, allowing several types of relationships in an RDF and RDFS description to be manipulated and managed. Here, the RDF elements considered are the RDF resource, RDF property and RDF literal, and the RDFS elements are the RDFS class and RDFS property. In the definition of these functions, a data graph refers to any visual expression of the data model.
@@ -44,36 +46,42 @@ O→M: Manipulation of an RDFS Class
 The manipulation function of an RDFS class is operated by the meta-model management facility, and consists of replacing and removing an RDFS class.
 
 Replace RDFS Class
-    When a URI of an RDFS class is replaced, the type name of the RDF resource, which refers to the replaced RDFS class, is also replaced at the same time.
+    When a URI of an RDFS class is replaced, the type of the RDF resource (URI), which refers to the replaced RDFS class, is also replaced at the same time.
 Removal of RDFS Class
     When an RDFS class is removed, MR\ :sup:`3` \ shows the list of RDF resources, which includes the removed RDFS class as a type. The user can choose (or empty) other RDFS classes as a type of RDF resource.
 
 Replace URI of RDFS Class
 """"""""""""""""""""""""""""""
-RDFSクラス名を変更する場合，そのRDFSクラスを参照しているRDFリソースのタイプ名(URI) も同時に変更される． :numref:`rename-class`  は，RDFSクラス名を変更する場合の具体例を表している． :numref:`rename-class`  の左側はRDFSクラスex:書籍を変更する前の状態を表しており，右側がRDFSクラスex:書籍をex:書物に変更した後の状態を表している．以下，RDF(S)コンテンツ管理機能の具体例を表す図中のRDFSにおける矩形はクラス，楕円はプロパティ，矢印はクラスの上位・下位関係を表す．矢印は，下位クラスから上位クラスに向かって伸びている．同様に，図中のRDFにおける楕円はRDFリソース，矢印はRDFプロパティ，楕円右上のラベルは，RDFリソースのタイプを表す．ex:学問のすゝめとex:民情一新は，ex:書籍をタイプとするRDFリソースである．RDFSクラスex:書籍をex:書物に変更すると，ex:書籍に対応するRDFリソースのタイプにも自動的に変更が反映される．つまり，RDFリソースex:学問のすゝめおよびex:民情一新のタイプは，ex:書物に自動的に変更される．
-   
+when a URI of an RDFS class is replaced, the type of the RDF resource (URI), which refers to the replaced RDFS class, is also replaced at the same time. :numref:`rename-class` shows an example of replacing a URI of an RDFS class. The left part of :numref:`rename-class` shows the state before replacing ex:Book class and the right part of :numref:`rename-class` shows the state after replacing ex:Book to dc:BibliographicResource class. 
+
+In the RDFS part in the following figures, rectangles represent RDFS classes, ellipses represent RDFS properties, arrows represent rdfs:subClassOf or rdfs:subPropertyOf properties. In the RDF part in the following figures, ellipses represent RDF resources, arrows represent RDF properties, and labels at the upper right of ellipses represent types of RDF resources.
+
+ex:The-Emotion-Machine and ex:The-Society-of-Mind are RDF resources that have ex:Book as their type. If the users replace the URI of ex:Book to dc:BibliographicResource, the type of RDF resource, which refers to ex:Book class, is also replaced at the same time. In this case, the types of ex:The-Emotion-Machine and ex:The-Society-of-Mind (ex:Book class) are replaced with dc:BibliographicResource class.
+
 .. _rename-class:
 .. figure:: figures/rename_rdfs_class.svg
    :scale: 80 %
-   :alt: RDFSクラス名の変更
+   :alt: An example of replacing a URI of an RDFS class
    :align: center
 
-   RDFSクラス名の変更
+   An example of replacing a URI of an RDFS class
 
 Removal of RDFS Class
 """""""""""""""""""""
-RDFSクラスを削除する場合，そのRDFSクラスをタイプとするRDFリソースの一覧を示し，ユーザはRDFリソースのタイプとして，他のRDFSクラス（または空）を選択することができる． :numref:`remove-class` は，RDFSクラスを削除する場合の具体例を表している．ユーザがRDFSクラスex:書籍を削除したとする．ex:学問のすゝめおよびex:民情一新は，ex:書籍をタイプとするRDFリソースであるため，ex:書籍が削除されるとRDFコンテンツとRDFSコンテンツ間の整合性を保つことができない． :numref:`remove-class` では整合性を保つために，RDFリソースex:学問のすゝめおよびex:民情一新のタイプを空にしている．
+When an RDFS class is removed, |MR3| shows the list of RDF resources, which includes the removed RDFS class as a type. The user can choose (or empty) other RDFS classes as a type of RDF resource.
+
+:numref:`remove-class` shows an example of removal of an RDFS class. When the users remove ex:Book class, it can not be maintained consistency beween RDF contents and RDFS contents. Because exBook class is types of ex:The-Emotion-Machine and ex:The-Society-of-Mind resources. In :numref:`remove-class`, the users select empty as their type to maintain the consistency. 
 
 .. note::
-    RDFリソースのタイプが空の場合，rdfs:Resource クラスをタイプとして持つことになる．
+    If a type of an RDF resource is empty, the type of the RDF resource become implicitly rdfs:Resource. 
 
 .. _remove-class:
 .. figure:: figures/remove_rdfs_class.svg
    :scale: 80 %
-   :alt: RDFSクラスの削除
+   :alt: An example of removal of an RDFS class
    :align: center
 
-   RDFSクラスの削除
+   An example of removal of an RDFS class
 
 O→M: Manipulation of an RDFS Property
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,112 +90,106 @@ The manipulation function of an RDFS property is operated by the meta-model mana
 Replace URI of RDFS Property
     When a URI of an RDFS property is replaced, the RDF property, which refers to the replaced RDFS property, is also replaced at the same time.
 Removal of RDFS Property
-    When an RDFS property is removed, $MR^3$ shows the list of the RDF properties which refer to the removed RDFS property. A user can choose other RDFS properties (or the default property – {\tt mr3:nil}) as a property of the RDF resources.
+    When an RDFS property is removed, |MR3| shows the list of the RDF properties which refer to the removed RDFS property. A user can choose other RDFS properties (or the default property – mr3:nil) as a property of the RDF resources.
 
 
 Replace URI of RDFS Property
 """"""""""""""""""""""""""""""""
-RDFSプロパティ名を変更する場合，そのRDFSプロパティを参照しているRDFプロパティ名(URI）も同時に自動的に変更される． :numref:`rename-rdfs-property` は，RDFSプロパティ名を変更する場合の具体例を表している． :numref:`rename-rdfs-property` の左側はRDFSプロパティex:著者を変更する前の状態を表しており，右側はRDFSプロパティex:著者をex:著作者に変更した後の状態を表している．ex:学問のすゝめおよびex:民情一新は，ex:著者プロパティをもつRDFリソースである．ユーザがRDFSプロパティex:著者をex:著作者に変更すると，ex:著者と対応するRDFプロパティにも変更が反映される．つまり，RDFリソースex:学問のすゝめおよびex:民情一新がもつプロパティex:著者はex:著作者に自動的に変更される．
+When a URI of an RDFS property is replaced, the RDF property, which refers to the replaced RDFS property, is also replaced at the same time. :numref:`rename-rdfs-property` shows an example of replacing a URI of an RDFS property. The left part of :numref:`rename-rdfs-property` shows the state before replacing ex:author property and the right part of :numref:`rename-rdfs-property` shows the state after replacing ex:author to dc:creator property. The-Emotion-Machine and The-Society-of-Mind resources have the ex:author property. If the users replace the ex:author property with the dc:creator property, the corresponding RDF properties are also replaced. In this case, The ex:author property that ex:The-Emotion-Machine and ex:The-Society-of-Mind resources have are automatically replaced with the dc:creator property|
 
 .. _rename-rdfs-property:
 .. figure:: figures/rename_rdfs_property.svg
    :scale: 80 %
-   :alt: Replace a URI of an RDFS property
+   :alt: An example of replacing a URI of an RDFS property
    :align: center
 
-   Replace a URI of an RDFS property
+   An example of replacing a URI of an RDFS property
 
 Removal of RDFS Property
 """"""""""""""""""""""""
-RDFSプロパティを削除する場合，そのRDFSプロパティを参照しているRDFプロパティの一覧を示し，ユーザはRDFプロパティとして，他のRDFSプロパティ（あるいは初期のプロパティ）を選択することができる． :numref:`remove-property` は，RDFSプロパティを削除する場合の具体例を表している．ユーザがRDFSプロパティex:著者を削除したとする．ex:学問のすゝめとex:民情一新は，ex:著者をプロパティとしてもつRDFリソースであるため，ex:著者が削除されるとRDFコンテンツとRDFSコンテンツ間の整合性を保つことができない． :numref:`remove-property` では，整合性を保つためにユーザは，RDFリソースex:学問のすゝめおよびex:民情一新がもつex:著者プロパティを初期のプロパティ(mr3:nil) にしている．
+When an RDFS property is removed, |MR3| shows the list of the RDF properties which refer to the removed RDFS property. A user can choose other RDFS properties (or the default property –  mr3:nil) as a property of the RDF resources.
+
+:numref:`remove-property` shows an example of removal of an RDFS property. When the users remove ex:author property in the Property editor, it can not be maintained consistency between the RDF contents and the RDFS contents. Because ex:The-Emotion-Machine and ex:The-Society-of-Mind resources have the ex:author property. Here, in order to maintain the consistency, the users replace ex:author property with the default property (mr3:nil).
 
 .. note::
-   MR\ :sup:`3` \ では，初期のプロパティをmr3:nil としている．RDFSプロパティが定義されていない状態でRDFリソース間の関係を定義した場合，そのRDFリソース間の関係は初期のプロパティとなる．
+   In |MR3|, mr3:nil is the default property. If any RDFS properties are not defined and the users create a statement, the property between resources in the statement become mr3:nil.
 
 .. _remove-property:
 .. figure:: figures/remove_rdfs_property.svg
    :scale: 80 %
-   :alt: RDFSプロパティの削除
+   :alt: An example of removal of an RDFS property
    :align: center
 
-   RDFSプロパティの削除
+   An example of removal of an RDFS property
 
 M→O: Replacing the Type of an RDF Resource
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When it is not clear which RDFS class corresponds to the type of an RDF resource replaced by the user, the meta-model management facility is applied. When the type of an RDF resource replaced by the user is defined by the RDFS class, MR\ :sup:`3` \ matches the type of the RDF resource and the RDFS class corresponding to the type of RDF resource. In addition, if the class is not defined, the user can choose one of the following:
 
-* Replace the RDFS class name with that referred to before the user replaced the type of the RDF resource.
-* Create a new RDFS class that has yet to be defined.
+* Replacing a URI of an RDFS class with that referred to before the user replaced the type of the RDF resource.
+* Creating an RDFS class that has yet to be defined.
 
-:numref:`rename-resource-type` および :numref:`make-class` は，それぞれ，RDFリソースのタイプを変更した場合の具体例を表している．
+:numref:`rename-resource-type` and :numref:`make-class` show examples of replacing a type of an RDF resource.
 
 
-参照しているRDFSクラス名の変更
-""""""""""""""""""""""""""""""
-
-:numref:`rename-resource-type` では，RDFSクラスex:書物が定義されていない状態で，ユーザがRDFリソースex:民情一新のタイプex:書籍をex:書物に変更している．ここでは，整合性を保つためにRDFSクラス名の変更をユーザが選択している．RDFSクラスex:書籍をex:書物に変更することにより，ex:学問のすゝめのタイプもex:書物に半自動的に変更される．
+Replacing a URI of an RDFS class
+"""""""""""""""""""""""""""""""""""
+In :numref:`rename-resource-type`, although dc:BibliographicResource class is not defined in the Class editor, the users replace the type of ex:The-Society-of-Mind (ex:Book class) with dc:BibliographicResource class. Here, in order to maintain the consistency, the users select replacing a URI of an RDFS class. In this case, the users replace ex:Book class with dc:BibliographicResource class. Therefore, the type of ex:The-Emotion-Machine (ex:Book) is automatically replaced with dc:BibliographicResource class.
 
 .. _rename-resource-type:
 .. figure:: figures/rename_rdf_resource_type.svg
    :scale: 80 %
-   :alt: 参照しているRDFSクラス名の変更
+   :alt: Replacing a URI of an RDFS class
    :align: center
 
-   参照しているRDFSクラス名の変更
+   Replacing a URI of an RDFS class
 
 
-RDFSクラスの新規作成
-""""""""""""""""""""
-
-:numref:`make-class` では，RDFSクラスex:啓蒙書が定義されていない状態で，ユーザがRDFリソースex:学問のすゝめのタイプex:書籍をex:啓蒙書に変更している．ここでは，整合性を保つためにRDFSクラスの新規作成をユーザが選択している．ex:啓蒙書クラスを新規に作成することによって，RDFコンテンツとRDFSコンテンツ間の整合性が保たれる．RDFSクラスex:啓蒙書は，rdfs:Resource のサブクラスとなる．
-
-.. note::
-    rdfs:subClassOfプロパティが定義されていないクラスは，暗黙的にrdfs:Resourceのサブクラスとなる．
+Creating an RDFS class
+"""""""""""""""""""""""""""""""
+In :numref:`make-class`, ex:ScienceBook class is not defined and the users replace the type of ex:The-Society-of-Mind (ex:Book) with ex:ScienceBook class. Here, the users select to create ex:ScienceBook to maitain consistency.
 
 .. _make-class:
 .. figure:: figures/make_rdfs_class.svg
    :scale: 80 %
-   :alt: RDFSクラスの新規作成
+   :alt: An example of creating an RDFS class
    :align: center
 
-   RDFSクラスの新規作成
+   An example of creating an RDFS class
 
 M→O: Replacing the RDF Property
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When it is not clear which RDF property corresponds to the RDFS property replaced by a user, the meta-model management facility is applied. When the RDF property which the user replaced is defined by the RDFS property, MR\ :sup:`3` \ matches the RDF property and the RDFS property corresponding to the RDF property. If the property is not defined, the user can choose one of the following:
 
 * Replace the RDFS property name with that referred to before the user replaced the RDF property.
-* Create a new RDFS property that has yet to be defined.
+* Create an RDFS property that has yet to be defined.
 
-:numref:`rename-rdf-property` および :numref:`make-property` は，それぞれ，RDFプロパティを変更した場合の具体例を表している．
+:numref:`rename-rdf-property` and :numref:`make-property` shows examples of replacing an RDF property.
 
 
-参照しているRDFSプロパティ名の変更
-""""""""""""""""""""""""""""""""""
-
-:numref:`rename-rdf-property` では，RDFSプロパティex:著作者が定義されていない状態で，ユーザがRDFリソースex:民情一新が持つプロパティex:著者をex:著作者に変更している．ここでは，整合性を保つためにRDFSプロパティ名の変更をユーザが選択している．RDFSプロパティex:著者をex:著作者に変更することにより，ex:学問のすゝめが持つプロパティex:著者もex:著作者に半自動的に変更される．
+Replacing a URI of an RDFS property
+"""""""""""""""""""""""""""""""""""""""""""
+In :numref:`rename-rdf-property`, although ex:author property is not defined in the Property editor, the users replace ex:author property that ex:The-Society-of-Mind resource has with dc:creator property. In order to maintain the consistency, the users select replacing a URI of an RDFS property. In this case, the users replace ex:author property with dc:creator property. Therefore, ex:author property that ex:The-Emotion-Machine has is automatically replaced with dc:creator property.
 
 .. _rename-rdf-property:
 .. figure:: figures/rename_rdf_property.svg
    :scale: 80 %
-   :alt: 参照しているRDFSプロパティ名の変更
+   :alt: An example of replacing a URI of an RDFS property
    :align: center
 
-   参照しているRDFSプロパティ名の変更
+   An example of replacing a URI of an RDFS property
 
-
-RDFSプロパティの新規作成
-""""""""""""""""""""""""
-
-:numref:`make-property` では，RDFSプロパティex:著作者が定義されていない状態で，ユーザがRDFリソースex:民情一新が持つプロパティex:著者をex:著作者に変更している．ここでは，整合性を保つためにRDFSプロパティの新規作成をユーザが選択している．RDFSプロパティex:著作者を新規に作成することによって，整合性を保つことができる．
+Creating an RDFS property
+"""""""""""""""""""""""""""""""""
+In :numref:`make-property`, dc:creator property is not defined and the users replace the ex:author property that ex:The-Society-of-Mind resource has with dc:creator. Here, the users select to create dc:creator property to maintain consistency.
 
 .. _make-property: 
 .. figure:: figures/make_rdfs_property.svg
    :scale: 80 %
-   :alt: RDFSプロパティの新規作成
+   :alt: An example of creating an RDFS property
    :align: center
 
-   RDFSプロパティの新規作成
+   An example of creating an RDFS property
 
 Other functions
 ---------------
@@ -210,9 +212,9 @@ Keeping Element Names Unique
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This function prevents RDF and RDFS from overlapping other element names when a user renames and creates an RDF or RDFS element. If duplication of an RDFS element name is allowed, consistency cannot be maintained.
 
-URI 識別補助機能
-~~~~~~~~~~~~~~~~
-URI 識別補助機能とは，RDF要素およびRDFS要素の識別を補助するための機能である．ユーザはRDF要素およびRDFS要素をURI によって識別する．URI は一般的に数十文字になるため，膨大な数のリソースを扱う場合，ユーザがURI を識別および編集することが困難である．そこで，RDF(S) コンテンツ構築支援ツールではユーザが指定した名前空間URI を指定した名前空間接頭辞に置換して表示する機能をもつ．また，RDF要素およびRDFS要素にrdfs:label プロパティの値（見出し）が定義されている場合，URIの代わりに見出しを表示する機能をもつ．
+Replacing namespace with prefix or URI with label
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|MR3| has a function to replace namespaces of resources with the corresponding prefixes that are defined in the Namespace Table. |MR3| also has a function to replace URIs of resources with the value of rdfs:label property that the resources have. 
 
 
 Setting a Meta Class and Property
@@ -225,5 +227,5 @@ When constructing an RDF model, MR\ :sup:`3` \ doesn’t check rdfs:domain and r
 
 
 .. note ::
-    オントロジーベースのツールでは，RDFS プロパティの定義域および値域を定義しなければ，RDF コンテンツ構築時にRDF プロパティが利用できない．RDF(S) コンテンツ構築支援ツールでは，RDFS プロパティの定義域および値域の定義を行うことなく，RDF プロパティの定義を行うことができる．
+    In ontology based tools, the users must define domains and ranges of RDFS properties before using the RDFS properties to build RDF contents. In |MR3|, the users can use RDFS properties without defining the domains and the ranges of the property to build RDF contents.
 
