@@ -5,13 +5,18 @@ Tutorial
 .. contents:: Contents
    :depth: 3
 
-チュートリアルでは，RDFPrimerの中で紹介されているRDF文書(Example 1: RDF/XML Describing Eric Miller)をMR\ :sup:`3` \ 1.0を用いて，２通りの方法（トップダウンとボトムアップ）で作成していく．本チュートリアルと同様のRDF文書作成動画はデモムービーのページから見ることができる．また，RDFSの置換例を示す．
+.. |MR3| replace:: MR\ :sup:`3` \
 
 ------------------------------   
-概要
+Overview
 ------------------------------   
+In this tutorial, we build an RDFs document that is introduced in `RDF Primer <https://www.w3.org/TR/2004/REC-rdf-primer-20040210/>`_ (Example 1: RDF/XML Describing Eric Miller as shown below) by using |MR3|. 
 
-RDFPrimerの中で紹介されているRDF文書(Example 1: RDF/XML Describing Eric Miller)をMR\ :sup:`3` \を用いて作成していく．MR\ :sup:`3` \を 用いてRDFsコンテンツを作成する方法には，RDFSコンテンツを作成した後に(RDFSコンテンツの語彙を用いて)RDFコンテンツを作成する方法 (トップダウン）とRDFコンテンツから作成する方法（ボトムアップ）がある．トップダウンでは，あらかじめRDFSコンテンツをインポートすることで， インポートしたRDFSコンテンツ(語彙）を用いてRDFコンテンツの作成ができる．ボトムアップでは，RDFモデルを作成しながら，RDFモデルの作成 に必要なリソースのタイプやプロパティを抽出し，RDFSクラスやプロパティに反映することができる．本チュートリアルでは，MR\ :sup:`3` \を用いて，トップダウンとボトムアップの２通りの方法で，以下に示すサンプルRDF文書の作成を行う．
+There are two ways to build the RDFs document by using |MR3|. One is a top down method. In the top down method, the users firstly build RDFS contents and then build RDF contents by using classes and properties defined in the RDFS contents. The users can also use an existing RDFS document by importing the document into |MR3|.
+
+The other is a bottom up method. In the bottom up method. the users can create RDFS classes and properties when they build RDF contents by using RDF(S) contents management facilities.
+
+In this tutorial, we introduce both of them. You can also check how to build the RDFs document from `the videos page <http://mrcube.org/videos.html>`_ in the |MR3| web site. Finally, we describe an example of replacing an RDFS document.
 
 Example 1: RDF/XML Describing Eric Miller
 
@@ -28,84 +33,91 @@ Example 1: RDF/XML Describing Eric Miller
       </contact:Person>
     </rdf:RDF>
 
-
-また，RDFS置換の例を示す．
-
----------------------------------------------
-RDFコンテンツの作成 （トップダウン）
----------------------------------------------
+--------------------------------------------------
+Building an RDFs document by the top down method
+--------------------------------------------------
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順１: RDFsコンテンツ作成に利用する接頭辞と名前空間の登録
+1. Registering prefixes and namespaces that are used in the RDFs document
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+At the begininng, the users should register prefixes and the corresponding namespaces in the Namespace Table to build the RDFs document. The Namespace table can be shown by selecting |nstable| icon in the toolbar or selecting Show Namespace Table sub menu in the Window menu.
 
-はじめに，RDFsコンテンツ作成に必要な名前空間を名前空間テーブルに登録する．名前空間テーブルを表示するためには，ツールバーのnstableア イコンまたはウィンドウメニューの「名前空間テーブルを表示」を選択する．以下の図は，接頭辞を”contact”，対応する名前空間を”http: //www.w3.org/2000/10/swap/pim/contact#”として名前空間テーブルに登録した状態を示している．接頭辞テキスト フィールドと名前空間テキストフィールドにそれぞれ，登録したい接頭辞および名前空間を入力し，”追加”ボタンを押すと接頭辞と対応する名前空間が名前空 間テーブルに登録される．名前空間テーブルに登録された接頭辞は，各要素(RDFリソース，RDFプロパティ，RDFSクラス，RDFSプロパティ）作成 する際に用いられる．
+In the following figure, **contact** prefix and the corresponding namespace (**http: //www.w3.org/2000/10/swap/pim/contact#**) are registered in the Namespace Table. When the users input a prefix in the Prefix text field, input a namespace in the NameSpace textfield, and select Add button, they are registered in the Namespace Table. 
 
-.. figure:: figures/top_down_step1.png
+Prefixes and namespaces can be used to create resources (RDF resources, RDF properties, RDFS classes, and RDFS properties).
+
+.. |nstable| image:: figures/toolbar/namespace_table.png
+
+.. figure:: figures/top-down-step1.png
    :scale: 40 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順２: RDFSクラスの挿入
+2. Inserting an RDFS class
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this step, we insert contact:Person class in the Class editor. 
 
-RDFSクラスの挿入を行う．クラスエディタ内で右クリックをしてポップアップメニューを出す．ポップアップメニュー の中の「クラスの挿入」メニューを選択し，RDFSクラスの挿入を行う．サンプルRDF文書内では，contact:Personがhttp: //www.w3.org/People/EM/contact#meリソースのタイプとなっている．MR\ :sup:`3` \では，RDFリソースのタイプは，RDFSクラスから選択する．RDFSクラスは，クラスエディタ内で定義する．
+First, when the users click a right mouse button in the Class Editor, a popup menu is shown. An RDFS class can be iserted by selecting **Insert Class menu** in the popup menu. The following figure shows the popup menu.
 
-.. figure:: figures/top_down_step2.png
+In the example RDFs document, contact:Person class is the type of **http: //www.w3.org/People/EM/contact#me** resource. In |MR3|, a type of an RDF resource can be selected from classes in the Class editor. Therefore, in order to select the type of the RDF resource, contact:Person class must be defined before creating the RDF resource by the top down method.
+
+.. figure:: figures/top-down-step2-1.png
    :scale: 40 %
    :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順３: RDFSクラスの入力
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+After selecting **Insert Class menu**, the following dialog is shown. The RDFS class (contact:Person) is inserted by selecting contact prefix from the Prefix combobox, inputting Person in the ID text field, and selecting the OK button.
 
-「クラスの挿入」メニューを選択すると，以下のダイアログが表示される．「接頭辞コンボボックス」から名前空間テーブ ルに登録した接頭辞contactを選択し，「IDテキストフィールド」にPersonを入力する．「了解ボタン」をクリックするとクラスエディタ内に RDFSクラス（この場合，contact:Person）が挿入される．
-
-.. figure:: figures/top_down_step3.png
+.. figure:: figures/top-down-step2-2.png
    :scale: 50 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順４: RDFSプロパティの入力
+3. Inserting RDFS properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this step, insert RDFS properties in the example RDFs document (contact:fullName，contact:mailbox，contact: personalTitle). 
 
-RDFSクラスと同様にexample 1文書内に含まれるRDFSプロパティ(contact:fullName，contact:mailbox，contact: personalTitle )も作成する．プロパティエディタ内で右クリックするとポップアップメニューが表示される．「プロパティの挿入」メニューを選択すると以下のダイアログが 表示される．「了解ボタン」をクリックするとプロパティエディタ内にRDFSプロパティが挿入される．MR\ :sup:`3` \では，RDFプロパティは，RDFSプロパティから選択する．RDFSプロパティは，プロパティエディタ内で定義する．
+When the users click a right mouse button in the Property Editor, a popup menu is shown. After selecting **Insert Proerty menu**, the following dialog is shown. An RDFS property is inserted by selecting a prefix from the Prefix combobox, inputting id in the ID text field, and selecting the OK button.
 
-.. figure:: figures/top_down_step4.png
+In |MR3|, an RDF property can be selected from the properties in the Property Editor. Therefore in order to select an RDF property, the corresponding RDFS property must be defined before using the RDF property by the top down method.
+
+The following figure shows a dialog when the users insert contact:fullName property in the Property Editor.
+
+.. figure:: figures/top-down-step3-1.png
    :scale: 100 %
    :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順５: 現在の状態
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-contact:Personクラスとcontact:fullName，contact:mailbox，contact:personalTitleプロパティをMR\ :sup:`3` \で作成すると以下の図のようになる．
+The following figure shows a screenshot after inserting contact:Person class, contact:fullName，contact:mailbox，and contact:personalTitle properties.
 
-.. figure:: figures/top_down_step5.png
+.. figure:: figures/top-down-step3-2.png
    :scale: 60 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順６: RDFリソースの挿入１
+4. Inserting RDF resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In the following steps, we build RDF contents based on the RDFS class and the RDFS properties built by above steps.
 
-次に，手順１から５までで，作成したRDFSクラス及びプロパティを用いてRDFコンテンツの作成を行う．まずは， RDFリソースを作成する．RDFリソースは，RDFエディタ内で定義する．RDFエディタ内で右クリックするとポップアップメニューが表示される．ポッ プアップメニュー内の「RDFリソースの挿入」メニューを選択し，RDFリソースの挿入を行う．
+First, insert an RDF resource in the RDF Editor. When the users click a right mouse button in the RDF Editor, a popup menu is shown. The following figure shows a screenshot showing the popup menu.
 
-.. figure:: figures/top_down_step6.png
+.. figure:: figures/top-down-step4-1.png
    :scale: 40 %
    :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順７: RDFリソースの挿入２
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+After selecting **Insert RDF Resource menu**, the following dialog is shown. A type of an RDF resource can be selected from **Resource Type combobox**. Types of RDF resources can be selected from RDFS classes in the Class Editor. Here, select contact:Person class as a type of an RDF resource. Then, input **http://www.w3.org/People/EM/contact#me** in the RDF Resource text field. The RDF resource is inserted after selecting the type of the RDF resource, inputting the URI of the RDF resource, and select the OK button.
 
-「RDFリソースの挿入」メニューを選択すると以下のダイアログが表示される．「リソースタイプコンボボックス」から リソースのタイプを選択する．リソースのタイプは，クラスエディタで作成されたRDFSクラスから選択できる．ここでは，contact:Personク ラスをリソースのタイプとして選択する．また，「http://www.w3.org/People/EM/contact#me」をRDFリソーステキ ストフィールドに入力する．（http://www.w3.org/People/EM/contact#名前空間を，今回は名前空間テーブルに登録して いないため，名前空間およびそのＩＤをここでは入力している．登録してある場合は接頭辞コンボボックスから登録した接頭辞を選択することで，名前空間の入 力を省略できる．また，「ブランクチェックボックス」にチェックをいれるとブランクノードとなる．）リソースのタイプとRDFリソースを入力し，「了解ボ タン」をクリックするとRDFリソースがRDFエディタに挿入される．
 
-.. figure:: figures/top_down_step7.png
+In the same way, insert **mailto:em@w3.org** as an RDF resource in the RDF Editor.
+
+.. note::
+    Here, since **http://www.w3.org/People/EM/contact#** and the corresponding prefix are not defined in the Namespace Table, we input URI of the RDF resource directly in the RDF Resource text field. If the namespace and the prefix are registered in the Namespace Table, the namespace is automatically inserted in the RDF Resource text field by selecting the corresponding prefix in the Prefix combobox. In addition, if the users check the blank checkbox, the RDF resource become blank node.
+
+.. figure:: figures/top-down-step4-2.png
    :scale: 100 %
    :align: center
 
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順８: RDFリテラルの挿入および編集
+5. Inserting RDF literals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 次に，「Eric Miller」及び「Dr.」リテラルを作成する．ポップアップメニューから「リテラルの挿入」メニューを選択すると「リテラルの挿入ダイアログ」が表示される．
@@ -120,30 +132,30 @@ contact:Personクラスとcontact:fullName，contact:mailbox，contact:personalT
    :scale: 90 %
    :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順９: RDFリソース(mailto:em@w3.org)の挿入
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-手順７と同様に，mailto:em@w3.orgリソースを作成する．
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順１０: RDFプロパティの挿入
+6. Inserting RDF properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-次に，RDFプロパティの挿入を行う．RDFプロパティを挿入するためには，「接続モード」に切り替える．「接続モー ド」に切り替えるためには，RDFエディタ内で右クリックをして，ポップアップメニューを表示し，「接続モード」メニューを選択する．または，RDFエ ディタのツールバーにある，arrowア イコンをクリックする．次に，subjectにあたるリソースの上にカーソルを合わせる．青色の枠が表示される．その状態で，objectにあたるリソー スまたはリテラルに向けてカーソルをドラッグし，同様に枠が表示された状態でドロップすることで，RDFプロパティが挿入される．作成されるRDFプロパ ティはmr3#nil(MR\ :sup:`3` \が提供する）となる．RDFプロパティを挿入する際に，あらかじめプロパティエディタにおいて，挿入したいプロパティを選択 してある場合には，選択されたプロパティがRDFプロパティとして挿入される．ここでは，「http: //www.w3.org/People/EM/contact#me」リソースと「Eric Miller」リテラルの間に「contact:fullName」プロパティを挿入する．同様に，「Dr.」リテラルの間に「contact: personalTitle」プロパティを，「mailto:em@w3.org」リソースの間に「contact:mailbox，」プロパティを挿入 する．
+次に，RDFプロパティの挿入を行う．RDFプロパティを挿入するためには，「接続モード」に切り替える．「接続モード」に切り替えるためには，RDFエディタ内で右クリックをして，ポップアップメニューを表示し，「接続モード」メニューを選択する．または，RDFエディタのツールバーにある， |connect| アイコンをクリックする．次に，subjectにあたるリソースの上にカーソルを合わせる．青色の枠が表示される．その状態で，objectにあたるリソースまたはリテラルに向けてカーソルをドラッグし，同様に枠が表示された状態でドロップすることで，RDFプロパティが挿入される．作成されるRDFプロパ ティはmr3#nil(MR\ :sup:`3` \が提供する）となる．RDFプロパティを挿入する際に，あらかじめプロパティエディタにおいて，挿入したいプロパティを選択してある場合には，選択されたプロパティがRDFプロパティとして挿入される．ここでは，「http: //www.w3.org/People/EM/contact#me」リソースと「Eric Miller」リテラルの間に「contact:fullName」プロパティを挿入する．同様に，「Dr.」リテラルの間に「contact: personalTitle」プロパティを，「mailto:em@w3.org」リソースの間に「contact:mailbox」プロパティを挿入する．
+
+
+.. |connect| image:: figures/toolbar/connect.gif 
 
 .. figure:: figures/top_down_step10-1.png
    :scale: 40 %
    :align: center
 
-RDFプロパティを編集するためには，アトリビュートダイアログを表示する．アトリビュートダイアログを表示するためには，ツールバーのattrDialogIconア イコンをクリックするか，ポップアップメニューから「アトリビュートダイアログを表示」メニューを選択する．RDFプロパティcontact: personalTitleに変更するためには，「接頭辞コンボボックス」から接頭辞contactを選択し，「プロパティIDリスト」からID personalTitleを選択する．「適用ボタン」をクリックすると変更が反映される．
+RDFプロパティを編集するためには，アトリビュートダイアログを表示する．アトリビュートダイアログを表示するためには，ツールバーの |attr-dialog| アイコンをクリックするか，ポップアップメニューから「アトリビュートダイアログを表示」メニューを選択する．RDFプロパティ「contact: personalTitle」に変更するためには，「接頭辞コンボボックス」から接頭辞contactを選択し，「プロパティIDリスト」からID personalTitleを選択する．「適用ボタン」をクリックすると変更が反映される．
+
+.. |attr-dialog| image:: figures/toolbar/attr_dialog.png 
 
 .. figure:: figures/top_down_step10-2.png
    :scale: 80 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順１１: 作成したRDFコンテンツをRDF/XML形式でエクスポートダイアログに出力
+7. Exporting the RDFs contents as an RDFs document
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ここまでの作業で，以下の図のようなRDFSクラス，RDFSプロパティ，RDFモデルが作成されている．
@@ -152,15 +164,14 @@ RDFプロパティを編集するためには，アトリビュートダイア�
    :scale: 60 %
    :align: center
 
-作成したRDFコンテンツが，RDF/XML形式でどのように出力されるかを確認するには，エクスポートダイアログを表示する．エクスポートダイアログは，ファイルメニューのエクスポートを選択するか，ツールバーのexportを選択する．構文として，RDF/XML（ラジオボタン）を選択する．データタイプとして，RDFチェックボックスを選択する．エクスポートダイアログ下部にある，テキストエリアに作成したRDFコンテンツがRDF/XML形式で出力される．
+作成したRDFコンテンツが，RDF/XML形式でどのように出力されるかを確認するには，エクスポートダイアログを表示する．エクスポートダイアログは，ファイルメニューのエクスポートを選択するか，ツールバーの|export|を選択する．構文として，RDF/XML（ラジオボタン）を選択する．データタイプとして，RDFチェックボックスを選択する．エクスポートダイアログ下部にある，テキストエリアに作成したRDFコンテンツがRDF/XML形式で出力される．
+
+
+.. |export| image:: figures/toolbar/export.png 
 
 .. figure:: figures/top_down_step11-2.png
    :scale: 60 %
    :align: center
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-手順１２: 作成したRDFコンテンツをRDF/XML形式でファイルに出力
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 作成したRDFコンテンツをRDF/XML形式でファイルに出力したい場合には，エクスポートダイアログの「ファイルボタン」を選択する．保存ダイアログが表示されるため，適当なフォルダにRDFファイルを保存する．
    
@@ -196,7 +207,7 @@ RDFコンテンツの作成 （ボトムアップ）
 手順５: RDFリソースの編集
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-アトリビュートダイアログを表示し，RDFリソース「http: //www.w3.org/People/EM/contact#me」を選択する．RDFリソースの属性がアトリビュートダイアログに表示される．左側 に表示されるリストの中から「タイプ」を選択する．「接頭辞コンボボックス」からcontactを選択し，リソースタイプIDとしてPersonを入力す る．RDFSクラスに指定したいクラスが定義されている場合には，「タイプ選択ボタン」をクリックすれば，クラスエディタからクラスを選択することができ る．今回は，ボトムアップにRDFコンテンツ作成しているため，RDFSクラスにcontact:Personクラスが作成されておらず，選択することが できない．指定したいリソースのタイプcontact:Personを入力した状態で，「適用するボタン」をクリックする．「定義されていません.クラス を作成しますか?」と尋ねるダイアログが表示されるので，「はいボタン」をクリックする．
+アトリビュートダイアログを表示し，RDFリソース「http: //www.w3.org/People/EM/contact#me」を選択する．RDFリソースの属性がアトリビュートダイアログに表示される．左側 に表示されるリストの中から「タイプ」を選択する．「接頭辞コンボボックス」からcontactを選択し，リソースタイプIDとしてPersonを入力する．RDFSクラスに指定したいクラスが定義されている場合には，「タイプ選択ボタン」をクリックすれば，クラスエディタからクラスを選択することができる．今回は，ボトムアップにRDFコンテンツ作成しているため，RDFSクラスにcontact:Personクラスが作成されておらず，選択することができない．指定したいリソースのタイプcontact:Personを入力した状態で，「適用するボタン」をクリックする．「定義されていません.クラス を作成しますか?」と尋ねるダイアログが表示されるので，「はいボタン」をクリックする．
 
 .. figure:: figures/bottom_up_step5.png
    :scale: 30 %
@@ -216,7 +227,7 @@ RDFコンテンツの作成 （ボトムアップ）
 手順７: RDFプロパティの編集１
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-アトリビュートダイアログを表示し，編集したいRDFプロパティを選択する．「プロパティの接頭辞のみ表示チェック ボックス」にチェックがされているとRDFSプロパティで定義されているプロパティのみを表示，選択することができる．今回は，RDFSプロパティに指定 したいプロパティが定義されていないので，このチェックをはずす．「接頭辞コンボボックス」から名前空間テーブルに登録したすべての接頭辞を選択できるよ うになるので，contactを選択する．「プロパティID」リストには，RDFSプロパティで定義されているプロパティのID一覧が表示されるが，今回 は定義されていないので表示されない．「IDテキストフィールド」にfullNameと入力し，「適用ボタン」をクリックする．「定義されていません.プロパティを作成しますか?」と尋ねるダイアログが表示されるので，「はいボタン」をクリックする．
+アトリビュートダイアログを表示し，編集したいRDFプロパティを選択する．「プロパティの接頭辞のみ表示チェックボックス」にチェックがされているとRDFSプロパティで定義されているプロパティのみを表示，選択することができる．今回は，RDFSプロパティに指定したいプロパティが定義されていないので，このチェックをはずす．「接頭辞コンボボックス」から名前空間テーブルに登録したすべての接頭辞を選択できるようになるので，contactを選択する．「プロパティID」リストには，RDFSプロパティで定義されているプロパティのID一覧が表示されるが，今回は定義されていないので表示されない．「IDテキストフィールド」にfullNameと入力し，「適用ボタン」をクリックする．「定義されていません.プロパティを作成しますか?」と尋ねるダイアログが表示されるので，「はいボタン」をクリックする．
 
 .. figure:: figures/bottom_up_step7.png
    :scale: 30 %
@@ -378,3 +389,4 @@ RDFSの置換を実行するとRDFS置換ダイアログが表示される．RDF
    :align: center     
    
    
+
