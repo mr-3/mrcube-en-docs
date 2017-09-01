@@ -1,76 +1,76 @@
 Plugin Development
 =======================
 
-.. contents:: Contentns
+.. contents:: Contents
    :depth: 2
-   
-MR\ :sup:`3` \のプラグイン作成に関するクラス(net.sourceforge.mr3.plugin.MR3Pluginクラス)及びプラグインの作成方法について説明する．また，プラグインのサンプルを示す．
 
-MR\ :sup:`3` \Pluginクラス
---------------------------
-net.sourceforge.mr3.plugin.MR3Pluginクラス(以下，MR3Pluginクラス)は，abstract public void exec()抽象メソッドをもつ抽象クラスである．MR\ :sup:`3` \のプラグインを作成するには，MR3Pluginクラスを継承して，execメソッドをオーバーライドする．MR3Pluginクラスは，ユーティリティメソッドを提供する．プラグイン作成者は，MR3Pluginクラスが提供するユーティリティメソッドを用いることで，Jenaが提供するcom.hp.hpl.mesa.rdf.jena.model.Modelインタフェース(以下，Model)からMR\ :sup:`3` \のグラフへの変換とMR\ :sup:`3` \のグラフからJenaのModelを得ることが可能となる．以下に，ユーティリティメソッドを示す．(`JavaDoc MR3Plugin <http://mr-3.github.io/javadoc/net/sourceforge/mr3/plugin/MR3Plugin.html>`_)
+.. |MR3| replace:: MR\ :sup:`3` \
+   
+In this page, we introduce the class related to develop |MR3| plugin (net.sourceforge.mr3.plugin.MR3Plugin class). We also explain how to develop |MR3| plugins and show examples of |MR3| plugins.
+
+|MR3| Plugin Class
+-----------------------------
+net.sourceforge.mr3.plugin.MR3Plugin class (hereinafter, referred to as "MR3Plugin class") is an abstract class which has an abstract method (abstract public void exec()). In order to develop |MR3| plugin, firstly, create a class that inherits MR3Plugin class and overrides the exec method in the class. MR3Plugin class provides several utility methods. |MR3| plugin developers can import an instance of com.hp.hpl.mesa.rdf.jena.model.Model interface (hereinafter, referred to as "Jena Model") to |MR3| data graphs and export |MR3| data graphs to Jena Model by using the utility methods. The utility methods are shown as follows. (If you'd like to get more information, please refer to `JavaDoc MR3Plugin <http://mrcube.org/javadoc/net/sourceforge/mr3/plugin/MR3Plugin.html>`_.)
 
 protected JDesktopPane getDesktopPane()
-    JDesktopPaneを得る．内部ウィンドウを作成する際に用いる．
+    Get JDesktopPane. It is used to create internal window in |MR3|.
 protected void replaceRDFModel(Model model)
-    Jenaが提供するModelを，MR\ :sup:`3` \のRDFグラフへ変換する．変換したRDFグラフを編集中のRDFグラフと置換する．
+    Replace Jena Model with existing RDF graph in |MR3|. 
 protected void mergeRDFModel(Model model)
-    Jenaが提供するModelを，MR\ :sup:`3` \のRDFグラフへ変換する．変換したRDFグラフを編集中のRDFグラフにマージする．
+    Merge Jena Model to existing RDF graph in |MR3|.
 protected void mergeRDFSModel(Model model)
-    Jenaが提供するModelを，MR\ :sup:`3` \のRDFSグラフへ変換する．変換したRDFSグラフを編集中のRDFSグラフにマージする．
+    Merge Jena Model to existing RDFS graph in |MR3|.
 protected void replaceProjectModel(Model model)
-    Jenaが提供するModelを，MR\ :sup:`3` \のプロジェクトへ変換する．引数のModelは，MR\ :sup:`3` \のプロジェクトファイル．
+    Replace Jena Model to |MR3| project. The model in this method parameter is created from a |MR3| project file.
 protected Model getRDFModel()
-    MR\ :sup:`3` \のRDFグラフをJenaのModelに変換する．
+    Get Jena Model from the RDF graph in |MR3|.
 protected JGraph getRDFGraph()
-    RDFエディタに描かれたグラフをorg.jgraph.JGraphオブジェクトとして得る．
+    Get org.jgraph.JGraph object from the graph in RDF Editor.
 protected JGraph getClassGraph()
-    クラスエディタに描かれたグラフをorg.jgraph.JGraphオブジェクトとして得る．
+    Get org.jgraph.JGraph object from the graph in Class Editor.
 protected JGraph getPorpertyGraph()
-    プロパティエディタに描かれたグラフをorg.jgraph.JGraphオブジェクトとして得る．
+    Get org.jgraph.JGraph object from the graph in Property Editor.
 protected Model getSelectedRDFModel()
-    選択されているMR\ :sup:`3` \のRDFグラフをJenaのModelに変換する．
+    Get Jena Model from the selected nodes in the RDF graph.
 protected Model getRDFSModel()
-    MR\ :sup:`3` \のRDFSグラフをJenaのModelに変換する．
+    Get Jena Model from the RDFS graph.
 protected Model getSelectedRDFSModel()
-    選択されているMR\ :sup:`3` \のRDFSグラフをJenaのModelに変換する．
+    Get Jena Model from the selected nodes in the RDFS graph.
 protected Model getClassModel()
-    MR\ :sup:`3` \のクラスグラフをJenaのModelに変換する．
+    Get Jena Model from the graph in Class Editor.
 protected Model getSelectedClassModel()
-    選択されているMR\ :sup:`3` \のクラスグラフをJenaのModelに変換する．
+    Get Jena Model from the selected nodes in the Class editor.
 protected Model getPropertyModel()
-    MR\ :sup:`3` \のプロパティグラフをJenaのModelに変換する．
+    Get Jena Model from the graph in Property Editor.
 protected Model getSelectedPropertyModel()
-    選択されているMR\ :sup:`3` \のプロパティグラフをJenaのModelに変換する．
+    Get Jena Model from the selected nodes in the Property editor.
 protected Model getProjectModel()
-    プロジェクトをJenaのModelに変換する．
+    Get Jena Model from the |MR3| project.
 
-プラグイン作成方法
-------------------
+How to develop |MR3| plugins
+--------------------------------
 
-1. MR3Pluginクラスのサブクラスを作り，public void exec()メソッドをオーバーライドする．
-2. マニフェストファイルに，プラグインクラス名とプラグイン名を以下のように記述し，プラグインクラスとマニフェストファイルをjarファイルでまとめる．（プラグインクラス名とプラグイン名は必須．creator, date, descriptionはオプション．）
+1. Create a class that inherits MR3Plugin class and overrides public void exec() method.
+2. Create a manifest file including plugin class name and the plugin name as follows. After that creating a jar file including the plugin class and the manifest file. (Plugin class name and the plugin name are necessary. Creator, date, and description attributes are options.）
 
 .. code-block:: mf
 
-     Name: プラグインクラス名
-     plugin-name(or menu-name): プラグイン名
-     creator: 作者名
-     date: 更新日時
-     description: プラグインの説明
+     Name: Plugin class name
+     plugin-name(or menu-name):  Plugin name
+     creator: creator name
+     date: update date
+     description: description of the plugin
      
-3. 作成したjarファイルをMR3/pluginsディレクトリ(または，クラスパスの通ったディレクトリ)に置く．
+3. Put the crated jar file in the MR3/plugins directory or the directory that is set as class path.
 
-MR\ :sup:`3` \を起動するとファイル->プラグインにメニューが追加される．メニューを実行すると，プラグインクラスで実装したexecメソッドが実行される．
+When the users select Plugins sub menu in the Tool menu, the Plugins dialog is shown and developed plugins are listed in the Plugins dialog. When the users select one of the plugins and click Execute button, the exec method that is overrided in the selected Plugin class is executed.
 
-サンプルプラグイン
+Sample Plugins
 ------------------
+A sample manifest file and samples plugins are described as follows. The sample plugins can be download from `MR3PluginSamples <https://github.com/mr-3/MR3PluginSamples>`_ .
 
-以下に，MR\ :sup:`3` \のプラグインの実例を示す．ここで示すプラグインは， `MR3PluginSamples <https://github.com/mr-3/MR3PluginSamples>`_ からダウンロードできる．
-
-
-マニフェストファイル
-~~~~~~~~~~~~~~~~~~~~
+A sample manifest file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: mf
 
@@ -113,8 +113,8 @@ MR\ :sup:`3` \を起動するとファイル->プラグインにメニューが�
     description: This is owl import plugin.
     
     
-サンプルプラグインのソースコードリスト
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+List of source codes of sample plugins
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * `GetRDFModelSample.java <https://github.com/mr-3/MR3PluginSamples/blob/master/src/main/java/net/sourceforge/mr3/plugins/samples/GetRDFModelSample.java>`_
 * `GroupNodesSample.java <https://github.com/mr-3/MR3PluginSamples/blob/master/src/main/java/net/sourceforge/mr3/plugins/samples/GroupNodesSample.java>`_
 * `OWLImportPlugin.java <https://github.com/mr-3/MR3PluginSamples/blob/master/src/main/java/net/sourceforge/mr3/plugins/samples/OWLImportPlugin.java>`_
