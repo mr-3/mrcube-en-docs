@@ -61,13 +61,13 @@ First, when the users click a right mouse button in the Class Editor, a popup me
 In the example RDF document, contact:Person class is the type of **http: //www.w3.org/People/EM/contact#me** resource. In |MR3|, a type of an RDF resource can be selected from classes in the Class editor. Therefore, in order to select the type of the RDF resource, contact:Person class must be defined before creating the RDF resource by the top down method.
 
 .. figure:: figures/top-down-step2-1.png
-   :scale: 40 %
+   :scale: 30 %
    :align: center
 
 After selecting **Insert Class menu**, the following dialog is shown. The RDFS class (contact:Person) is inserted by selecting contact prefix from the Prefix combobox, inputting Person in the ID text field, and selecting the OK button.
 
 .. figure:: figures/top-down-step2-2.png
-   :scale: 50 %
+   :scale: 30 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,14 +82,14 @@ In |MR3|, an RDF property can be selected from the properties in the Property Ed
 The following figure shows a dialog when the users insert contact:fullName property in the Property Editor.
 
 .. figure:: figures/top-down-step3-1.png
-   :scale: 100 %
+   :scale: 80 %
    :align: center
 
 
 The following figure shows a screenshot after inserting contact:Person class, contact:fullName，contact:mailbox，and contact:personalTitle properties.
 
 .. figure:: figures/top-down-step3-2.png
-   :scale: 60 %
+   :scale: 30 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,7 +111,7 @@ In the same way, insert **mailto:em@w3.org** as an RDF resource in the RDF Edito
     Here, since **http://www.w3.org/People/EM/contact#** and the corresponding prefix are not defined in the Namespace Table, we input URI of the RDF resource directly in the RDF Resource text field. If the namespace and the prefix are registered in the Namespace Table, the namespace is automatically inserted in the RDF Resource text field by selecting the corresponding prefix in the Prefix combobox. In addition, if the users check the blank checkbox, the RDF resource become blank node.
 
 .. figure:: figures/top-down-step4-2.png
-   :scale: 100 %
+   :scale: 80 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -122,7 +122,7 @@ In this step, insert **Eric Miller** and **Dr.** RDF literals in the RDF Editor.
 When the users click a right mouse button in the RDF Editor and select **Insert Literal menu** in the popup menu, the following dialog is shown. An RDF literal is inserted after inputting strings in the Literal text area and selecting OK button.
 
 .. figure:: figures/top-down-step5.png
-   :scale: 100 %
+   :scale: 80 %
    :align: center
 
 
@@ -137,7 +137,7 @@ First, change connect mode by clicking a right mouse button and selecting **Conn
 .. |connect| image:: figures/toolbar/connect.gif 
 
 .. figure:: figures/top-down-step6-1.png
-   :scale: 40 %
+   :scale: 30 %
    :align: center
 
 Second, move the mouse cursor to the center of an RDF resource, drag the mouse cursor to the center of an RDF resource or an RDF literal, and drop the mouse cursor. Then, two nodes are connected with an RDF property. If the users do not select one of the RDFS properties in the Property Editor, the RDF property become mr3:nil which is the default RDF property in |MR3|. If the users select one of the RDFS properties, the selected RDFS property is used for the RDF property.
@@ -162,7 +162,7 @@ Finally, export the RDF contents as an RDF document.
 As a result, the following RDFS classes, RDFS properties, and an RDF model are created in each editor.
 
 .. figure:: figures/top-down-step7-1.png
-   :scale: 60 %
+   :scale: 30 %
    :align: center
 
 First, show the Export Dialog by selecting **Export sub menu** in the File menu or selecting |export| icon in the toolbar. 
@@ -172,7 +172,7 @@ Second, select Syntax, Data Type, and Option. Here, select RDF/XML as the syntax
 .. |export| image:: figures/toolbar/export.png 
 
 .. figure:: figures/top-down-step7-2.png
-   :scale: 100 %
+   :scale: 70 %
    :align: center
 
 When the users select File button, a Save dialog is shown. Then, you can select or create a file to export the RDF document.
@@ -203,7 +203,7 @@ The attributes of **http: //www.w3.org/People/EM/contact#me** resource are shown
 If the users click the Yes button in the RDF(S) management dialog, contact:Person class is created in the Class Editor as follows.
 
 .. figure:: figures/bottom-up-step2-2.png
-   :scale: 60 %
+   :scale: 30 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -232,7 +232,7 @@ Third, select contact prefix in the Prefix combobox. since there are no Ids in t
 If the users click the Yes button in the RDF(S) management dialog, contact:fullName property is created in the Property Editor as follows.
 
 .. figure:: figures/bottom-up-step4-2.png
-   :scale: 60 %
+   :scale: 30 %
    :align: center
 
 Create contact:mailbox and contact:personalTitle properties in the same way.
@@ -250,7 +250,7 @@ The users can replace an RDFS contents by selecting RDFS as Data Type, selecting
 In the following descriptions, prefix animal represents **http://example.com/animal#** and prefix mr3 represents **http://mr3.sourceforege.net#**.
 
 .. figure:: figures/import_dialog_rdfs_replace.png
-   :scale: 70 %
+   :scale: 80 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -308,80 +308,5 @@ In the RDF document, mr3:Pochi is an RDF resource and it's instance of mr3:Dog. 
 The following figure shows a screenshot of the RDF and RDFS model before replacing.
 
 .. figure:: figures/rdf-and-rdfs-model-before-replacing.png
-   :scale: 60 %
+   :scale: 30 %
    :align: center
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
-An RDFS document to be replaced
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In the example, the following RDFS document is replaed with the previous RDFS document. The difference is the namespace of classes and properties. The base namespace of the RDFS document before replacing is **http://mr3.sourceforge.net#**. On the other hand, the base namespace of the RDFS document to be replaced is **http://example.com/animal#**.
-
-.. code-block:: xml
-
-    <?xml version="1.0"?>
-    <rdf:RDF
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns:owl="http://www.w3.org/2002/07/owl#"
-        xmlns:mr3="http://mr3.sourceforge.net#"
-        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-        xmlns:animal="http://example.com/animal#"
-        xml:base="http://mr3.sourceforge.net#">
-      <rdfs:Class rdf:about="http://example.com/animal#Animal"/>
-      <rdfs:Class rdf:about="http://example.com/animal#Cat">
-        <rdfs:subClassOf rdf:resource="http://example.com/animal#Animal"/>
-      </rdfs:Class>
-      <rdfs:Class rdf:about="http://example.com/animal#Dog">
-        <rdfs:subClassOf rdf:resource="http://example.com/animal#Animal"/>
-      </rdfs:Class>
-      <rdf:Property rdf:about="http://example.com/animal#play"/>
-    </rdf:RDF>
-
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
-Replace RDFS Dialog
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When the users import an RDFS document with replace option, the Replace RDFS Dialog is shown. In the dialog, current class list and current property list are shown. If the users select up arrow or down arrow button to match a class in the current class list to a class in the replace class list, the selected class is replaced. A property in the current property list can be replaed in the same way.
-
-Here, mr3:Animal class is replaced with animal:Animal class, mr3:Dog class is replaced with animal:Dog class, and mr3:Cat class is replaed with animal:Cat class respectively. In addition, mr3:play property is replaed with animal:play property. When the users select Apply button, current RDFS document is replaced with new one. The following figure shows the Replace RDFS Dialog.
-
-.. figure:: figures/replace-rdfs-dialog.png
-   :scale: 80 %
-   :align: center
-
-|MR3| automatically matches classes and properties before replacing and classes and properties after replacing according to the following priority.
-
-1. URIs are same
-2. IDs are same
-
-If there are no classes or properties that match above, classes and properties after replacing become NULL. In this case, classes aftere replacing become empty and properties after replacing become mr3:nil.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After replacing an RDFS contents
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The RDF document after replacing an RDFS document is shown below. Types of RDF resources and RDF properties in an RDF model are also replaced. In this case, the type of mr3:Pochi (mr3:Dog) is replaced with animal:Dog and the type of mr3:Tama (mr3:Cat) is replaced with animal:Cat. In addition, the relationship between mr3:Pochi and mr3:Tama (mr3:play property) is replaced with animal:play property.
-
-The RDF document after replacing an RDFS document
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-.. code-block:: xml
-
-    <?xml version="1.0"?>
-    <rdf:RDF
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns:owl="http://www.w3.org/2002/07/owl#"
-        xmlns:mr3="http://mr3.sourceforge.net#"
-        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-        xmlns:animal="http://example.com/animal#"
-        xml:base="http://mr3.sourceforge.net#">
-      <animal:Dog rdf:ID="Pochi">
-        <animal:play>
-          <animal:猫 rdf:ID="Tama"/>
-        </animal:play>
-      </animal:Dog>
-    </rdf:RDF>
-
-The following figure shows a screenshot of the RDF and RDFS model after replacing.
-     
-.. figure:: figures/rdf-and-rdfs-model-after-replacing.png
-   :scale: 60 %
-   :align: center     
-   

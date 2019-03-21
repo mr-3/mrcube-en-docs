@@ -44,7 +44,7 @@ The details of the graphical modeler are shown in the following sections.
 
  .. _mr3-screenshot:
  .. figure:: figures/screenshot_of_mr3.png
-   :scale: 50 %
+   :scale: 30 %
    :alt: Typical screen with Graphical Modeler interface of |MR3|
    :align: center
 
@@ -72,30 +72,22 @@ Toolbar in the RDF Editor
 
 Icons in the toolbar in the RDF editor and the corresponding functions are shown in the following table.
 
-================================================== ===================================================================
-        Icon                                          Function                                                             
-================================================== ===================================================================
- .. figure:: figures/toolbar/move.gif               Move nodes
- .. figure:: figures/toolbar/connect.gif            Connect nodes
- .. figure:: figures/toolbar/link.png               Select a corresponding RDFS class or property
- .. figure:: figures/toolbar/link_break.png         Don't select a corresponding RDFS class or property
- .. figure:: figures/toolbar/insert_resource.png    Insert an RDF resource
- .. figure:: figures/toolbar/insert_literal.png     Insert an RDF literal
- .. figure:: figures/toolbar/arrow_undo.png         Undo
- .. figure:: figures/toolbar/arrow_redo.png         Redo
- .. figure:: figures/toolbar/copy.png               Copy nodes
- .. figure:: figures/toolbar/cut.png                Cut nodes
- .. figure:: figures/toolbar/paste.png              Paste nodes
- .. figure:: figures/toolbar/delete.png             Remov nodes
- .. figure:: figures/toolbar/find.png               Show resource find dialog
- .. figure:: figures/toolbar/zoom100.gif            Set default magnification
- .. figure:: figures/toolbar/zoom_in.png            Expand the RDF editor
- .. figure:: figures/toolbar/zoom_out.png           Reduce the RDF editor
- .. figure:: figures/toolbar/zoom.png               Set appropriate magnification
- .. figure:: figures/toolbar/shape_group.png        Group nodes
- .. figure:: figures/toolbar/shape_ungroup.png      Ungroup nodes
- .. figure:: figures/toolbar/layout_rdf_graph.png   Automatically layout the RDF graph
-================================================== ===================================================================
+.. csv-table::
+   :header: Icon, Function
+   :align: center
+   :widths: 3, 10 
+
+   .. figure:: figures/toolbar/resource.png, Insert an RDF resource
+   .. figure:: figures/toolbar/literal.png, Insert an RDF literal
+   .. figure:: figures/toolbar/copy.png, Copy nodes
+   .. figure:: figures/toolbar/cut.png, Cut nodes
+   .. figure:: figures/toolbar/paste.png, Paste nodes
+   .. figure:: figures/toolbar/delete.png, Remove nodes
+   .. figure:: figures/toolbar/undo.png, Undo
+   .. figure:: figures/toolbar/redo.png, Redo
+   .. figure:: figures/toolbar/export_graph_img.png, Save the RDF graph as image file
+   .. figure:: figures/toolbar/l_to_r_layout.png, Automatically layout the RDF graph
+   .. figure:: figures/toolbar/open_resource.png, Open a selected RDF resource
 
 Popup menu in the RDF editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -202,7 +194,7 @@ First input language in the Lang text field and comment in the Comment text area
 
 .. _attr-rdf-res-comment:
 .. figure:: figures/attribute_dialog_rdf_resource_comment.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (Comment of an RDF resource)
    :align: center
 
@@ -266,28 +258,22 @@ Toolbar in the Class Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Icons in the toolbar in the Class editor and the corresponding functions are shown in the following table.
 
-======================================================= ===================================================================
-        Icon                                             Function                                                             
-======================================================= ===================================================================
- .. figure:: figures/toolbar/move.gif                    Move nodes
- .. figure:: figures/toolbar/connect.gif                 Connect nodes
- .. figure:: figures/toolbar/insert_class.png            Insert an RDFS class
- .. figure:: figures/toolbar/arrow_undo.png              Undo
- .. figure:: figures/toolbar/arrow_redo.png              Redo
- .. figure:: figures/toolbar/copy.png                    Copy nodes
- .. figure:: figures/toolbar/cut.png                     Cut nodes
- .. figure:: figures/toolbar/paste.png                   Paste nodes
- .. figure:: figures/toolbar/delete.png                  Remove nodes
- .. figure:: figures/toolbar/find.png                    Show resource search dialog
- .. figure:: figures/toolbar/zoom100.gif                 Set default magnification
- .. figure:: figures/toolbar/zoom_in.png                 Expand the Class Editor
- .. figure:: figures/toolbar/zoom_out.png                Reduct the Class Editor
- .. figure:: figures/toolbar/zoom.png                    Set appropriate magnification
- .. figure:: figures/toolbar/shape_group.png             Group nodes
- .. figure:: figures/toolbar/shape_ungroup.png           Ungroup nodes
- .. figure:: figures/toolbar/layout_class_graph.png      Automatically layout the RDFS class graph
-======================================================= ===================================================================
+.. csv-table::
+   :header: Icon, Function
+   :align: center
+   :widths: 3, 10 
 
+    .. figure:: figures/toolbar/resource.png, Insert an RDFS class
+    .. figure:: figures/toolbar/copy.png, Copy nodes
+    .. figure:: figures/toolbar/cut.png,  Cut nodes
+    .. figure:: figures/toolbar/paste.png, Paste nodes
+    .. figure:: figures/toolbar/delete.png, Remove nodes
+    .. figure:: figures/toolbar/undo.png, Undo
+    .. figure:: figures/toolbar/redo.png, Redo
+    .. figure:: figures/toolbar/export_graph_img.png, Save the class graph as an image file
+    .. figure:: figures/toolbar/l_to_r_layout.png, Automatically layout the class graph (lef to right)
+    .. figure:: figures/toolbar/u_to_d_layout.png, Automatically layout the class graph (up to down)         
+    .. figure:: figures/toolbar/open_resource.png, Open a selected RDFS class
 
 Popup menu in the Class Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -380,27 +366,22 @@ Toolbar in the Property Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Icons in the toolbar in the Property editor and the corresponding functions are shown in the following table.
 
-======================================================= ===================================================================
-        Icon                                             Function                                                             
-======================================================= ===================================================================
- .. figure:: figures/toolbar/move.gif                    Move nodes
- .. figure:: figures/toolbar/connect.gif                 Connect nodes
- .. figure:: figures/toolbar/insert_property.png         Insert an RDFS property
- .. figure:: figures/toolbar/arrow_undo.png              Undo
- .. figure:: figures/toolbar/arrow_redo.png              Redo
- .. figure:: figures/toolbar/copy.png                    Copy nodes
- .. figure:: figures/toolbar/cut.png                     Cut nodes
- .. figure:: figures/toolbar/paste.png                   Paste nodes
- .. figure:: figures/toolbar/delete.png                  Remove nodes
- .. figure:: figures/toolbar/find.png                    Show Resource Search Dialog
- .. figure:: figures/toolbar/zoom100.gif                 Set default magnification
- .. figure:: figures/toolbar/zoom_in.png                 Expand the Property Editor
- .. figure:: figures/toolbar/zoom_out.png                Reduce the Property Editor
- .. figure:: figures/toolbar/zoom.png                    Set appropriate magnification
- .. figure:: figures/toolbar/shape_group.png             Group nodes
- .. figure:: figures/toolbar/shape_ungroup.png           Ungroup nodes
- .. figure:: figures/toolbar/layout_property_graph.png   Automatically layout the RDFS property graph
-======================================================= ===================================================================
+.. csv-table::
+   :header: Icon, Function
+   :align: center
+   :widths: 3, 10 
+     
+   .. figure:: figures/toolbar/resource.png, Insert an RDFS property
+   .. figure:: figures/toolbar/copy.png, Copy nodes
+   .. figure:: figures/toolbar/cut.png, Cut nodes
+   .. figure:: figures/toolbar/paste.png, Paste nodes
+   .. figure:: figures/toolbar/delete.png, Remove nodes
+   .. figure:: figures/toolbar/undo.png, Undo
+   .. figure:: figures/toolbar/redo.png, Redo
+   .. figure:: figures/toolbar/export_graph_img.png, Save the property graph as an image file
+   .. figure:: figures/toolbar/l_to_r_layout.png, Automatically layout the RDFS property graph (left to right)
+   .. figure:: figures/toolbar/u_to_d_layout.png, Automatically layout the RDFS property graph (up to down)
+   .. figure:: figures/toolbar/open_resource.png, Open a selected RDFS property
 
 Popup menu in the Property Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -823,33 +804,30 @@ Help->About MR\ :sup:`3` \
 Toolbar
 ------------------
 
-================================================== ===================================================================
-        Icon                                         Function                                                             
-================================================== ===================================================================
- .. figure:: figures/toolbar/new.png                New |MR3| project
- .. figure:: figures/toolbar/open.png               Open |MR3| project file
- .. figure:: figures/toolbar/save.png               Save |MR3| project file
- .. figure:: figures/toolbar/saveas.png             Save as |MR3| project file
- .. figure:: figures/toolbar/import.png             Show Import Dialog
- .. figure:: figures/toolbar/export.png             Show Export Dialog
- .. figure:: figures/toolbar/find.png               Show Resource Search Dialog
- .. figure:: figures/toolbar/rdf_editor.png         Show RDF Editor to the front
- .. figure:: figures/toolbar/class_editor.png       Show Class Editor to the front
- .. figure:: figures/toolbar/property_editor.png    Show Property Editor to the front
- .. figure:: figures/toolbar/attr_dialog.png        Show Attribute Dialog to the front
- .. figure:: figures/toolbar/namespace_table.png    Show Namespace Table to the front
- .. figure:: figures/toolbar/cpr.png                Show Class, Property, and RDF Editors
- .. figure:: figures/toolbar/cr.png                 Show Class and RDF Editors
- .. figure:: figures/toolbar/pr.png                 Show Property and RDF Editors
- .. figure:: figures/toolbar/arrow_left.png         Find previous
- .. figure:: figures/toolbar/arrow_right.png        Find next
- .. figure:: figures/toolbar/accept.png             Validate RDFs contents
- .. figure:: figures/toolbar/plugin.png             Show Plugin Management Dialog
- .. figure:: figures/toolbar/information.png        Show Project Information
- .. figure:: figures/toolbar/log_console.png        Show Log Console
- .. figure:: figures/toolbar/cog.png                Show Config Dialog
- .. figure:: figures/toolbar/help.png               Show about |MR3|
-================================================== ===================================================================
+.. csv-table::
+   :header: Icon, Function
+   :align: center
+   :widths: 3, 10
+
+   .. figure:: figures/toolbar/new.png, New MR\ :sup:`3` \ project
+   .. figure:: figures/toolbar/open.png, Open MR\ :sup:`3` \ project file
+   .. figure:: figures/toolbar/save.png, Save MR\ :sup:`3` \ project file
+   .. figure:: figures/toolbar/saveas.png, Save as MR\ :sup:`3` \ project file
+   .. figure:: figures/toolbar/find.png, Show Resource Search Dialog
+   .. figure:: figures/toolbar/rdf_editor.png, Show RDF Editor Overview to the front
+   .. figure:: figures/toolbar/class_editor.png, Show Class Editor Overview to the fornt
+   .. figure:: figures/toolbar/property_editor.png, Show Property Editor Overview to the front
+   .. figure:: figures/toolbar/attribute_dialog.png, Show Attribute Dialog to the front
+   .. figure:: figures/toolbar/namespace_table.png, Show Namespace Table to the front
+   .. figure:: figures/toolbar/cpr.png, "Show Class, Property, and RDF editors"
+   .. figure:: figures/toolbar/cr.png, "Show Class and RDF editors"
+   .. figure:: figures/toolbar/pr.png, "Show Property and RDF editors"
+   .. figure:: figures/toolbar/code.png, Show RDF source codes
+   .. figure:: figures/toolbar/accept.png, Validate RDFs contents
+   .. figure:: figures/toolbar/information.png, Show Project Information
+   .. figure:: figures/toolbar/log_console.png, Show Log Console
+   .. figure:: figures/toolbar/cog.png, Show Config Dialog
+   .. figure:: figures/toolbar/help.png, Show about MR\ :sup:`3` \
 
 Shortcut keys
 -------------------
