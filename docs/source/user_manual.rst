@@ -642,30 +642,6 @@ When the users select the Layout item as shown in :numref:`config-layout`, metho
 
    Config Dialog: Layout
 
-Rendering
-~~~~~~~~~~~~
-When the users select Rendering item as shown in :numref:`config-rendering`, colors of each node (RDF resources, RDF literals, RDFS classes, and RDFS properties), colors of each selected node, and background color of each editor can be set. If the users uncheck the Color checkbox, all of the nodes become colorless. If the users check the Antialias checkbox, an edge of each node become smooth.
-
-.. _config-rendering:
-.. figure:: figures/config_dialog_rendering.png
-   :scale: 100 %
-   :alt: Config Dialog: Rendering
-   :align: center
-
-   Config Dialog: Rendering
-
-
-Plugins
----------
-When the users select Plugins sub menu in the Tool menu, the dialog as shown in :numref:`plugin-dialog` is shown. |MR3| loads jar files in the plug-ins directory that is set in the Config Dialog. The plugins are shown in the list. If the users select one of the plugins, the description of the plugin is shown at the bottom of the dialog. If the users click Exec button, the selected plugin is executed. Please refer to :doc:`plugin_development` to build |MR3| plugins.
-
-.. _plugin-dialog:
-.. figure:: figures/plugin_dialog.png
-   :scale: 100 %
-   :alt:  Plugins
-   :align: center
-
-   Plugins
 
 Validator
 -----------
@@ -722,85 +698,83 @@ Menu
 
 File
 ~~~~~~~~~~
-File->New Project
+New Project
     Create new |MR3| project. The users should select save the current project or delete it.
-File->Open Project
+Open Project
     Open |MR3| project file
-File->Save Project
+Save Project
     Save |MR3| project file
-File->Save As Project
+Save As Project
     Save As |MR3| project file
-File->Import
-    Show Import Dialog
-File->Export
-    Show Export Dialog
-File->Exit
-    Exit |MR3|
-
-Edit
-~~~~~~~~~
-Edit->Find Resource
-    Show Find Resource Dialog
-
-**Edit->Select->Select All RDF Nodes**
-    　
-**Edit->Select->Select All Class Nodes**
-
-**Edit->Select->Select All Property Nodes**
-      　  
+Quit
+    Quit |MR3|
 
 View
 ~~~~~~~~
-View->URI View
+URI
     URIs of resources are shown in each editor. If namespaces are defined in the Namespace Table, the corresponding prefixes are replaced with the namespaces.
-View->ID View
+ID
     IDs of resources are shown in each editor.
-View->Label View
+Label
     Values of rdfs:label properties are shown in each editor. If a resource does not have rdfs:label property, the URI of the resource is shown instead of the value of rdfs:label property.
-View->Show Resource Type
+Resource Type
     If the users check the Show Resource Type, the type of RDF resources are shown at the top right of each resource.
-View->Show RDF Property Label
+RDF Property Label
     If the users check the Show RDF Property Label, the label of properties are shown. If it is not checked, the label properties are not shown in the RDF editor.
-View->Show ToolTips
+ToolTips
     If the users check the Show ToolTips, tooltips are shown when the users mouse over the resources.
-View->Apply Layout->RDF
-    Automatically layout the RDF graph
-View->Apply Layout->Class
-    Automatically layout the Class graph
-View->Apply Layout->Property
-    Automatically layout the Property graph
+RDF Graph Layout (Left to Right)
+    Automatically layout the RDF graph (left to right)
+Class Graph Layout (Left to Right)
+    Automatically layout the Class graph (left to right)
+Class Graph Layout (Up to Down)
+    Automatically layout the Class graph (up to down)
+Property Graph Layout (Left to Right)
+    Automatically layout the Property graph (left to right)
+Property Graph Layout (Up to Down)
+    Automatically layout the Property graph (up to down)
 
 Window
 ~~~~~~~~~~
-Window->Show RDF Editor Overview
+RDF Editor Overview
     The overview of the RDF editor is shown in the dialog. When the users drag a red rectangle, part of the RDF graph in the red rectangle are shown in the RDF editor. The users can change the size of the red rectangle by dragging the right down part. It is enabled to expand and reduce the editor.
-Window->Show Class Editor Overview
+Class Editor Overview
     The overview of the Class editor is shown in the dialog. The functions of the dialog is as same as RDF Editor Overview.
-Window->Show Property Editor Overview
+Property Editor Overview
     The overview of the Property editor is shown in the dialog. The functions of the dialog is as same as RDF Editor Overview.
-    
-**Window->To Front RDF Editor**
-        
-**Window->To Front Class Editor**
-    
-**Window->To Front Property Editor**
-    
-**Window->Show Attribute Dialog**
-    
-**Window->Show Namespace Table**
-    
-Window->Layout->Deploy Windows (C,P,R)
-    The RDF editor, the Property editor, and the Class editor are shown.
-Window->Layout->Deploy Windows (C,R)
-    The Class editor and the RDF editor are shown.
-Window->Layout->Deploy Windows (P,R)
-    The Property editor and the RDF editor are shown.
+Attribute Dialog
+    Show Attribute Dialog to the front.       
+Namespace Table
+    Show Namespace Table to the front.
+Deploy Windows (C,P,R)
+    Show the RDF editor, the Property editor, and the Class editor.
+Deploy Windows (C,R)
+    Show the Class editor and the RDF editor.
+Deploy Windows (P,R)
+    Show the Property editor and the RDF editor.
+
+Tool
+~~~~~~~~~~~~~~~~~~~~~
+RDF Source Code Viewer
+    Show RDF Source Code Viewer.
+Find
+    Show Resource Find Dialog.
+Validation
+    Show Validation Dialog.
+Project Information
+    Show Project Information Dialog.
+Log Console
+    Show Log Console which outputs standard outputs and standard error outputs in MR\ :sup:`3` \.
+Option
+    Dhow Option Dialog.
 
 Help
 ~~~~~~~~~
-Help->About MR\ :sup:`3` \
+About MR\ :sup:`3` \
     The developer, version, license, project web site, contact, and libraries used in |MR3| are shown in the dialog.
- 
+MR\ :sup:`3` \ manual 
+    Open MR\ :sup:`3` \ manual page in browser.
+
 Toolbar
 ------------------
 
@@ -834,39 +808,42 @@ Shortcut keys
 
 Shortcut keys that can be used in |MR3|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Ctrl-N
-    Create new |MR3| project. The users should select save the current project or delete it.
-Ctrl-O
-    Open |MR3| project file
-Ctrl-S
-    Save |MR3| project file
-Ctrl+Shift+S
-    Save as |MR3| project file
-Ctrl+Q
-    Exit |MR3|
-Alt+R
-    Show the RDF Editor to the front
-Alt+C
-    Show the Class Editor to the front
-Alt+P
-    Show the Property Editor to the front
-Alt+A
-    Show the Attribute Dialog
-Alt+N
-    Show the Namespace Table
-Alt+F
-    Show the Find Resource Dialog
+
+.. csv-table::
+   :header: Shortcut keys, Description
+   :align: center
+   :widths: 5, 10 
+
+    Ctrl + N | Command + N, Create new |MR3| project. The users should select save the current project or delete it.
+    Ctrl + O | Command + O, Open |MR3| project file.
+    Ctrl + S | Command + S, Save |MR3| project file.
+    Ctrl + Shift + S | Command + Shift + S, Save as |MR3| project file.
+    Ctrl + Q | Command + Q, Quit |MR3|.
+    Ctrl + Shift + A | Command + Shift + A, Show the Attribute Dialog.
+    Ctrl + Shift + N | Command + Shift + N, Show the Namespace Table.
+    Ctrl + 1 | Command + 1, "Show Class, Property, and RDF editors."
+    Ctrl + 2 | Command + 2, "Show Class and RDF editors."
+    Ctrl + 3 | Command + 3, "Show Property and RDF editors."
+    Ctrl + R | Command + R, Show the RDF source code viewer.
+    Ctrl + F | Command + F, Show the Find Resource Dialog.
+    Ctrl + Shift + V | Command + Shift + V, Validate RDF graphs.
+    Ctrl + Shift + M | Command + Shift + M, Show the Project Information dialog.
+    Ctrl + Shift + L | Command + Shift + L, Show the Log console.
+    Ctrl + Shift + O | Command + Shift + O, Show the Option dialog.
+    F1, Show about MR\ :sup:`3` \.
 
 Shortcut keys that can be used in editors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Ctrl-A
-    Select all of the nodes in a editor
-Delete
-    Delete selected nodes in a editor
-Ctrl-C
-    Copy selected nodes in a editor
-Ctrl-X
-    Cut selected nodes in a editor
-Ctrl-V
-    Paste nodes that are copied or cut.
 
+.. csv-table::
+   :header: Shortcut key, Description
+   :align: center
+   :widths: 5, 10 
+
+   Ctrl + I | Command + I, Insert an resource.
+   Ctrl + L | Command + L, Insert a literal.
+   Ctrl + A | Command + A, Select all of the nodes in a editor.
+   Delete, Delete selected nodes in a editor.
+   Ctrl + C | Command + C, Copy selected nodes in a editor.
+   Ctrl + X | Command + X, Cut selected nodes in a editor.
+   Ctrl + V | Command + V, Paste nodes that are copied or cut.
