@@ -15,7 +15,7 @@ Implementation architecture
 .. _mr3-architecture:
 
 .. figure:: figures/implementation_architecture_of_mr3.svg
-   :scale: 50 %
+   :scale: 40 %
    :alt: Implementation architecture of |MR3|
    :align: center
 
@@ -29,7 +29,7 @@ System overview
 .. _system-overview:
 
 .. figure:: figures/system_overview_of_mr3.svg
-   :scale: 50 %
+   :scale: 40 %
    :alt: System overview of |MR3| 
    :align: center
 
@@ -44,7 +44,7 @@ The details of the graphical modeler are shown in the following sections.
 
  .. _mr3-screenshot:
  .. figure:: figures/screenshot_of_mr3.png
-   :scale: 30 %
+   :scale: 25 %
    :alt: Typical screen with Graphical Modeler interface of |MR3|
    :align: center
 
@@ -61,7 +61,7 @@ As shown in :numref:`rdf-editor`, RDF resources are represented as ellipses, RDF
 
 .. _rdf-editor:
 .. figure:: figures/rdf_editor.png
-   :scale: 40 %
+   :scale: 25 %
    :alt: RDF Editor
    :align: center
 
@@ -138,7 +138,7 @@ If users would like to set a URI of an RDF resource, they should select URI from
 
 .. _attr-rdf-res-uri:
 .. figure:: figures/attribute_dialog_rdf_resource_uri.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (URI of an RDF resource)
    :align: center
 
@@ -154,7 +154,7 @@ When the users click the JumpClass button, the type of an RDF resource is select
 
 .. _attr-rdf-res-type:
 .. figure:: figures/attribute_dialog_rdf_resource_type.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (type of RDF resource)
    :align: center
 
@@ -162,7 +162,7 @@ When the users click the JumpClass button, the type of an RDF resource is select
 
 .. _rdf-res-type-selection-dialog:
 .. figure:: figures/rdf_resource_type_selection_dialog.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: RDF Resource Type Selection Dialog
    :align: center
 
@@ -170,7 +170,7 @@ When the users click the JumpClass button, the type of an RDF resource is select
 
 .. _rdf-and-rdfs-management-dialog:
 .. figure:: figures/rdf_and_rdfs_management_dialog.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: RDF(S) contents management dialog
    :align: center
 
@@ -181,7 +181,7 @@ If the users would like to define the rdfs:label of an RDF resource, the users s
 
 .. _attr-rdf-res-label:
 .. figure:: figures/attribute_dialog_rdf_resource_label.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (Label of an RDF resource)
    :align: center
 
@@ -211,7 +211,7 @@ If the user check the Show Property Prefix Only checkbox, the users can only sel
 
 .. _attr-rdf-property:
 .. figure:: figures/attribute_dialog_rdf_property.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (RDF Property)
    :align: center
 
@@ -231,7 +231,7 @@ When the users select an RDF literal in the RDF Editor, the attributes of the RD
 
 .. _attr-rdf-literal:
 .. figure:: figures/attribute_dialog_rdf_literal.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (RDF Literal)
    :align: center
 
@@ -248,7 +248,7 @@ The Class Editor allows the users to edit the attributes of RDFS classes and the
 
 .. _class-editor:
 .. figure:: figures/class_editor.png
-   :scale: 60 %
+   :scale: 25 %
    :alt: An screenshot of the Class Editor
    :align: center
    
@@ -322,7 +322,7 @@ When the users select the Base item, the type of an RDFS class and the URI can b
 
 .. _attr-class-basic:
 .. figure:: figures/attribute_dialog_rdfs_class_basic.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (Base of RDFS class)
    :align: center
    
@@ -330,7 +330,7 @@ When the users select the Base item, the type of an RDFS class and the URI can b
  
 .. _attr-class-instance:
 .. figure:: figures/attribute_dialog_rdfs_class_instance.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (Instances of the RDFS class)
    :align: center
 
@@ -338,7 +338,7 @@ When the users select the Base item, the type of an RDFS class and the URI can b
   
 .. _attr-class-upper-class:
 .. figure:: figures/attribute_dialog_rdfs_class_upper_class.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (Upper classes of the RDFS class)
    :align: center
 
@@ -356,7 +356,7 @@ The Property Editor allows the users to edit the attributes of RDFS properties a
 
 .. _property-editor:
 .. figure:: figures/property_editor.png
-   :scale: 60 %
+   :scale: 25 %
    :alt: An screenshot of the Property Editor
    :align: center
    
@@ -424,11 +424,11 @@ Show Attribute Dialog
 
 Editing attributes of the Property editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When the users select an RDFS property in the Property Editor, the attributes of the RDFS property are shown in the Attribute Dialog (:numref:`attr-property-region`  to :numref:`attr-property-upper-property`).  The users can edit the attributes of an RDFS property by selecting Base, Label, Comment, Region, Instance, or SuperProperties items in the left side menu of the Attribute Dialog. Base, Label, and Comment items are same as RDFS Class. The type list in the Base item can be defined in the property class list in the Config Dialog. When the users select Region item, domains and ranges of the selected RDFS property can be edited (:numref:`attr-property-region`). When the users select Instances item, RDF resource list that have the selected RDFS property is shown in the Attribute Dialog (:numref:`attr-property-instance`). When the users select the one of the items in the list, the RDF resource is selected and the attributes of the RDF resource are shown in the Attribute Dialog. When the users select SuperProperties item, super properties of the selected RDFS property are shown in the list (:numref:`attr-property-upper-property`).
+When the users select an RDFS property in the Property Editor, the attributes of the RDFS property are shown in the Attribute Dialog (:numref:`attr-property-region`  and :numref:`attr-property-instance`).  The users can edit the attributes of an RDFS property by selecting Base, Label, Comment, Region, Instance, or SuperProperties items in the left side menu of the Attribute Dialog. Base, Label, and Comment items are same as RDFS Class. The type list in the Base item can be defined in the property class list in the Config Dialog. When the users select Region item, domains and ranges of the selected RDFS property can be edited (:numref:`attr-property-region`). When the users select Instances item, RDF resource list that have the selected RDFS property is shown in the Attribute Dialog (:numref:`attr-property-instance`). When the users select the one of the items in the list, the RDF resource is selected and the attributes of the RDF resource are shown in the Attribute Dialog. When the users select SuperProperties item, super properties of the selected RDFS property are shown in the list.
 
 .. _attr-property-region:
 .. figure:: figures/attribute_dialog_rdfs_property_region.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (Rnage of RDFS property)
    :align: center
    
@@ -436,20 +436,12 @@ When the users select an RDFS property in the Property Editor, the attributes of
   
 .. _attr-property-instance:
 .. figure:: figures/attribute_dialog_rdfs_property_instance.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Attribute Dialog (Instances of RDFS property)
    :align: center
    
    Attribute Dialog (Instances of RDFS property)
   
-.. _attr-property-upper-property:
-.. figure:: figures/attribute_dialog_rdfs_property_upper_property.png
-   :scale: 100 %
-   :alt: Attribute Dialog (Super properties of RDFS property)
-   :align: center
-   
-   Attribute Dialog (Super properties of RDFS property)
-
 .. index:: Resource Search Dialog
 
 Resource Search Dialog
@@ -458,7 +450,7 @@ The users can find resources (RDF resources, RDF properties, RDFS classes, and R
 
  .. _resource-search-dialog:
  .. figure:: figures/resource_search_dialog.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: A screenshot of the Resource search dialog
    :align: center
 
@@ -472,7 +464,7 @@ The users can register perfixes and the corresponding namespaces in the Namespac
 
 .. _namespace-table:
 .. figure:: figures/namespace_table.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: A screenshot of the Namespace Table
    :align: center
 
@@ -493,7 +485,7 @@ If the users select one of the RDF resources, RDF properties, or RDFS properties
 
 .. _remove-dialog:
 .. figure:: figures/remove_dialog.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Remove Dialog
    :align: center
 
@@ -508,7 +500,7 @@ The users can import RDF(S) documents described as RDF/XML, N3, N-Triple, or Tur
 
  .. _import-dialog:
  .. figure:: figures/import_dialog.svg
-   :scale: 100 %
+   :scale: 50 %
    :alt: A screenshot of the Import Dialog
    :align: center
 
@@ -550,7 +542,7 @@ The users can export RDF(S) data graphs in |MR3| to an RDF(S) document as RDF/XM
 .. _export-dialog:
 
 .. figure:: figures/export_dialog.svg
-   :scale: 100 %
+   :scale: 50 %
    :alt:  A screenshot of the Export Dialog
    :align: center
 
@@ -586,7 +578,7 @@ When the users select the Basic item as shown in :numref:`config-basic`, languag
 .. _config-basic:
 
 .. figure:: figures/config_dialog_basic.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Config Dialog: Basic
    :align: center
 
@@ -598,7 +590,7 @@ When the users select the Directory item as shown in :numref:`config-directory`,
 
 .. _config-directory:
 .. figure:: figures/config_dialog_directory.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Config Dialog: Directory
    :align: center
 
@@ -610,7 +602,7 @@ When the users select the Proxy item as shown in :numref:`config-proxy`, a host 
 
 .. _config-proxy:
 .. figure:: figures/config_dialog_proxy.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Config Dialog: Proxy
    :align: center
 
@@ -624,7 +616,7 @@ In the initial setting, rdfs:Class is defined in Class Class and rdf:Property is
 
 .. _config-metaclass:
 .. figure:: figures/config_dialog_metaclass.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Config Dialog; Meta Class
    :align: center
 
@@ -636,7 +628,7 @@ When the users select the Layout item as shown in :numref:`config-layout`, metho
 
 .. _config-layout:
 .. figure:: figures/config_dialog_layout.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Config Dialog: Layout
    :align: center
 
@@ -649,7 +641,7 @@ When the users select Validator sub menu in the Tool menu, the dialog as shown i
 
 .. _validator-dialog:
 .. figure:: figures/validator_dialog.png
-   :scale: 100 %
+   :scale: 50 %
    :alt:  Validator
    :align: center
 
@@ -661,7 +653,7 @@ When the users select Project Info sub menu in the Tool menu, the dialog as show
 
 .. _project-info-dialog:
 .. figure:: figures/project_info_dialog.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Project Info
    :align: center
 
@@ -674,7 +666,7 @@ When the users select Show Log Console sub menu in the Tool menu, the dialog as 
 
 .. _log-console:
 .. figure:: figures/log_console.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: Log Console
    :align: center
 
@@ -686,7 +678,7 @@ When the users select About MR3 sub menu in the Help menu, the dialog as shown i
 
 .. _about-mr3:
 .. figure:: figures/about_dialog.png
-   :scale: 100 %
+   :scale: 50 %
    :alt: About MR3
    :align: center
 
