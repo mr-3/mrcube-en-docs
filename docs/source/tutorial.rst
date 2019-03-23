@@ -10,7 +10,7 @@ Tutorial
 ------------------------------   
 Overview
 ------------------------------   
-In this tutorial, we build an RDF document that is introduced in `RDF Primer <https://www.w3.org/TR/2004/REC-rdf-primer-20040210/>`_ (Example 1: RDF/XML Describing Eric Miller as shown below) by using |MR3|. 
+In this tutorial, we build an RDF document that is introduced in `RDF Primer <https://www.w3.org/TR/rdf11-primer/>`_ (Example 1: RDF/XML Describing Eric Miller as shown below) by using |MR3|. 
 
 There are two ways to build the RDF document by using |MR3|. One is a top down method. In the top down method, the users firstly build RDFS contents and then build RDF contents by using classes and properties defined in the RDFS contents. The users can also use an existing RDFS document by importing the document into |MR3|.
 
@@ -18,20 +18,31 @@ The other is a bottom up method. In the bottom up method. the users can create R
 
 In this tutorial, we introduce both of them. You can also check how to build the RDF document from `the videos page <http://mrcube.org/videos.html>`_ in the |MR3| web site. Finally, we describe an example of replacing an RDFS document.
 
-Example 1: RDF/XML Describing Eric Miller
 
-.. code-block:: xml
+.. code-block:: turtle
 
-    <?xml version="1.0"?>
-    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-             xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#">
+    BASE   <http://example.org/>
+    PREFIX bob: <http://example.org/bob#>
+    PREFIX alice: <http://example.org/alice#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    PREFIX schema: <http://schema.org/>
+    PREFIX dcterms: <http://purl.org/dc/terms/>
+    PREFIX wd: <http://www.wikidata.org/entity/>
+ 
+    bob:me
+        a foaf:Person ;
+        foaf:knows alice:me ;
+        schema:birthDate "1990-07-04"^^xsd:date ;
+        foaf:topic_interest wd:Q12418 .
+   
+    wd:Q12418
+        dcterms:title "Mona Lisa" ;
+        dcterms:creator <http://dbpedia.org/resource/Leonardo_da_Vinci> .
+  
+    <http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619>
+        dcterms:subject wd:Q12418 .
 
-      <contact:Person rdf:about="http://www.w3.org/People/EM/contact#me">
-        <contact:fullName>Eric Miller</contact:fullName>
-        <contact:mailbox rdf:resource="mailto:em@w3.org"/>
-        <contact:personalTitle>Dr.</contact:personalTitle>
-      </contact:Person>
-    </rdf:RDF>
 
 --------------------------------------------------
 Building an RDF document by the top down method
@@ -41,6 +52,21 @@ Building an RDF document by the top down method
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 At the begininng, the users should register prefixes and the corresponding namespaces in the Namespace Table to build the RDF document. The Namespace table can be shown by selecting |nstable| icon in the toolbar or selecting Show Namespace Table sub menu in the Window menu.
 
+.. csv-table::
+   :header: Prefix, Namespace
+   :widths: 5, 30 
+
+   mr3, http://mrcube.org#
+   rdf, http://www.w3.org/1999/02/22-rdf-syntax-ns#
+   rdfs, http://www.w3.org/2000/01/rdf-schema#
+   owl, http://www.w3.org/2002/07/owl#
+   foaf, http://xmlns.com/foaf/0.1/
+   schema, http://schema.org/
+   dcterms, http://purl.org/dc/terms/
+   wd, http://www.wikidata.org/entity/
+   bob,  http://example.org/bob#
+   alice,  http://example.org/alice#
+
 In the following figure, **contact** prefix and the corresponding namespace (**http: //www.w3.org/2000/10/swap/pim/contact#**) are registered in the Namespace Table. When the users input a prefix in the Prefix text field, input a namespace in the NameSpace textfield, and select Add button, they are registered in the Namespace Table. 
 
 Prefixes and namespaces can be used to create resources (RDF resources, RDF properties, RDFS classes, and RDFS properties).
@@ -48,7 +74,7 @@ Prefixes and namespaces can be used to create resources (RDF resources, RDF prop
 .. |nstable| image:: figures/toolbar/namespace_table.png
 
 .. figure:: figures/top-down-step1.png
-   :scale: 40 %
+   :scale: 25 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,13 +87,13 @@ First, when the users click a right mouse button in the Class Editor, a popup me
 In the example RDF document, contact:Person class is the type of **http: //www.w3.org/People/EM/contact#me** resource. In |MR3|, a type of an RDF resource can be selected from classes in the Class editor. Therefore, in order to select the type of the RDF resource, contact:Person class must be defined before creating the RDF resource by the top down method.
 
 .. figure:: figures/top-down-step2-1.png
-   :scale: 30 %
+   :scale: 25 %
    :align: center
 
 After selecting **Insert Class menu**, the following dialog is shown. The RDFS class (contact:Person) is inserted by selecting contact prefix from the Prefix combobox, inputting Person in the ID text field, and selecting the OK button.
 
 .. figure:: figures/top-down-step2-2.png
-   :scale: 30 %
+   :scale: 50 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,14 +108,13 @@ In |MR3|, an RDF property can be selected from the properties in the Property Ed
 The following figure shows a dialog when the users insert contact:fullName property in the Property Editor.
 
 .. figure:: figures/top-down-step3-1.png
-   :scale: 80 %
+   :scale: 50 %
    :align: center
-
 
 The following figure shows a screenshot after inserting contact:Person class, contact:fullName，contact:mailbox，and contact:personalTitle properties.
 
 .. figure:: figures/top-down-step3-2.png
-   :scale: 30 %
+   :scale: 25 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,7 +125,7 @@ In the following steps, we build RDF contents based on the RDFS class and the RD
 First, insert an RDF resource in the RDF Editor. When the users click a right mouse button in the RDF Editor, a popup menu is shown. The following figure shows a screenshot showing the popup menu.
 
 .. figure:: figures/top-down-step4-1.png
-   :scale: 40 %
+   :scale: 25 %
    :align: center
 
 After selecting **Insert RDF Resource menu**, the following dialog is shown. A type of an RDF resource can be selected from **Resource Type combobox**. Types of RDF resources can be selected from RDFS classes in the Class Editor. Here, select contact:Person class as a type of an RDF resource. Then, input **http://www.w3.org/People/EM/contact#me** in the RDF Resource text field. The RDF resource is inserted after selecting the type of the RDF resource, inputting the URI of the RDF resource, and select the OK button.
@@ -111,7 +136,7 @@ In the same way, insert **mailto:em@w3.org** as an RDF resource in the RDF Edito
     Here, since **http://www.w3.org/People/EM/contact#** and the corresponding prefix are not defined in the Namespace Table, we input URI of the RDF resource directly in the RDF Resource text field. If the namespace and the prefix are registered in the Namespace Table, the namespace is automatically inserted in the RDF Resource text field by selecting the corresponding prefix in the Prefix combobox. In addition, if the users check the blank checkbox, the RDF resource become blank node.
 
 .. figure:: figures/top-down-step4-2.png
-   :scale: 80 %
+   :scale: 50 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -121,8 +146,8 @@ In this step, insert **Eric Miller** and **Dr.** RDF literals in the RDF Editor.
 
 When the users click a right mouse button in the RDF Editor and select **Insert Literal menu** in the popup menu, the following dialog is shown. An RDF literal is inserted after inputting strings in the Literal text area and selecting OK button.
 
-.. figure:: figures/top-down-step5.png
-   :scale: 80 %
+.. figure:: figures/top-down-step5-1.png
+   :scale: 25 %
    :align: center
 
 
@@ -137,7 +162,7 @@ First, change connect mode by clicking a right mouse button and selecting **Conn
 .. |connect| image:: figures/toolbar/connect.gif 
 
 .. figure:: figures/top-down-step6-1.png
-   :scale: 30 %
+   :scale: 25 %
    :align: center
 
 Second, move the mouse cursor to the center of an RDF resource, drag the mouse cursor to the center of an RDF resource or an RDF literal, and drop the mouse cursor. Then, two nodes are connected with an RDF property. If the users do not select one of the RDFS properties in the Property Editor, the RDF property become mr3:nil which is the default RDF property in |MR3|. If the users select one of the RDFS properties, the selected RDFS property is used for the RDF property.
@@ -151,7 +176,7 @@ The following figure shows a screenshot of the Attribute Dialog when the users s
 .. |attr-dialog| image:: figures/toolbar/attr_dialog.png 
 
 .. figure:: figures/top-down-step6-2.png
-   :scale: 80 %
+   :scale: 50 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -162,7 +187,7 @@ Finally, export the RDF contents as an RDF document.
 As a result, the following RDFS classes, RDFS properties, and an RDF model are created in each editor.
 
 .. figure:: figures/top-down-step7-1.png
-   :scale: 30 %
+   :scale: 25 %
    :align: center
 
 First, show the Export Dialog by selecting **Export sub menu** in the File menu or selecting |export| icon in the toolbar. 
@@ -172,7 +197,7 @@ Second, select Syntax, Data Type, and Option. Here, select RDF/XML as the syntax
 .. |export| image:: figures/toolbar/export.png 
 
 .. figure:: figures/top-down-step7-2.png
-   :scale: 70 %
+   :scale: 50 %
    :align: center
 
 When the users select File button, a Save dialog is shown. Then, you can select or create a file to export the RDF document.
@@ -197,13 +222,13 @@ The attributes of **http: //www.w3.org/People/EM/contact#me** resource are shown
 
 
 .. figure:: figures/bottom-up-step2-1.png
-   :scale: 30 %
+   :scale: 25 %
    :align: center
 
 If the users click the Yes button in the RDF(S) management dialog, contact:Person class is created in the Class Editor as follows.
 
 .. figure:: figures/bottom-up-step2-2.png
-   :scale: 30 %
+   :scale: 25 %
    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -226,13 +251,13 @@ Third, select contact prefix in the Prefix combobox. since there are no Ids in t
 
 
 .. figure:: figures/bottom-up-step4-1.png
-   :scale: 30 %
+   :scale: 25 %
    :align: center
    
 If the users click the Yes button in the RDF(S) management dialog, contact:fullName property is created in the Property Editor as follows.
 
 .. figure:: figures/bottom-up-step4-2.png
-   :scale: 30 %
+   :scale: 25 %
    :align: center
 
 Create contact:mailbox and contact:personalTitle properties in the same way.
@@ -242,71 +267,3 @@ Create contact:mailbox and contact:personalTitle properties in the same way.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This step is same as the step7 in the top down method.
    
----------------------------------------------
-An example of replacing RDFS contents
----------------------------------------------
-The users can replace an RDFS contents by selecting RDFS as Data Type, selecting Replace as Import Method, and selecting Import button in the Import Dialog as shown below.
-
-In the following descriptions, prefix animal represents **http://example.com/animal#** and prefix mr3 represents **http://mr3.sourceforege.net#**.
-
-.. figure:: figures/import_dialog_rdfs_replace.png
-   :scale: 80 %
-   :align: center
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Before replacing an RDFS contents
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In the following, example RDFS and RDF documents are shown.
-
-An RDFS document before replacing
-""""""""""""""""""""""""""""""""""""""""
-In the RDFS document, three classes are defined. They are mr3:Animal, mr3:Dog, and mr3:Cat classes. mr3:Dog and mr3:Cat classes are sub class of mr3:Animal class.
-
-.. code-block:: xml
-
-    <?xml version="1.0"?>
-    <rdf:RDF
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns:owl="http://www.w3.org/2002/07/owl#"
-        xmlns:mr3="http://mr3.sourceforge.net#"
-        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-        xmlns:animal="http://example.com/animal#"
-        xml:base="http://mr3.sourceforge.net#">
-        <rdfs:Class rdf:ID="Dog">
-            <rdfs:subClassOf>
-            <rdfs:Class rdf:ID="Animal"/>
-            </rdfs:subClassOf>
-        </rdfs:Class>
-        <rdfs:Class rdf:ID="Cat">
-            <rdfs:subClassOf rdf:resource="#Animal"/>
-        </rdfs:Class>
-        <rdf:Property rdf:ID="play"/>
-    </rdf:RDF>
-
-      
-An RDF document before replacing
-"""""""""""""""""""""""""""""""""""""""""""
-In the RDF document, mr3:Pochi is an RDF resource and it's instance of mr3:Dog. mr3:Tama is an RDF resource and it's instance of mr3:Cat class. mr3:Pochi is connected to mr3:Tama with mr3:play property.
-
-.. code-block:: xml
-
-    <?xml version="1.0"?>
-    <rdf:RDF
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns:owl="http://www.w3.org/2002/07/owl#"
-        xmlns:mr3="http://mr3.sourceforge.net#"
-        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-        xmlns:animal="http://example.com/animal#"
-        xml:base="http://mr3.sourceforge.net#">
-        <mr3:Dog rdf:ID="Pochi">
-            <mr3:play>
-                <mr3:Cat rdf:ID="Tama"/>
-            </mr3:play>
-        </mr3:Dog>
-    </rdf:RDF>
-
-The following figure shows a screenshot of the RDF and RDFS model before replacing.
-
-.. figure:: figures/rdf-and-rdfs-model-before-replacing.png
-   :scale: 30 %
-   :align: center
