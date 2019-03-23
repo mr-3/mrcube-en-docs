@@ -496,74 +496,30 @@ If the users select one of the RDF resources, RDF properties, or RDFS properties
 
 Import Dialog
 --------------------
-The users can import RDF(S) documents described as RDF/XML, N3, N-Triple, or Turtle format to |MR3| by using Import Dialog. :numref:`import-dialog` shows a screenshot of the Import Dialog. The parts of the Import Dialog (1 to 13 in :numref:`import-dialog`) are shown below.
+The users can import RDF(S) documents described as Turtle, JSONLD, RDF/XML, or N-Triples format to |MR3| by using Import Dialog. :numref:`import-dialog` shows a screenshot of the Import Dialog. 
 
  .. _import-dialog:
- .. figure:: figures/import_dialog.svg
+ .. figure:: figures/import_dialog.png
    :scale: 50 %
    :alt: A screenshot of the Import Dialog
    :align: center
 
    A screenshot of the Import Dialog
- 
-#. Directory or URI
-     Directories that RDF(S) documents are saved or URIs that are RDF(S) documents are shown in the list.
-#. Add Dir
-     Add a directory in the Directory or URI list.
-#. Add URI
-     Add a URI in the Directory or URI list.
-#. Remove
-     Remove the selected directory or URI in the Directory or URI list.
-#. Syntax
-     Select a syntax (RDF/XML, N3, N-Triple, or Turtle) of an RDF(S) document that the users would like to import
-#. Data Type
-     Select a data type (RDF, RDFS, or OWL) of an RDF(S) document that the users would like to import
-#. Import Method
-     If the users select Merge, an RDF(S) document is merged to the current project. If the users select Replace, an RDF(S) document is replaced with the current project. 
-#. Find Resource
-     The files in the Import File List are filtered by inputted keyword in the Find Resource text field.
-#. Import File List
-     Files in the selected directory in the Directory or URI list are shown in the Import File List.
-#. Extension
-    The files in the Import File List are filtered by selected extensions. 
-#. Reload
-    Reload the directories in the directory or URI list and the lates files are shown in the Import File List.
-#. Import
-    Import an RDF(S) document to |MR3| based on the set condition (syntax, data type, import method, and import file).
-#. Cancel
-    Close the Import Dialog.
 
 .. index:: Export Dialog
 
 Export Dialog
 ----------------------
-The users can export RDF(S) data graphs in |MR3| to an RDF(S) document as RDF/XML, N3, N-Triple, or Turtle syntax. :numref:`export-dialog` shows a screenshot of the Export Dialog. The parts of the Export Dialog (1 to 8 in :numref:`export-dialog`) are described below.
+The users can export RDF(S) data graphs in |MR3| to an RDF(S) document as Turtle, JSONLD, RDF/XML, or N-Triples syntax. :numref:`export-dialog` shows a screenshot of the Export Dialog. 
 
 .. _export-dialog:
 
-.. figure:: figures/export_dialog.svg
+.. figure:: figures/export_dialog.png
    :scale: 50 %
    :alt:  A screenshot of the Export Dialog
    :align: center
 
    A screenshot of the Export Dialog
-
-#. Syntax
-    Select a syntax (RDF/XML，N-Triple，Turtle，N3, etc) of an RDF(S) document that the users would like to export.
-#. Data Type
-    If the users check the RDF, Class, or Property checkbox, data graphs in the selected editor are exported to an RDF(S) document. (For example, if the users checks Class and Property, classes and properties are exported as an RDF(S) document.)
-#. Option
-    If the users check Encode(UTF-8) checkbox, URIs of resources are encoded based on RFC3986.  If the users check Selected checkbox, only selected nodes are exported. If the users check Abbrev checkbox, data graphs are exported as RDF/XML Abbreviation syntax. If the users check XMLbase checkbox, XMLBase declaration is added in the RDF(S) document.
-#. File
-    Export an RDF(S) document based on the set condition (syntax, data type, and options).
-#. Image
-    If the users select one of the data types (RDF, Class, or Property) and click Image button, the selected data graph is saved as an image file. 
-#. Reload
-    The latest data graph are exported based on the set condition and the source is shown in the 8 part.
-#. Cancel
-    Close the Export Dialog.
-#. Show the source of RDFs models
-    The users can confirm the source of an RDF(S) document that will be exported.
     
 .. index:: Config Dialog
 
