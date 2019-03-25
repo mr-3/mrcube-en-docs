@@ -8,9 +8,7 @@ User manual
 
 Implementation architecture
 ------------------------------------------
-
-:numref:`mr3-architecture` shows the system architecture of |MR3| from the aspect of system implementation. |MR3| is implemented in Java language, using the Java Swing user interface. |MR3| uses JGraph for RDF(S) graph visualization, and Apache Jena for enabling the use of Semantic Web standards such as RDF, RDFS, and OWL. The Parser and Generator in |MR3| are implemented using Jena APIs. By using these libraries, |MR3| is implemented as an environment for graphical representation of Semantic Web descriptions. Additionally, |MR3| also has a plug-in facility to extend its functionality. At present, |MR3| offers two kinds of APIs for plug-in development: one for changing the |MR3| data graph into a model object of Jena, and one for changing the model object of Jena into a |MR3| data graph. 
-
+:numref:`mr3-architecture` shows the system architecture of |MR3| from the aspect of system implementation. |MR3| is implemented in Java language, using the Java Swing user interface. |MR3| uses JGraph for RDF(S) graph visualization, and Apache Jena for enabling the use of Semantic Web standards such as RDF, RDFS, and OWL. The Parser and Generator in |MR3| are implemented using Jena APIs. By using these libraries, |MR3| is implemented as an environment for graphical representation of Semantic Web descriptions. 
 
 .. _mr3-architecture:
 
@@ -23,8 +21,7 @@ Implementation architecture
 
 System overview
 ----------------------------------------
-
-:numref:`system-overview` shows the system overview of |MR3| . |MR3| consists of the Parser module, Generator module, Meta-Model Management module, Plug-ins, and User Interface. The user edits the RDFs description visually via the User Interface, which also includes the Graphical Modeler and Plug-in interfaces. The Graphical Modeler provides access to the basic functions of |MR3| , while the Plug-in Interface provides access to the functions of the plug-ins. The input and output of |MR3| are RDFs documents. The Parser analyzes input RDFs documents and makes further operations possible by transforming the RDFs document into a Jena model. Then, the Parser changes the Jena model into an internal data expression, and meta-model management is performed. Plug-ins are built using APIs provided by |MR3| . The Generator changes the internal data expression into a Jena model. Finally, the Jena model is changed into an RDFs document.
+:numref:`system-overview` shows the system overview of |MR3| . |MR3| consists of the **Parser**, **Generator**, **RDF(S) Management**, and **Graphical Modeler**. The **Graphical Modeler** mainly consists of the **RDF Editor**, **Class Editor**, and **Property Editor**. The user edits the RDFs description visually via the **Graphical Modeler**. The input and output of |MR3| are RDFs documents. The **Parser** analyzes input RDFs documents and makes further operations possible by transforming the RDFs document into a Jena model. Then, the **Parser** changes the Jena model into an internal data expression, and RDF(S) management is performed. The **Generator** changes the internal data expression into a Jena model. Finally, the Jena model is changed into an RDFs document.
 
 .. _system-overview:
 
@@ -35,12 +32,11 @@ System overview
 
    System overview of |MR3| 
 
-Overview of the Graphical modeler
+Overview of the Graphical Modeler
 ---------------------------------------
+:numref:`mr3-screenshot` shows a typical screen showing the **Graphical Modeler** of |MR3| . The **Graphical Modeler** consists of **RDF Editor**, **Class Editor**, **Property Editor**, **Attribute Dialog**, **Namespace Table**, **Remove Dialog**, **Find Resource Dialog**, **Import Dialog**, and **Export Dialog**. 
 
-:numref:`mr3-screenshot` shows a typical screen showing the Graphical Modeler interface of |MR3| . The Graphical Modeler consists of five main windows; RDF Editor, Class Editor, Property Editor, Attribute Dialog, and Namespace Table. 
-
-The details of the graphical modeler are shown in the following sections.
+The details of the **Graphical Modeler** are shown in the following sections.
 
  .. _mr3-screenshot:
  .. figure:: figures/screenshot_of_mr3.png
@@ -54,10 +50,9 @@ The details of the graphical modeler are shown in the following sections.
 
 RDF Editor
 --------------
+The **RDF Editor** allows the user to express the relationship between an RDF resource, RDF property, and RDF literal using a directed graph, and also allows the attributes of each element to be edited. The attributes of an RDF resource consist of a URI, the URI type, and the RDF resource type. The RDF resource type can be chosen using the **Class Editor**. The URI type can be chosen from either a URI or can be set as anonymous. 
 
-The RDF Editor allows the user to express the relationship between an RDF resource, RDF property, and RDF literal using a directed graph, and also allows the attributes of each element to be edited. The attributes of an RDF resource consist of a URI, the URI type, and the RDF resource type. The RDF resource type can be chosen using the Class Editor. The URI type can be chosen from either a URI or can be set as anonymous. 
-
-As shown in :numref:`rdf-editor`, RDF resources are represented as ellipses, RDF properties are represented as arrows, and RDF literals are represented as rectangles in the RDF editor . Types of RDF resources are shown at the upper right part of the RDF resources.
+As shown in :numref:`rdf-editor`, RDF resources are represented as ellipses, RDF properties are represented as arrows, and RDF literals are represented as rectangles in the **RDF editor**. Types of RDF resources are shown at the upper left part of the RDF resources.
 
 .. _rdf-editor:
 .. figure:: figures/rdf_editor.png
@@ -69,8 +64,7 @@ As shown in :numref:`rdf-editor`, RDF resources are represented as ellipses, RDF
 
 Toolbar in the RDF Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Icons in the toolbar in the RDF editor and the corresponding functions are shown in the following table.
+Icons in the toolbar in the **RDF Editor** and the corresponding functions are shown in the following table.
 
 .. csv-table::
    :header: Icon, Function
@@ -91,7 +85,7 @@ Icons in the toolbar in the RDF editor and the corresponding functions are shown
 
 Popup menu in the RDF editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When users right click in the RDF editor, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. Popup menus are shown as follows.
+When users right click in the **RDF Editor**, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. Popup menus are shown as follows.
 
 .. figure:: figures/popup_menu_rdf_editor.png
    :scale: 60 %
@@ -111,10 +105,8 @@ Insert RDF Resource
     Insert an RDF resource to the position that mouse is right clicked.
 Insert RDF Literal
     Insert an RDF literal to the position that mouse is right clicked.
-Connect Mode
-    Change the mode to connect mode from move mode. When the mode is connect mode, users can connect an RDF resource and another RDF resource or a literal by dragging and dropping. 
-Move Mode
-    Change the mode to move mode from connect mode. When the mode is move mode, users can move nodes in the RDF editor.
+Change Resource Type
+    Convert an RDF resource type to a class selected in the **Class Editor**.
 Transform from RDF to Class
     Transform the selected RDF resource to an RDFS class.
 Transform from RDF to Property
@@ -127,14 +119,14 @@ Paste
     Paste selected RDF resources, properties, or literals
 Remove
     Remove selected RDF resources, properties or literals
-Show Attribute Dialog
+Attribute Dialog
     Show the Attribute Dialog
 
 Editing attributes of RDF resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When users select an RDF resource in the RDF editor, the attributes of the RDF resource are shown in the Attribute Dialog ( :numref:`attr-rdf-res-uri` to :numref:`attr-rdf-literal` ). The attributes of RDF resources are URI, rdf:type, blank node or note, rdfs:label, and rdfs:comment. Here the blank nodes are RDF resources that are not named by URIs. Blank nodes can not be acceced from external documents.  However, the blank nodes can be subjects or objects of statements. They are used to represent RDF resources that are difficult to name or structure RDF contents.
+When users select an RDF resource in the **RDF Editor*, the attributes of the RDF resource are shown in the **Attribute Dialog** ( :numref:`attr-rdf-res-uri` to :numref:`attr-rdf-res-comment` ). The attributes of RDF resources are URI, rdf:type, blank node or not, rdfs:label, and rdfs:comment. Here the blank nodes are RDF resources that are not named by URIs. Blank nodes can not be acceced from external documents.  However, the blank nodes can be subjects or objects of statements. They are used to represent RDF resources that are difficult to name or structure RDF contents.
 
-If users would like to set a URI of an RDF resource, they should select URI from the left side menus in the Attribute Dialog as shown in :numref:`attr-rdf-res-uri`. Prefixes that are registered in the Namespace Table are shown in The prefix combo box. When users select one of the prefixes in the combo box, the corresponding namespace is shown in the RDF Resource text field. The users can input any URI in the text field. If the users would like to set an RDF resource as a blank node, the users should check the blank checkbox. 
+If users would like to set a URI of an RDF resource, they should select URI from the left side menus in the **Attribute Dialog** as shown in :numref:`attr-rdf-res-uri`. Prefixes that are registered in the **Namespace Table** are shown in the **[Prefix]** combo box. When users select one of the prefixes in the combo box, the corresponding namespace is shown in the **[RDF Resource]** text field. The users can input any URI in the text field. If the users would like to set an RDF resource as a blank node, the users should check the **[blank node]** checkbox. 
 
 .. _attr-rdf-res-uri:
 .. figure:: figures/attribute_dialog_rdf_resource_uri.png
@@ -144,13 +136,13 @@ If users would like to set a URI of an RDF resource, they should select URI from
 
    Attribute Dialog (URI of an RDF resource)
 
-If the users would like to set a type to an RDF resource, the users should select the Type from the left side menu in the Attribute Dialog as shown in :numref:`attr-rdf-res-type`. The isType checkbox should be checked when the users input the type of an RDF resource. If the users would like to empty the type of an RDF resource, they should uncheck the isType checkbox. 
+If the users would like to set a type to an RDF resource, the users should select the **[Resource Type]** from the left side menu in the **Attribute Dialog** as shown in :numref:`attr-rdf-res-type`. The **[Resource Type]** checkbox should be checked when the users input the type of an RDF resource. If the users would like to empty the type of an RDF resource, they should uncheck the **[Resouce Type]** checkbox. 
 
-When the users click the Select Type button, Select Resource Type Dialog are shown as shown in :numref:`rdf-res-type-selection-dialog`. The class hierarchy that is build in the Class editor is shown in the Select Resource Type Dialog. When the users select an RDFS class in the dialog, the namespace and ID of the selected class are set in the Attribute Dialog.
+When the users click the **[Select Type]** button, **[Select Resource Type Dialog]** are shown as shown in :numref:`rdf-res-type-selection-dialog`. The class hierarchy that is build in the **Class Editor** is shown in the **[Select Resource Type Dialog]**. When the users select an RDFS class in the dialog, the namespace and ID of the selected class are set in the **Attribute Dialog**.
 
-When the users input a URI that is not defined in the Class editor, RDF(S) contents management dialog is shown as shown in :numref:`rdf-and-rdfs-management-dialog`. In the RDF(S) contents management dialog, the users can select Rename or Create. 
+When the users input a URI that is not defined in the **[Class Editor]**, **[RDF(S) contents management]** dialog is shown as shown in :numref:`rdf-and-rdfs-management-dialog`. In the RDF(S) contents management dialog, the users can select Rename or Create. 
 
-When the users click the JumpClass button, the type of an RDF resource is selected and the attributes of the type of the RDF resource are shown in the Attribute Dialog. 
+When the users click the **[ClassEdit]** button, the type of an RDF resource is selected and the attributes of the type of the RDF resource are shown in the **Attribute Dialog**. 
 
 .. _attr-rdf-res-type:
 .. figure:: figures/attribute_dialog_rdf_resource_type.png
@@ -176,8 +168,7 @@ When the users click the JumpClass button, the type of an RDF resource is select
 
    RDF(S) contents management dialog
 
-
-If the users would like to define the rdfs:label of an RDF resource, the users should select Label in the left side menu in the Attribute Dialog as shown in :numref:`attr-rdf-res-label`. After inputting language in the Lang text field and label in the Label text field, the language and the label are added in the table in the Attribute Dialog. If the users select a line in the table and click remove button, the selected label is removed.
+If the users would like to define the **rdfs:label** of an RDF resource, the users should select **[Label]** in the left side menu in the **Attribute Dialog** as shown in :numref:`attr-rdf-res-label`. After inputting language in the **[Lang]** text field and label in the **[Label]** text field, the language and the label are added in the table in the **Attribute Dialog**. If the users select a line in the table and click **Remove** button, the selected label is removed.
 
 .. _attr-rdf-res-label:
 .. figure:: figures/attribute_dialog_rdf_resource_label.png
@@ -187,10 +178,9 @@ If the users would like to define the rdfs:label of an RDF resource, the users s
 
    Attribute Dialog (Label of an RDF resource)
 
+If the users would like to define the **rdfs:comment** of an RDF resource, the users should select **[Comment]** in the left side menu in the **Attribute Dialog** as shown in :numref:`attr-rdf-res-comment`. After clicking the **[Add]** button, the **[Edit Comment Dialog]** is shown. 
 
-If the users would like to define the rdfs:comment of an RDF resource, the users should select Comment in the left side menu in the Attribute Dialog as shown in :numref:`attr-rdf-res-comment`. After clicking the Add button, the Edit Comment Dialog is shown. 
-
-First input language in the Lang text field and comment in the Comment text area. Then, click OK button. After that, the language and the label are added in the table in the Attribute Dialog. If the users select a line in the table and click Edit button, the users can edit the selected comment and the language. In the same way, if the user select a line in the table and click Remove button, the selected label is removed.
+First input language in the **[Lang]** text field and comment in the **[Comment]** text area. Then, click **[OK]** button. After that, the language and the label are added in the table in the **Attribute Dialog**. If the users select a line in the table and click **[Edit]** button, the users can edit the selected comment and the language. In the same way, if the user select a line in the table and click **[Remove]** button, the selected label is removed.
 
 .. _attr-rdf-res-comment:
 .. figure:: figures/attribute_dialog_rdf_resource_comment.png
@@ -202,12 +192,13 @@ First input language in the Lang text field and comment in the Comment text area
 
 Editing attributes of RDF properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If the users select an RDF property in the RDF Editor, the attributes of the RDF property are shown in the Attribute Dialog (:numref:`attr-rdf-property`). The users can edit the URI of the selected RDF property. 
+If the users select an RDF property in the **RDF Editor**, the attributes of the RDF property are shown in the **Attribute Dialog** (:numref:`attr-rdf-property`). The users can edit the URI of the selected RDF property. 
 
-If the users check the isContainer checkbox and input a number, the users can set rdf:_1 to n property that is corresponding to the inputted number.
+When the users input a URI which is not defined in the **Property Editor**, **[RDF(S) contents management]** dialog is shown as shown in :numref:`rdf-and-rdfs-management-dialog`. In the **[RDF(S) contents management]** dialog, the users can select rename the RDFS property or create an RDFS property. 
 
-If the user check the Show Property Prefix Only checkbox, the users can only select prefixes that are only used in the defined RDFS properties. If the user uncheck the checkbox, the users can select all of the prefixes that are defined in the Namespace Table.
+When the users select one of the prefixes in the dialog, IDs of RDFS properties that are defined in the **Property Editor** and the namespace is correspond to the selected prefix are shown in the **[Property ID]** list. 
 
+When the users select one of the Property IDs and click **[RDFSPropertyEdit]** button, the RDFS property is selected and the attributes of the RDFS property are shown in the **Attribute Dialog**.
 
 .. _attr-rdf-property:
 .. figure:: figures/attribute_dialog_rdf_property.png
@@ -217,17 +208,10 @@ If the user check the Show Property Prefix Only checkbox, the users can only sel
 
    Attribute Dialog (RDF Property)
 
-When the users input a URI which is not defined in the Property Editor, RDF(S) contents management dialog is shown as shown in :numref:`rdf-and-rdfs-management-dialog`. In the RDF(S) contents management dialog, the users can select rename the RDFS property or create an RDFS property. 
-
-When the users select one of the prefixes in the dialog, IDs of RDFS properties that are defined in the Property Editor and the namespace is correspond to the selected prefix are shown in the Property ID list. 
-
-When the users select one of the Property IDs and click (Jump) Property button, the RDFS property is selected and the attributes of the RDFS property are shown in the Attribute Dialog.
-
 
 Editing attributes of RDF literals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When the users select an RDF literal in the RDF Editor, the attributes of the RDF literal are shown in the Attribute Dialog. (:numref:`attr-rdf-literal`) The users can edit the contents of the literal, the attribute of language (xml:lang), and the data type of the literal. In the Literal text are, the users can input the contents of the literal. The users can also input language in the Lang text field. If the users set the data type of the literal, the users should check isType checkbox and select one of the types in the Type combobox. Language attribute and data type attribute are exclusive and the users only select one of them. 
-
+When the users select an RDF literal in the **RDF Editor**, the attributes of the RDF literal are shown in the **Attribute Dialog**. (:numref:`attr-rdf-literal`) The users can edit the contents of the literal, the attribute of language (**xml:lang**), and the data type of the literal. In the **[Literal]** text are, the users can input the contents of the literal. The users can also input language in the **[Lang]** text field. If the users set the data type of the literal, the users should check **[Data type]** checkbox and select one of the types in the combobox. Language attribute and data type attribute are exclusive and the users only select one of them. 
 
 .. _attr-rdf-literal:
 .. figure:: figures/attribute_dialog_rdf_literal.png
@@ -236,7 +220,6 @@ When the users select an RDF literal in the RDF Editor, the attributes of the RD
    :align: center
 
    Attribute Dialog (RDF Literal)
-
 
 .. index:: Class Editor
 
