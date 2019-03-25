@@ -10,13 +10,13 @@ Tutorial
 ------------------------------   
 Overview
 ------------------------------   
-In this tutorial, we build an RDF document that is introduced in `RDF Primer <https://www.w3.org/TR/rdf11-primer/>`_ by using |MR3|. 
+In this tutorial, we build an RDF(S) document that is introduced in `RDF Primer <https://www.w3.org/TR/rdf11-primer/>`_ by using |MR3|. 
 
-There are two ways to build RDF documents by using |MR3|. One is a top down method. In the top down method, the users firstly build RDFS contents and then build RDF contents by using classes and properties defined in the RDFS contents. The users can also use an existing RDFS document by importing the document into |MR3|.
+There are two ways to build RDF(S) documents by using |MR3|. One is a top down method. In the top down method, the users firstly build RDFS contents and then build RDF contents by using classes and properties defined in the RDFS contents. The users can also use an existing RDFS document by importing the document into |MR3|.
 
 The other is a bottom up method. In the bottom up method. the users can create RDFS classes and properties when they build RDF contents by using RDF(S) contents management facilities.
 
-In this tutorial, we introduce how to build up the RDF document shown below using top down and bottom up methods. You can also check how to build the RDF document from `the videos page <http://mrcube.org/videos.html>`_ in the |MR3| web site. 
+In this tutorial, we introduce how to build up the RDF(S) document shown below using top down and bottom up methods. You can also check how to build the RDF(S) document from `the videos page <http://mrcube.org/videos.html>`_ in the |MR3| web site. 
 
 .. code-block:: turtle
 
@@ -43,12 +43,12 @@ In this tutorial, we introduce how to build up the RDF document shown below usin
         dcterms:subject wd:Q12418 .
 
 --------------------------------------------------
-Building an RDF document by the top down method
+Building an RDF(S) document by the top down method
 --------------------------------------------------
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Registering prefixes and namespaces that are used in the RDF document
+1. Registering prefixes and namespaces that are used in the RDF(S) document
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-At the begininng, the users should register prefixes and the corresponding namespaces in the **[Namespace Table]** to build the RDF document. The **[Namespace Table]** can be shown by selecting |nstable| icon in the toolbar or selecting **[Namespace Table]** sub menu in the **[Window]** menu. :numref:`top-down-step1` shows the correspondence between the namespace prefixes and the namespaces shown below registered in the **[Namespace Table]**. The namespace prefixes **mr3**, **rdf**, **rdfs** and **owl** are registered in the initial state.
+At the begininng, the users should register prefixes and the corresponding namespaces in the **[Namespace Table]** to build the RDF(S) document. The **[Namespace Table]** can be shown by selecting |nstable| icon in the toolbar or selecting **[Namespace Table]** sub menu in the **[Window]** menu. :numref:`top-down-step1` shows the correspondence between the namespace prefixes and the namespaces shown below registered in the **[Namespace Table]**. The namespace prefixes **mr3**, **rdf**, **rdfs** and **owl** are registered in the initial state.
 
 When the users input a prefix in the **[Prefix]** text field, input a namespace in the **[NameSpace]** textfield, and select **[Add]** button, they are registered in the **[Namespace Table]**. Prefixes and namespaces can be used to create resources (RDF resources, RDF properties, RDFS classes, and RDFS properties).
 
@@ -83,7 +83,7 @@ In this step, we insert **foaf:Person** class in the Class editor.
 
 First, when the users click a right mouse button in the **Class Editor**, a popup menu is shown (:numref:`top-down-step2-1`). An RDFS class can be iserted by selecting **[Insert Class]** menu in the popup menu. 
 
-In the example RDF document, **foaf:Person** class is the type of **bob:me** resource. In |MR3|, a type of an RDF resource can be selected from classes in the Class editor. Therefore, in order to select the type of the RDF resource, **foaf:Person** class must be defined before creating the RDF resource by the top down method.
+In the example RDF(S) document, **foaf:Person** class is the type of **bob:me** resource. In |MR3|, a type of an RDF resource can be selected from classes in the Class editor. Therefore, in order to select the type of the RDF resource, **foaf:Person** class must be defined before creating the RDF resource by the top down method.
 
 .. _top-down-step2-1:
 .. figure:: figures/top-down-step2-1.png
@@ -104,7 +104,7 @@ After selecting **[Insert Class]** menu, **[Insert Class]** dialog is shown (:nu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 3. Inserting RDFS properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In this step, insert RDFS properties in the example RDF document (**foaf:knows**, **schema:birthDate**, **foaf:topic_interest**, **dcterms:title**, **dcterms:creator**, **dcterms:subject**). 
+In this step, insert RDFS properties in the example RDF(S) document (**foaf:knows**, **schema:birthDate**, **foaf:topic_interest**, **dcterms:title**, **dcterms:creator**, **dcterms:subject**). 
 
 When the users click a right mouse button in the **Property Editor**, a popup menu is shown. After selecting **[Insert Proerty]** menu, the **[Insert Property]** dialog is shown (:numref:`top-down-step3-1`). An RDFS property is inserted by selecting a prefix from the **[Prefix]** combobox, inputting id in the **[ID]** text field, and selecting the **[OK]** button.
 
@@ -167,7 +167,7 @@ When the users click a right mouse button in the **RDF Editor** and select **[In
 
    Top down step 5-1
 
-:numref:`top-down-step5-2` show the **[Insert Literal]** dialog. An RDF literal is inserted after inputting strings in the **[Literal]** text area and selecting **[OK]** button. When the users check the **[Data type]** checkbox, a data type of a literal can be selected from the **[Data type[** combobox. Here, select **http://www.w3.org/2001/XMLSchema#date** (xsd:date) as the data type of "1990-07-04" literal.
+:numref:`top-down-step5-2` shows the **[Insert Literal]** dialog. An RDF literal is inserted after inputting strings in the **[Literal]** text area and selecting **[OK]** button. When the users check the **[Data type]** checkbox, a data type of a literal can be selected from the **[Data type[** combobox. Here, select **http://www.w3.org/2001/XMLSchema#date** (xsd:date) as the data type of "1990-07-04" literal.
 
 .. _top-down-step5-2:
 .. figure:: figures/top-down-step5-2.png
@@ -179,8 +179,11 @@ When the users click a right mouse button in the **RDF Editor** and select **[In
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 6. Inserting RDF properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In this step, insert RDF properties in the **RDF Editor**. 
+In this step, insert RDF properties in the **RDF Editor**. First, move the mouse cursor to the center of a source (subject) RDF resource. At that time, the shape of mouse cursor changes from arrow to cross. After that, drag the mouse cursor to the center of a target (object) RDF resource or RDF literal. When the shape of mouse cursor changes from arrow to cross, drop the mouse cursor. Then, two nodes are connected with an RDF property. If the users do not select one of the RDFS properties in the **Property Editor**, the RDF property becomes **mr3:nil** which is the default RDF property in |MR3|. If the users select one of the RDFS properties, the selected RDFS property is used for the RDF property.
 
+Here, connect **bob:me** RDF resource and **alice:me** RDF resource with **foaf:knows** RDF property. :numref:`top-down-step6-1` shows the screenshot of connecting these nodes.
+
+In the same way，connect **bob:me** RDF resourcre and **"1990-07-04"** literal with **schema:birthDate** property. Connect **bob:me** RDF resource and **wd:Q12418** RDF resource with **foaf:topic_interest** property. Connect **wd:Q12418** RDF resource and **http://dbpedia.org/resource/Leonardo_da_Vinci** RDF resource with **dcterms:creator** property. Connect **wd:Q12418** RDF resource and **"Mona Lisa"** literal with **dcterms:title** property. **http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619** RDF resource and **wd:Q12418** RDF resource with **dcterms:subject** property.
 
 .. _top-down-step6-1:
 .. figure:: figures/top-down-step6-1.png
@@ -189,13 +192,9 @@ In this step, insert RDF properties in the **RDF Editor**.
 
    Top down step 6-1
 
-Second, move the mouse cursor to the center of an RDF resource, drag the mouse cursor to the center of an RDF resource or an RDF literal, and drop the mouse cursor. Then, two nodes are connected with an RDF property. If the users do not select one of the RDFS properties in the Property Editor, the RDF property become mr3:nil which is the default RDF property in |MR3|. If the users select one of the RDFS properties, the selected RDFS property is used for the RDF property.
+In order to edit an RDF property, the **[Attribute Dialog]** is used. The **[Attribute Dialog]** is shown by clicking |attr-dialog| icon in the toolbar or selecting **[Attribute Dialog]** menu in the popup menu in the **RDF Editor**.
 
-Here, connect **http: //www.w3.org/People/EM/contact#me** RDF resource and **Eric Miller** literal with **contact:fullName** RDF property. In the same way，connect the RDF resourcre and **Dr.** literal with **contact:personalTitle** property. Connect the RDF resource and **mailto:em@w3.org** resource with **contact:mailbox** property.
-
-In order to edit an RDF property, the Attribute Dialog is used. The Attribute Dialog is shown by clicking |attr-dialog| icon in the toolbar or selecting **Show Attribute Dialog menu** in the popup menu in the RDF Editor.
-
-The following figure shows a screenshot of the Attribute Dialog when the users select an RDF property. An RDF property can be edited by selecting a prefix from the Prefix combobox, selecting an id from Property ID list, and selecting Apply button.
+:numref:`top-down-step6-2` shows a screenshot of the **[Attribute Dialog]** when the users select **foaf:knows** RDF property. An RDF property can be edited by selecting a prefix from the **[Prefix]** combobox, selecting an id from **[Property ID]** list, and selecting **[Apply]** button.
 
 .. |attr-dialog| image:: figures/toolbar/attribute_dialog.png 
 
@@ -207,11 +206,11 @@ The following figure shows a screenshot of the Attribute Dialog when the users s
    Top down step 6-2
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7. Exporting the RDF contents as an RDF document
+7. Exporting the RDF contents as an RDF(S) document
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Finally, export the RDF contents as an RDF document.
+Finally, export the RDF contents as an RDF(S) document.
 
-As a result, the following RDFS classes, RDFS properties, and an RDF model are created in each editor.
+As a result, the following RDFS classes, RDFS properties, and an RDF model are created in each editor (:numref:`top-down-step7-1`). 
 
 .. _top-down-step7-1:
 .. figure:: figures/top-down-step7-1.png
@@ -220,10 +219,9 @@ As a result, the following RDFS classes, RDFS properties, and an RDF model are c
 
    Top down step 7-1
 
-First, show the Export Dialog by selecting **Export sub menu** in the File menu or selecting |export| icon in the toolbar. 
+To see how the RDF(S) contents you created is output, show the **RDF Source Code Viewer**. :numref:`top-down-step7-2` shows a screenshot of the **RDF Source Code Viewer**. The **[RDF Source Code Viewer]** is shown by clicking |code_viewer| icon in the toolbar or selecting **[RDF Source Code Viewer]** sub menu on the **Tools** menu. The users can select **Turtle**, **JSONLD**, **XML**, and **N-Triples** formats as the syntax from the radio button. Selecting the radio button will display the RDF source code with the specified syntax.
 
-Second, select Syntax, Data Type, and Option. Here, select RDF/XML as the syntax and select RDF checkbox to export only RDF model as RDF/XML format. The source of the RDF document is shown at bottom part of the Export Dialog.
-
+.. |code_viewer| image:: figures/toolbar/code.png 
 .. |export| image:: figures/toolbar/saveas.png 
 
 .. _top-down-step7-2:
@@ -233,14 +231,21 @@ Second, select Syntax, Data Type, and Option. Here, select RDF/XML as the syntax
 
    Top down step 7-2
 
-When the users select File button, a Save dialog is shown. Then, you can select or create a file to export the RDF document.
-   
+If the users want to output the created RDF(S) content to a file, select the **[Save As]** button on the **[File]** menu. Then, **[Save]** dialog is shown (:numref:`top-down-step7-3`). Select the folder the users want to save, select an RDF format from **[Files of Type]** combobox, and press the **[Save]** button, the RDF(S) content will be saved to the file in the specified format. Here, select **[Turtle（\*.ttl)]** to save the RDF(S) content as Turtle format.
+
+.. _top-down-step7-3:
+.. figure:: figures/top-down-step7-3.png
+   :scale: 50 %
+   :align: center
+
+   Top down step 7-3
+
 --------------------------------------------------------
-Building an RDF document by the bottom up method
+Building an RDF(S) document by the bottom up method
 --------------------------------------------------------
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Registering prefixes and namespaces that are used in the RDF document
+1. Registering prefixes and namespaces that are used in the RDF(S) document
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This step is same as the step1 in the top down method.
 
@@ -296,7 +301,7 @@ If the users click the Yes button in the RDF(S) management dialog, contact:fullN
 Create contact:mailbox and contact:personalTitle properties in the same way.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-5. Exporting the RDF contents as an RDF document
+5. Exporting the RDF(S) contents as an RDF(S) document
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This step is same as the step7 in the top down method.
    
