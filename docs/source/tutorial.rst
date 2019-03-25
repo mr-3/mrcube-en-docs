@@ -254,20 +254,25 @@ This step is same as the step1 in the top down method.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This step is almost same as the step4 in the top down method.
 
-The difference is the type of **http: //www.w3.org/People/EM/contact#me** resource is not defined in the Class Editor at this time. In the bottom up method, the users can create an RDFS class while editing an RDF resource.
+The difference is the type of **bob:me** resource is not defined in the **Class Editor** at this time. In the bottom up method, the users can create an RDFS class while editing an RDF resource.
 
-The attributes of **http: //www.w3.org/People/EM/contact#me** resource are shown in the Attribute Dialog by selecting the resource and showing the Attribute Dialog. Then, select Type item in the left side list. After that, Check isType checkbox, select contact from the Prefix combobox, and input Person in the Resource Type ID. If the selected class is defined in the Class Editor, the selected class can be set as a type of an RDF resource. In this case, since the selected class (contact:Person) is not defined in the Class Editor, the selected class can not be set as the type of the RDF resource in this state. In this situation, |MR3| performs an RDF(S) management facility to maintain consistency. When the users click Apply button in the Attribute Dialog, RDF(S) management dialog is shown as follows. 
+The attributes of **bob:me** resource are shown in the **[Attribute Dialog]** by selecting the resource and showing the **[Attribute Dialog]**. Then, select **[Resource Type]** item in the left side list. After that, **[Resource Type]** checkbox, select **foaf** from the **[Prefix]** combobox, and input **Person** in the **[Resource Type ID]** text field. If the selected class is defined in the **Class Editor**, the selected class can be set as a type of the RDF resource. In this case, since the selected class (**foaf:Person**) is not defined in the **Class Editor**, the selected class can not be set as the type of the RDF resource in this state. In this situation, |MR3| performs an RDF(S) management facility to maintain consistency. When the users click **[Apply]** button in the **[Attribute Dialog]**, the **[RDF(S) management]** dialog is shown (:numref:`bottom-up-step2-1`). 
 
-
+.. _bottom-up-step2-1:
 .. figure:: figures/bottom-up-step2-1.png
    :scale: 25 %
    :align: center
 
-If the users click the Yes button in the RDF(S) management dialog, contact:Person class is created in the Class Editor as follows.
+   Bottom up step 2-1
 
+If the users click the **[Yes]** button in the **[RDF(S) management]** dialog, **foaf:Person** class is created in the **Class Editor** as shown in :numref:`bottom-up-step2-2`.
+
+.. _bottom-up-step2-2:
 .. figure:: figures/bottom-up-step2-2.png
    :scale: 25 %
    :align: center
+
+   Bottom up step 2-2
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 3. Inserting RDF literals
@@ -279,26 +284,30 @@ This step is same as the step5 in the top down method.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This step is almost same as the step6 in the top down method.
 
-The difference is RDFS properties are not defined in the Property Editor at this time. In the bottom up method, the users can create an RDFS property while editing an RDF property.
+The difference is RDFS properties are not defined in the **Property Editor** at this time. In the bottom up method, the users can create an RDFS property while editing an RDF property. Here, we would like to explain how to create **foaf:knows** property by the bottom up method.
 
-First, select an RDF property and show the Attribute Dialog. At this time, RDF resources and literals are connected with mr3:nil property. 
+First, select the RDF property which connects **bob:me** and **alice:me** RDF resources and show the **Attribute Dialog**. At this time, the RDF property is **mr3:nil** property. 
 
-Second, uncheck the Show Property Prefix Only checkbox. If this checkbox is checked, the users only select prefixes that RDFS properties defined in the Property Editor have. In this case, since any RDFS properties are not defined in the Property Editor, uncheck the checkbox to select contact prefix.
+Then, select **foaf** prefix in the **[Prefix]** combobox. Since there are no Ids in the **[Property ID]** list, input **knows** in the **[ID]** text field and click **[Apply]** button. Then, the **[RDF(S) management]** dialog is shown to maintain the consistency.
+:numref:`bottom-up-step4-1` shows a screenshot when the users input **knows** in the **[ID]** text field and click the **[Apply]** button.
 
-Third, select contact prefix in the Prefix combobox. since there are no Ids in the Property ID list, input an id in the ID text field and click Apply button. Then, the RDF(S) management dialog is shown to maintain the consistency. The following figure shows a screenshot when the users input fullName in the ID text field and click the Apply button.
-
-
+.. _bottom-up-step4-1:
 .. figure:: figures/bottom-up-step4-1.png
    :scale: 25 %
    :align: center
-   
-If the users click the Yes button in the RDF(S) management dialog, contact:fullName property is created in the Property Editor as follows.
 
+   Bottom up step 4-1
+
+If the users click the **[Yes]** button in the **[RDF(S) management]** dialog, **foaf:knows** property is created in the **Property Editor** as shown in :numref:`bottom-up-step4-2`.
+
+.. _bottom-up-step4-2:
 .. figure:: figures/bottom-up-step4-2.png
    :scale: 25 %
    :align: center
 
-Create contact:mailbox and contact:personalTitle properties in the same way.
+   Bottom up step 4-2
+
+Create **schema:birthDate**, **foaf:topic_interest**, **dcterms:title**, **dcterms:creator**, and **dcterms:subject** properties in the same way.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 5. Exporting the RDF(S) contents as an RDF(S) document
