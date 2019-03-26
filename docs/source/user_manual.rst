@@ -225,21 +225,21 @@ When the users select an RDF literal in the **RDF Editor**, the attributes of th
 
 Class Editor
 --------------
-The Class Editor allows the users to edit the attributes of RDFS classes and the relationships between the classes.
+The **Class Editor** allows the users to edit the attributes of RDFS classes and the relationships between the classes.
 
-:numref:`class-editor` shows an screenshot of the Class Editor
+:numref:`class-editor` shows a screenshot of the **Class Editor**.
 
 .. _class-editor:
 .. figure:: figures/class_editor.png
    :scale: 25 %
-   :alt: An screenshot of the Class Editor
+   :alt: A screenshot of the Class Editor
    :align: center
    
-   An screenshot of the Class Editor
+   A screenshot of the Class Editor
 
 Toolbar in the Class Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Icons in the toolbar in the Class editor and the corresponding functions are shown in the following table.
+Icons in the toolbar in the **Class Editor** and the corresponding functions are shown in the following table.
 
 .. csv-table::
    :header: Icon, Function
@@ -260,7 +260,7 @@ Icons in the toolbar in the Class editor and the corresponding functions are sho
 
 Popup menu in the Class Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When users right click in the Class editor, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. The popup menus are shown as follows.
+When users right click in the **Class Editor**, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. The popup menus are shown as follows.
 
 .. figure:: figures/popup_menu_class_editor.png
    :scale: 60 %
@@ -278,10 +278,6 @@ When users right click in the Class editor, a popup menu is shown. The contents 
 
 Insert Class
     Insert an RDFS class to the position that the mouse is right clicked. If one or more RDFS classes are selected, an RDFS class is inserted as the sub classes of the selected classes.
-Connect Mode
-   Change the mode to connect mode from move mode. When the mode is connect mode, users can connect classes by dragging and dropping.
-Move Mode
-    Change the mode to move mode from connect mode. When the mode is move mode, users can move nodes in the Class editor.
 Transform from Class to RDF
     Transform the selected RDFS classes to RDF resources. 
 Transform from Class to Property
@@ -294,14 +290,14 @@ Paste
     Paste copied RDFS classes and the relationships between the classes.
 Remove
     Remove selected RDFS classes and the relationships between the classes.
-Show Attribute Dialog
-    Show the Attribute Dialog
+Attribute Dialog
+    Show the **Attribute Dialog**.
 
 Editing attributes of the Class editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When the users select an RDFS class in the Class Editor, the attributes of the RDFS class are shown in the Attribute Dialog (:numref:`attr-class-basic` to :numref:`attr-class-upper-class`). The users can edit the attributes of an RDFS class by selecting Base, Label, Comment, Instances, or UpperClasses items from the left side menu in the Attribute Dialog.
+When the users select an RDFS class in the **Class Editor**, the attributes of the RDFS class are shown in the **Attribute Dialog** (:numref:`attr-class-basic` to :numref:`attr-class-upper-class`). The users can edit the attributes of an RDFS class by selecting Base, Label, Comment, Instances, or SuperClasses items from the left side menu in the **Attribute Dialog**.
 
-When the users select the Base item, the type of an RDFS class and the URI can be edited (:numref:`attr-class-basic`).  The types can be defined class class list in the Config Dialog. When the users select the Label item, the value of rdfs:label property can be edited. When the users select the Comment item, the value of rdfs:comment property can be edited. The methods for editing rdfs:label and rdfs:comment are same as RDF resource. When the users select the Instances item, the instances of the selected RDFS class are shown in the list (:numref:`attr-class-instance`). When the users select the one of the items in the list, corresponding RDF resource is selected and the attributes of the RDF resource are shown in the Attribute Dialog. When the users select the UpperClasses item, the uppser classes of the selected RDFS class are shown in the list (:numref:`attr-class-upper-class`).
+When the users select the **[Base]** item, the type of an RDFS class and the URI can be edited (:numref:`attr-class-basic`).  The **[Resource Type]** can be defined by **[Class Class List]** in the **Option Dialog**. When the users select the **[Label]** item, the value of **rdfs:label** property can be edited. When the users select the **[Comment]** item, the value of **rdfs:comment** property can be edited. The methods for editing **rdfs:label** and **rdfs:comment** are same as RDF resource. When the users select the **[Instances]** item, the instances of the selected RDFS class are shown in the list (:numref:`attr-class-instance`). When the users select the one of the items in the list, corresponding RDF resource is selected and the attributes of the RDF resource are shown in the **Attribute Dialog**. When the users select the ***[SuperClasses]** item, the super classes of the selected RDFS class are shown in the list (:numref:`attr-class-upper-class`).
 
 .. _attr-class-basic:
 .. figure:: figures/attribute_dialog_rdfs_class_basic.png
@@ -325,7 +321,7 @@ When the users select the Base item, the type of an RDFS class and the URI can b
    :alt: Attribute Dialog (Upper classes of the RDFS class)
    :align: center
 
-   Attribute Dialog (Upper classes of the RDFS class)
+   Attribute Dialog (Super classes of the RDFS class)
 
 
 .. index:: Property Editor
@@ -333,21 +329,21 @@ When the users select the Base item, the type of an RDFS class and the URI can b
 
 Property Editor
 ------------------
-The Property Editor allows the users to edit the attributes of RDFS properties and the relationships between the properties.
+The **Property Editor** allows the users to edit the attributes of RDFS properties and the relationships between the properties.
 
-:numref:`property-editor` shows an screenshot of the Property Editor
+:numref:`property-editor` shows a screenshot of the **Property Editor**.
 
 .. _property-editor:
 .. figure:: figures/property_editor.png
    :scale: 25 %
-   :alt: An screenshot of the Property Editor
+   :alt: A screenshot of the Property Editor
    :align: center
    
-   An screenshot of the Property Editor
+   A screenshot of the Property Editor
 
 Toolbar in the Property Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Icons in the toolbar in the Property editor and the corresponding functions are shown in the following table.
+Icons in the toolbar in the **Property Editor** and the corresponding functions are shown in the following table.
 
 .. csv-table::
    :header: Icon, Function
@@ -368,7 +364,7 @@ Icons in the toolbar in the Property editor and the corresponding functions are 
 
 Popup menu in the Property Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When users right click in the Property editor, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. The popup menus are shown as follows.
+When users right click in the **Property Editor**, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. The popup menus are shown as follows.
 
 .. figure:: figures/popup_menu_selected_property_editor.png
    :scale: 60 %
@@ -386,10 +382,6 @@ When users right click in the Property editor, a popup menu is shown. The conten
 
 Insert Property
     Insert an RDFS property to the position that the mouse is right clicked. If one or more RDFS properties are selected, an RDFS property is inserted as the sub properties of the selected properties.
-Connect Mode
-   Change the mode to connect mode from move mode. When the mode is connect mode, users can connect propertie by dragging and dropping.
-Move Mode
-    Change the mode to move mode from connect mode. When the mode is move mode, users can move nodes in the Property editor.
 Transform from Property to RDF
     Transform the selected RDFS properties to RDF resources
 Transform from Property to Class
@@ -402,12 +394,12 @@ Paste
     Paste the copied RDFS properties and the relationships between the properties
 Remove
     Remove the selected RDFS properties and the relationships between the properties
-Show Attribute Dialog
+Attribute Dialog
     Show the Attribute Dialog
 
 Editing attributes of the Property editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When the users select an RDFS property in the Property Editor, the attributes of the RDFS property are shown in the Attribute Dialog (:numref:`attr-property-region`  and :numref:`attr-property-instance`).  The users can edit the attributes of an RDFS property by selecting Base, Label, Comment, Region, Instance, or SuperProperties items in the left side menu of the Attribute Dialog. Base, Label, and Comment items are same as RDFS Class. The type list in the Base item can be defined in the property class list in the Config Dialog. When the users select Region item, domains and ranges of the selected RDFS property can be edited (:numref:`attr-property-region`). When the users select Instances item, RDF resource list that have the selected RDFS property is shown in the Attribute Dialog (:numref:`attr-property-instance`). When the users select the one of the items in the list, the RDF resource is selected and the attributes of the RDF resource are shown in the Attribute Dialog. When the users select SuperProperties item, super properties of the selected RDFS property are shown in the list.
+When the users select an RDFS property in the **Property Editor**, the attributes of the RDFS property are shown in the **Attribute Dialog** (:numref:`attr-property-region`  and :numref:`attr-property-instance`).  The users can edit the attributes of an RDFS property by selecting **[Base]**, **[Label]**, **[Comment]**, **[Domain/Range]**, **[Instances]**, or **[SuperProperties]** items in the left side menu of the **Attribute Dialog**. **[Base]**, **[Label]**, and **[Comment]** items are same as RDFS Class. The **[Resource Type]** list in the **[Base]** item can be defined by the **[Property Class List]** in the **Option Dialog**. When the users select **[Domain/Range]** item, domains and ranges of the selected RDFS property can be edited (:numref:`attr-property-region`). When the users select **[Instances]** item, RDF resource list that have the selected RDFS property is shown in the **Attribute Dialog** (:numref:`attr-property-instance`). When the users select the one of the items in the list, the RDF resource is selected and the attributes of the RDF resource are shown in the **Attribute Dialog**. When the users select **[SuperProperties]** item, super properties of the selected RDFS property are shown in the list.
 
 .. _attr-property-region:
 .. figure:: figures/attribute_dialog_rdfs_property_region.png
@@ -429,7 +421,7 @@ When the users select an RDFS property in the Property Editor, the attributes of
 
 Resource Search Dialog
 --------------------------
-The users can find resources (RDF resources, RDF properties, RDFS classes, and RDFS properties) by using Resource Search Dialog. :numref:`resource-search-dialog` shows a screenshot of the Resource Search Dialog. The users can set search scope by checking the Graph Type (RDF, Class, or Property). When the users set a URI in the URI text field, resources that partially match the URI are shown in the Find Result list in the Resource Search Dialog. When the users select the one of the items in the list, corresponding resource is selected and the attributes of the resource are shown in the Attribute Dialog. The users can set the value of rdfs:label and rdfs:comment in the Label or Comment text field. 
+The users can find resources (RDF resources, RDF properties, RDFS classes, and RDFS properties) by using **Resource Search Dialog**. :numref:`resource-search-dialog` shows a screenshot of the **Resource Search Dialog**. When the users enter a string in the **[Keyword]** text field, the corresponding resource list is displayed in the **[Find Result]** list at the bottom of :numref:`resource-search-dialog`. The serach targets are URIs, labels, and comments of RDFS classes, properties, and RDF resources. When the users select the one of the items in the list, corresponding resource is selected and the attributes of the resource are shown in the **Attribute Dialog**. 
 
  .. _resource-search-dialog:
  .. figure:: figures/resource_search_dialog.png
@@ -443,11 +435,11 @@ The users can find resources (RDF resources, RDF properties, RDFS classes, and R
 
 Namespace Table
 -------------------
-The users can register perfixes and the corresponding namespaces in the Namespace Table. :numref:`namespace-table` shows a screenshot of the Namespace Table. When the users set a prefix in the Prefix text field, set a namespace in the NameSpace text field, and click Add button, the prefix and the namespace are added in the table in the Namespace Table. If the users would like to remove the prefix and the corresponding namespace, select the line in the table and click Remove button. If the users check the available checkbox, namespaces of resources in each editor are replaced with the corresponding prefix (This function is only available when the Display->URI menu is selected.). When the users set a URI of an resource, the Namespace Table is referred and the users can select the registered prefixes in the Attribute Dialog. When the users select one of the prefixes, the corresponding namespace is shown in the Namespace label or RDF Resource text field.
+The users can register perfixes and the corresponding namespaces in the **Namespace Table**. :numref:`namespace-table` shows a screenshot of the **Namespace Table**. When the users set a prefix in the **[Prefix]** text field, set a namespace in the **[NameSpace]** text field, and click **[Add]** button, the prefix and the namespace are added in the table in the **Namespace Table**. If the users would like to remove the prefix and the corresponding namespace, select the line in the table and click **[Remove]** button. If the users check the available checkbox, namespaces of resources in each editor are replaced with the corresponding prefix (This function is only available when the View->URI menu is selected.). When the users set a URI of an resource, the **Namespace Table** is referred and the users can select the registered prefixes in the **Attribute Dialog**. When the users select one of the prefixes, the corresponding namespace is shown in the **[Namespace]** label or **[RDF Resource]** text field.
 
 .. _namespace-table:
 .. figure:: figures/namespace_table.png
-   :scale: 50 %
+   :scale: 40 %
    :alt: A screenshot of the Namespace Table
    :align: center
 
@@ -458,13 +450,13 @@ The users can register perfixes and the corresponding namespaces in the Namespac
 
 Remove Dialog
 -----------------
-If an RDFS class is referred by a type of a resource or a domain or a range of a property, it is inconsistency when the RDFS class is removed. If an RDFS property is reffered in the RDF editor, it is inconsistency when the RDFS property is removed. In these cases, when the users remove those RDFS classes or properties, the Remove Dialog as shown in :numref:`remove-dialog` is shown before removing them actually.
+If an RDFS class is referred by a type of a resource or a domain or a range of a property, it is inconsistency when the RDFS class is removed. If an RDFS property is reffered in the RDF editor, it is inconsistency when the RDFS property is removed. In these cases, when the users remove those RDFS classes or properties, the **Remove Dialog** as shown in :numref:`remove-dialog` is shown before removing them actually.
 
-Removed RDFS classes or properties are shown in the upper part of :numref:`remove-dialog`. RDF resources that referred the removed RDFS classes as their type are shown in the RDF tab in the lower part of :numref:`remove-dialog`. RDF properties that referred the removed RDFS properties are also shown in the RDF tab. RDFS properties that refer removed RDFS classes as their domains or ranges are shown in the Property tab in the lower part of :numref:`remove-dialog`.
+Removed RDFS classes or properties are shown in the upper part of :numref:`remove-dialog`. RDF resources that referred the removed RDFS classes as their type are shown in the **[RDF Editor]** tab in the lower part of :numref:`remove-dialog`. RDF properties that referred the removed RDFS properties are also shown in the **[RDF Editor]** tab. RDFS properties that refer removed RDFS classes as their domains or ranges are shown in the **[Property Editor]** tab in the lower part of :numref:`remove-dialog`.
 
-If the users check the Delete Checkboxes and click Apply button, RDF resources, RDF properties, and RDFS properties that listed in the lower part of the Remove Dialog stop referring to the removed RDFS classes or RDFS properties. Then, the RDFS classes and RDFS properties are actually removed. 
+If the users check the **[Delete Check]** Checkboxes and click **[Apply]** button, RDF resources, RDF properties, and RDFS properties that listed in the lower part of the **Remove Dialog** stop referring to the removed RDFS classes or RDFS properties. Then, the RDFS classes and RDFS properties are actually removed. 
 
-If the users select one of the RDF resources, RDF properties, or RDFS properties, attributes of the selected resource are shown in the Attribute Dialog. Then, the users can edit the attributes to maintain consistency.
+If the users select one of the RDF resources, RDF properties, or RDFS properties, attributes of the selected resource are shown in the **Attribute Dialog**. Then, the users can edit the attributes to maintain consistency.
 
 .. _remove-dialog:
 .. figure:: figures/remove_dialog.png
@@ -479,7 +471,9 @@ If the users select one of the RDF resources, RDF properties, or RDFS properties
 
 Import Dialog
 --------------------
-The users can import RDF(S) documents described as Turtle, JSONLD, RDF/XML, or N-Triples format to |MR3| by using Import Dialog. :numref:`import-dialog` shows a screenshot of the Import Dialog. 
+The users can import RDF(S) documents described as Turtle, JSONLD, RDF/XML, N-Triples, or mr3 format to |MR3| by using Import Dialog. :numref:`import-dialog` shows a screenshot of the **Import Dialog**. The users can open **Import Dialog** by clicking **[Open]** sub menu in the **[File]** menu or clicking |open| icon in the Toolbar.
+
+First, select a file that the users want to open. Then, select a file format from the **[Files of Type]**. Finally, select **[Open]** button. 
 
  .. _import-dialog:
  .. figure:: figures/import_dialog.png
@@ -489,11 +483,30 @@ The users can import RDF(S) documents described as Turtle, JSONLD, RDF/XML, or N
 
    A screenshot of the Import Dialog
 
+.. |open| image:: figures/toolbar/open.png 
+
+If the users select **[All Files]** from the **[Files of Type]**, the file format is automatically detected from the extension of the file. The correspondence between the extension and the file format is shown below.
+
+.. _ext-description:
+.. csv-table::
+   :header: Extension, File format
+   :align: center
+   :widths: 5, 10 
+
+   ttl, Turtle
+   jsonld, JSONLD
+   n3, N-Triples
+   rdf, RDF/XML
+   mr3, MR^3 project
+
+
 .. index:: Export Dialog
 
 Export Dialog
 ----------------------
-The users can export RDF(S) data graphs in |MR3| to an RDF(S) document as Turtle, JSONLD, RDF/XML, or N-Triples syntax. :numref:`export-dialog` shows a screenshot of the Export Dialog. 
+The users can export RDF(S) data graphs in |MR3| to an RDF(S) document as Turtle, JSONLD, RDF/XML, N-Triples, or mr3 syntax by using the **Export Dialog**. :numref:`export-dialog` shows a screenshot of the **Export Dialog**. The users can open **Export Dialog** by clicking **[Save As]** sub menu in the **[File]** menu or clicking |saveas| icon in the Toolbar.
+
+First, select a file that the users want to save. Then, select a file format from the **[Files of Type]**. Finally, select **[Save]** button. If the users select **[All Files]** from the **[Files of Type]**, the file format is automatically detected from the extension of the file. 
 
 .. _export-dialog:
 
@@ -503,80 +516,82 @@ The users can export RDF(S) data graphs in |MR3| to an RDF(S) document as Turtle
    :align: center
 
    A screenshot of the Export Dialog
-    
-.. index:: Config Dialog
 
-Config Dialog
+.. |saveas| image:: figures/toolbar/saveas.png 
+
+.. index:: Option Dialog
+
+Option Dialog
 ----------------
-The users can set configurations about basic, directory, proxy, meta class, layout, and rendering in the Config Dialog.
+The users can set configurations about **[Base]**, **[Directory]**, **[Proxy]**, **[Meta Class]**, and **[Layout]** in the **Option Dialog**.
 
-Basic
+Base
 ~~~~~~~~~
-When the users select the Basic item as shown in :numref:`config-basic`, language, UI language, output encoding, font, base URI, and log file can be set. If a resource has many multilingual labels, the users should select the prior language. The prior language of labels can be set in the Lang text field. Labels with prior language are shown in each resource when the user select display->label menu. Language of UI such as menu can be set in the UI Lang list. The users can select ja (Japanese), en (English), or zh (Chinsese) from the UI Lang list. Output encoding can be used to export an RDF(S) document. The font of resources can be set by clicking Font Setting button and selecting a font from the font selecting dialog. Default namespace is set based on the Base URI. The directory that a log file is saved can be set by clicking Browse button and selecting the directory from the directory selection dialog.
+When the users select the **[Base]** item as shown in :numref:`config-basic`, language, UI language, base URI, and log file can be set. If a resource has many multilingual labels, the users should select the prior language. The prior language of labels can be set in the **[Lang]** text field. Labels with prior language are shown in each resource when the user select View->label menu. Language of UI such as menu can be set in the **[UILang]** combobox. The users can select ja (Japanese), en (English), or zh (Chinsese) from the **[UILang]** combobox. Default namespace is set based on the **[Base URI]**. The directory that a log file is saved can be set by clicking **[Browse]** button and selecting the directory from the **directory selection dialog**.
 
 .. _config-basic:
 
 .. figure:: figures/config_dialog_basic.png
    :scale: 50 %
-   :alt: Config Dialog: Basic
+   :alt: Option Dialog: Base
    :align: center
 
-   Config Dialog: Basic
+   Option Dialog: Base
 
 Directory
 ~~~~~~~~~~~~
-When the users select the Directory item as shown in :numref:`config-directory`, work directory, plugins directory, and resources directory can be set. The work directory is a directory that is opened firstly when the users import an RDF(S) document. The plugins directory is a directory that plug-ins of |MR3| are saved. The resources directory is a directory that property files are saved. The property files are defined labels that displayed in |MR3| for each language.
+When the users select the **[Directory]** item as shown in :numref:`config-directory`, work directory and resources directory can be set. The work directory is a directory that is opened firstly when the users import an RDF(S) document. The resources directory is a directory that property files are saved. The property files are defined labels that displayed in |MR3| for each language.
 
 .. _config-directory:
 .. figure:: figures/config_dialog_directory.png
    :scale: 50 %
-   :alt: Config Dialog: Directory
+   :alt: Option Dialog: Directory
    :align: center
 
-   Config Dialog: Directory
+   Option Dialog: Directory
    
 Proxy
 ~~~~~~~~
-When the users select the Proxy item as shown in :numref:`config-proxy`, a host name and a port number of a proxy server can be set. This configuration is necessary to import an RDF(S) document from a URI when the user's environment is under a proxy server.
+When the users select the **[Proxy]** item as shown in :numref:`config-proxy`, a host name and a port number of a proxy server can be set. This configuration is necessary to import an RDF(S) document from a URI when the user's environment is under a proxy server.
 
 .. _config-proxy:
 .. figure:: figures/config_dialog_proxy.png
    :scale: 50 %
-   :alt: Config Dialog: Proxy
+   :alt: Option Dialog: Proxy
    :align: center
 
-   Config Dialog: Proxy
+   Option Dialog: Proxy
 
 Meta Class
 ~~~~~~~~~~~~~~
-When the users select the Meta Class item as shown in :numref:`config-metaclass`, Class Class and Property Class can be set. If the users set a Class Class, |MR3| regards resources that have the Class Class as their type as classes. If the users set a Property Class, |MR3| regards resources that have the Property Class as their type as properties. These classes and properties are imported in the RDFS class editor or RDFS property editor. 
+When the users select the **[Meta Class]** item as shown in :numref:`config-metaclass`, **[Class Class]** and **[Property Class]** can be set. If the users set a **Class Class**, |MR3| regards resources that have the **Class Class** as their type as classes. If the users set a **Property Class**, |MR3| regards resources that have the **Property Class** as their type as properties. These classes and properties are imported in the **Class Editor** or **Property Editor**. 
 
-In the initial setting, rdfs:Class is defined in Class Class and rdf:Property is defined in Property Class. If the users would like to import OWL classes and properties, owl:Class must be set as Class Class, owl:ObjectProperty and owl:DatatypeProperty must be set as Property Class.
+In the initial setting, **rdfs:Class** is defined in **Class Class** and **rdf:Property** is defined in **Property Class**. If the users would like to import OWL classes and properties, **owl:Class** must be set as **Class Class**, **owl:ObjectProperty** and **owl:DatatypeProperty** must be set as **Property Class**.
 
 .. _config-metaclass:
 .. figure:: figures/config_dialog_metaclass.png
    :scale: 50 %
-   :alt: Config Dialog; Meta Class
+   :alt: Option Dialog; Meta Class
    :align: center
 
-   Config Dialog: Meta Class
+   Option Dialog: Meta Class
 
 Layout
 ~~~~~~~~~~
-When the users select the Layout item as shown in :numref:`config-layout`, methods for layout for each editor can be set.
+When the users select the **[Layout]** item as shown in :numref:`config-layout`, methods for layout for each editor can be set.
 
 .. _config-layout:
 .. figure:: figures/config_dialog_layout.png
    :scale: 50 %
-   :alt: Config Dialog: Layout
+   :alt: Option Dialog: Layout
    :align: center
 
-   Config Dialog: Layout
+   Option Dialog: Layout
 
 
 Validator
 -----------
-When the users select Validator sub menu in the Tool menu, the dialog as shown in :numref:`validator-dialog` is shown. |MR3| uses Apache Jena's validation API (`org.apache.jena.reasoner.ValidityReport <https://jena.apache.org/documentation/javadoc/jena/org/apache/jena/reasoner/ValidityReport.html>`_ ) and it is enabled to check if the data type of literals are defined based on a range of property.
+When the users select **[Validator]** sub menu in the **[Tool]** menu, the dialog as shown in :numref:`validator-dialog` is shown. |MR3| uses Apache Jena's validation API (`org.apache.jena.reasoner.ValidityReport <https://jena.apache.org/documentation/javadoc/jena/org/apache/jena/reasoner/ValidityReport.html>`_ ) and it is enabled to check if the data type of literals are defined based on a range of property.
 
 .. _validator-dialog:
 .. figure:: figures/validator_dialog.png
@@ -588,7 +603,7 @@ When the users select Validator sub menu in the Tool menu, the dialog as shown i
 
 Project Info
 ------------------
-When the users select Project Info sub menu in the Tool menu, the dialog as shown in :numref:`project-info-dialog` is shown. The current project name, the number of RDF resources, the number of RDF literals, the number of RDF statements, the number of classes, the number of properties, the number of all resources, the number of all literals, the number of all statements are shown in the dialog.
+When the users select **[Project Info]** sub menu in the **[Tool]** menu, the dialog as shown in :numref:`project-info-dialog` is shown. The current project name, the number of RDF resources, the number of RDF literals, the number of RDF statements, the number of classes, the number of properties, the number of all resources, the number of all literals, the number of all statements are shown in the dialog.
 
 .. _project-info-dialog:
 .. figure:: figures/project_info_dialog.png
@@ -601,7 +616,7 @@ When the users select Project Info sub menu in the Tool menu, the dialog as show
 
 Log Console
 -----------------
-When the users select Show Log Console sub menu in the Tool menu, the dialog as shown in :numref:`log-console` is shown. The users can confirm the standard output and the standard error in the dialog. 
+When the users select Show **[Log Console]** sub menu in the **[Tool]** menu, the dialog as shown in :numref:`log-console` is shown. The users can confirm the standard output and the standard error in the dialog. 
 
 .. _log-console:
 .. figure:: figures/log_console.png
@@ -611,9 +626,9 @@ When the users select Show Log Console sub menu in the Tool menu, the dialog as 
 
    Log Console
 
-About MR3
------------
-When the users select About MR3 sub menu in the Help menu, the dialog as shown in :numref:`about-mr3` is shown. The developer, version, license, project web site, contact, and libraries used in |MR3| are shown in the dialog.
+About MR^3
+----------------
+When the users select About **[MR^3]** sub menu in the **[Help]** menu, the dialog as shown in :numref:`about-mr3` is shown. The developer, version, license, project web site, contact, and libraries used in |MR3| are shown in the dialog.
 
 .. _about-mr3:
 .. figure:: figures/about_dialog.png
@@ -621,7 +636,7 @@ When the users select About MR3 sub menu in the Help menu, the dialog as shown i
    :alt: About MR3
    :align: center
 
-   About MR3
+   About MR^3
 
 
 Menu
@@ -697,7 +712,7 @@ Project Information
 Log Console
     Show Log Console which outputs standard outputs and standard error outputs in MR\ :sup:`3` \.
 Option
-    Dhow Option Dialog.
+    Show Option Dialog.
 
 Help
 ~~~~~~~~~
@@ -731,7 +746,7 @@ Toolbar
    .. figure:: figures/toolbar/accept.png, Validate RDFs contents
    .. figure:: figures/toolbar/information.png, Show Project Information
    .. figure:: figures/toolbar/log_console.png, Show Log Console
-   .. figure:: figures/toolbar/cog.png, Show Config Dialog
+   .. figure:: figures/toolbar/cog.png, Show Option Dialog
    .. figure:: figures/toolbar/help.png, Show about MR\ :sup:`3` \
 
 Shortcut keys
