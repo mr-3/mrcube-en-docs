@@ -7,7 +7,7 @@ Installation
 
 Requirements
 ------------
-MR\ :sup:`3` \ is implemented by Java language. JRE (Java Runtime Environment) 11 or later is required to execute.
+MR\ :sup:`3` \ is implemented by Java language. JRE (Java Runtime Environment) 11 or later is required to execute. In ver. 2019.03_1, JRE 11 is embedded, so there is no need to install a JRE.
 
 We confirmed MR\ :sup:`3` \ following environemnt.
 
@@ -16,12 +16,14 @@ We confirmed MR\ :sup:`3` \ following environemnt.
 
 How to Install
 --------------
-#. Download the file from `Download Page <https://sourceforge.net/projects/mr3/>`_ 
-#. Execute MR3.exe or MR3.app in the extracted folder.
+#. Download the file from `Download Page <https://sf.net/projects/mr3/>`_  
+    * For Windows: **mrcube-2019.03_1_win.zip**
+    * For macos:  **mrcube-2019.03_1_mac.zip**
+#. Extract the file and execute mrcube.bat (Windows) or mrcube (macos) in the **bin** folder.
 
 How to Uninstall
 ----------------
-#. Remove the extracted folder.
+* Remove the extracted folder.
 
 Used libraries
 --------------
