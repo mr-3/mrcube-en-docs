@@ -523,11 +523,11 @@ First, select a file that the users want to save. Then, select a file format fro
 
 Option Dialog
 ----------------
-The users can set configurations about **[Base]**, **[Directory]**, **[Proxy]**, **[Meta Class]**, and **[Layout]** in the **Option Dialog**.
+The users can set configurations about **[Base]**, **[Meta Class]**, **[Layout]**, and **[Rendering]** in the **Option Dialog**.
 
 Base
 ~~~~~~~~~
-When the users select the **[Base]** item as shown in :numref:`config-basic`, language, UI language, base URI, and log file can be set. If a resource has many multilingual labels, the users should select the prior language. The prior language of labels can be set in the **[Lang]** text field. Labels with prior language are shown in each resource when the user select View->label menu. Language of UI such as menu can be set in the **[UILang]** combobox. The users can select ja (Japanese), en (English), or zh (Chinsese) from the **[UILang]** combobox. Default namespace is set based on the **[Base URI]**. The directory that a log file is saved can be set by clicking **[Browse]** button and selecting the directory from the **directory selection dialog**.
+When the users select the **[Base]** item as shown in :numref:`config-basic`, language, UI language, base URI, work directory, and proxy can be set. If a resource has many multilingual labels, the users should select the prior language. The prior language of labels can be set in the **[Lang]** text field. Labels with prior language are shown in each resource when the user select View->label menu. Language of UI such as menu can be set in the **[UILang]** combobox. The users can select ja (Japanese), en (English), or zh (Chinsese) from the **[UILang]** combobox. Default namespace is set based on the **[Base URI]**. The work directory is a directory that is opened firstly when the users import an RDF(S) document. When the users check **[Proxy]** checkbox, a host name and a port number of a proxy server can be set. This configuration is necessary to import an RDF(S) document from a URI when the user's environment is under a proxy server.
 
 .. _config-basic:
 
@@ -537,30 +537,6 @@ When the users select the **[Base]** item as shown in :numref:`config-basic`, la
    :align: center
 
    Option Dialog: Base
-
-Directory
-~~~~~~~~~~~~
-When the users select the **[Directory]** item as shown in :numref:`config-directory`, work directory and resources directory can be set. The work directory is a directory that is opened firstly when the users import an RDF(S) document. The resources directory is a directory that property files are saved. The property files are defined labels that displayed in |MR3| for each language.
-
-.. _config-directory:
-.. figure:: figures/config_dialog_directory.png
-   :scale: 50 %
-   :alt: Option Dialog: Directory
-   :align: center
-
-   Option Dialog: Directory
-   
-Proxy
-~~~~~~~~
-When the users select the **[Proxy]** item as shown in :numref:`config-proxy`, a host name and a port number of a proxy server can be set. This configuration is necessary to import an RDF(S) document from a URI when the user's environment is under a proxy server.
-
-.. _config-proxy:
-.. figure:: figures/config_dialog_proxy.png
-   :scale: 50 %
-   :alt: Option Dialog: Proxy
-   :align: center
-
-   Option Dialog: Proxy
 
 Meta Class
 ~~~~~~~~~~~~~~
@@ -589,6 +565,44 @@ When the users select the **[Layout]** item as shown in :numref:`config-layout`,
    Option Dialog: Layout
 
 
+Rendering
+~~~~~~~~~~
+When the users select the **[Rendering]** item as shown in :numref:`config-rendering`, the colors (text display color, background color, selected background color, line color, and selected line color) for the data graph components (RDF resources, RDF properties, RDF literals, classes, properties, editors) in each editor can be set. Check the **[Black-and-White]** checkbox to change all colors to black and white. Check **[Antialias]** to make jaggies (pixel jagged) less noticeable. You can reset the colors of all elements to their initial values by pressing the **[Set Default Colors]** button.
+
+.. _config-rendering:
+.. figure:: figures/config_dialog_rendering.png
+   :scale: 50 %
+   :alt: Option Dialog: Rendering
+   :align: center
+
+   Option Dialog: Rendering
+
+
+RDF Source Code Viewer
+-----------------------------------------
+When the users select **[RDF Source Code Viewer]** sub menu in the **[Tool]** menu, the dialog as shown in :numref:`rdf-source-code-viewer` is shown. The **[RDF Source Code Viewer]** can output the RDF model constructed by each editor with the specified syntax. The syntax can be selected from Turtle, JSONLD, XML, or N-Triples.
+
+.. _rdf-source-code-viewer:
+.. figure:: figures/rdf_source_code_viewer.png
+   :scale: 50 %
+   :alt:  RDF Source Code Viewer
+   :align: center
+
+   RDF Source Code Viewer
+
+
+SPARQL Query Dialog
+-----------------------------------------
+When the users select **[SPARQL Query Dialog]** sub menu in the **[Tool]** menu, the dialog as shown in :numref:`sparql-query-dialog` is shown. In the **[SPARQL Query Dialog]**, enter the SPARQL SELECT query in the **[SPARQL Query]** text area and press the **[Run Query]** button to display the search results of the variable specified in **[Query Results]**. Selecting a resource or literal in the the **[Query Results]** selects the corresponding resource or literal on each graph.
+
+.. _sparql-query-dialog:
+.. figure:: figures/sparql_query_dialog.png
+   :scale: 50 %
+   :alt:  SPARQL Query Dialog
+   :align: center
+
+   SPARQL Query Dialog
+
 Validator
 -----------
 When the users select **[Validator]** sub menu in the **[Tool]** menu, the dialog as shown in :numref:`validator-dialog` is shown. |MR3| uses Apache Jena's validation API (`org.apache.jena.reasoner.ValidityReport <https://jena.apache.org/documentation/javadoc/jena/org/apache/jena/reasoner/ValidityReport.html>`_ ) and it is enabled to check if the data type of literals are defined based on a range of property.
@@ -613,6 +627,18 @@ When the users select **[Project Info]** sub menu in the **[Tool]** menu, the di
 
    Project Info
 
+
+History Manager
+---------------------
+When the users select Show **[History Manager]** sub menu in the **[Tool]** menu, the dialog as shown in :numref:`history-manager` is shown. In **[History Manager]**, the operation history performed on each editor is displayed. The users can restore the selected history by selecting one of the history and press the **[Open History]** button.
+
+.. _history-manager:
+.. figure:: figures/history_manager.png
+   :scale: 50 %
+   :alt: History Manager
+   :align: center
+
+   History Manager
 
 Log Console
 -----------------
@@ -652,6 +678,12 @@ Save Project
     Save |MR3| project file
 Save As Project
     Save As |MR3| project file
+Save Graph As Image File -> Save RDF Graph As Image File
+    Save an RDF graph as an image file in SVG, JPEG, or PNG format.
+Save Graph As Image File -> Save Class Graph As Image File
+    Save a class graph as an image file in SVG, JPEG, or PNG format.
+Save Graph As Image File -> Save Property Graph As Image File
+    Save a property graph as an image file in SVG, JPEG, or PNG format.
 Quit
     Quit |MR3|
 
@@ -705,10 +737,14 @@ RDF Source Code Viewer
     Show RDF Source Code Viewer.
 Find
     Show Resource Find Dialog.
+SPARQL Query Dialog
+    Show SPARQL Query Dialog.
 Validation
     Show Validation Dialog.
 Project Information
     Show Project Information Dialog.
+History Manager
+    Show History Manager.
 Log Console
     Show Log Console which outputs standard outputs and standard error outputs in MR\ :sup:`3` \.
 Option
@@ -745,6 +781,7 @@ Toolbar
    .. figure:: figures/toolbar/code.png, Show RDF source codes
    .. figure:: figures/toolbar/accept.png, Validate RDFs contents
    .. figure:: figures/toolbar/information.png, Show Project Information
+   .. figure:: figures/toolbar/history_management.png, Show History Manager
    .. figure:: figures/toolbar/log_console.png, Show Log Console
    .. figure:: figures/toolbar/cog.png, Show Option Dialog
    .. figure:: figures/toolbar/help.png, Show about MR\ :sup:`3` \
@@ -770,12 +807,14 @@ Shortcut keys that can be used in |MR3|
     Ctrl + 1 | Command + 1, "Show Class, Property, and RDF editors."
     Ctrl + 2 | Command + 2, "Show Class and RDF editors."
     Ctrl + 3 | Command + 3, "Show Property and RDF editors."
-    Ctrl + R | Command + R, Show the RDF source code viewer.
+    Ctrl + R | Command + R, Show the RDF Source Code Viewer.
     Ctrl + F | Command + F, Show the Find Resource Dialog.
+    Ctrl + Shift + F | Command + Shift + F, Show the SPARQL Query Dialog.
     Ctrl + Shift + V | Command + Shift + V, Validate RDF graphs.
-    Ctrl + Shift + M | Command + Shift + M, Show the Project Information dialog.
+    Ctrl + Shift + M | Command + Shift + M, Show the Project Information Dialog.
     Ctrl + Shift + L | Command + Shift + L, Show the Log console.
-    Ctrl + Shift + O | Command + Shift + O, Show the Option dialog.
+    Ctrl + Shift + H | Command + Shift + H, Show the History Manager.
+    Ctrl + Shift + O | Command + Shift + O, Show the Option Dialog.
     F1, Show about MR\ :sup:`3` \.
 
 Shortcut keys that can be used in editors
