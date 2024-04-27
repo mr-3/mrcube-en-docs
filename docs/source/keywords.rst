@@ -1,4 +1,4 @@
-Key concepts
+Keywords
 ==========================
 
 .. contents:: Contents
@@ -35,7 +35,7 @@ RDF data models are built from Web resources. RDF data models are described by R
    Relationships among Web resources, models, and ontologies in the Semantic Web.
 
 
-Concept of Meta-Model Management
+Meta-Model Management
 --------------------------------
 
 This section discusses our concept of a meta-model and meta-model management. In our research, meta-model is defined as a model expressing the components of models, especially the type of an RDF resource and RDF property. RDFS class is a model expressing the type of RDF resource. RDFS property is a model expressing an RDF property.

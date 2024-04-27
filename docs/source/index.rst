@@ -11,7 +11,7 @@ MR\ :sup:`3` \ Document
 
    about
    install
-   key_concepts
+   keywords
    functions
    user_manual
    tutorial
