@@ -20,16 +20,15 @@ Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Download **mrcube-22.5.2.msi** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and open the file.
 #. The message "Windows protected your PC" is displayed. Then, click on the "More info" link.
-#. Click the 'Run anyway' button.
-#. 'Do you want to allow this app from an unknown publisher to make changes to your device?' is displayed in the dialog box. Then, Click 'Yes'.
+#. Click the "Run anyway" button.
+#. "Do you want to allow this app from an unknown publisher to make changes to your device?" is displayed in the dialog box. Then, Click "Yes" button.
 #. Run the shortcut that is created on the desktop.
 
 macOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Download and extract **mrcube-22.5.2-x64.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **mrcube-22.5.2.app** to the 'Applications' folder.
 #. Run **mrcube-22.5.2.app**.
-#. The message "mrcube-22.5.2 is an application downloaded from the Internet. Are you sure you want to open it?" Click the "Open" button.
-
+#.  The message "\"mrcube-22.5.2.app\" is an app downloaded from the Internet. Are you sure you want to open it?" is displayed. Then, click the "Open" button.
 
 How to Uninstall
 ----------------
