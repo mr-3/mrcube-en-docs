@@ -19,9 +19,9 @@ How to Install
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Download **mrcube-22.5.2.msi** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and open the file.
-#. The message "Your PC has been protected by Windows" is displayed, click on the "More information" link.
-#. Click the 'Run' button.
-#. 'Do you want to allow apps from this unknown publisher to make changes to the device?' is displayed in the dialog box. Then, Click 'Yes'.
+#. The message "Windows protected your PC" is displayed. Then, click on the "More info" link.
+#. Click the 'Run anyway' button.
+#. 'Do you want to allow this app from an unknown publisher to make changes to your device?' is displayed in the dialog box. Then, Click 'Yes'.
 #. Run the shortcut that is created on the desktop.
 
 macOS
