@@ -71,5 +71,5 @@ From our experience, we consider that the actual construction of meta-models and
 
 References
 ----------
-.. [Miller95] G.A.Miller, “WordNet: A Lexical Database for English,” Commun. ACM, vol.38, no.11, pp.39.41, 1995.
-.. [Yokoi95] T. Yokoi, “The EDR Electronic Dictionary,” Commun. ACM, vol.38, no.11, pp.42. 44, 1995, http://www2.nict.go.jp/r/r312/EDR/.
+.. [Miller95] G.A.Miller, "WordNet: A Lexical Database for English," Commun. ACM, vol.38, no.11, pp.39.41, 1995.
+.. [Yokoi95] T. Yokoi, "The EDR Electronic Dictionary," Commun. ACM, vol.38, no.11, pp.42. 44, 1995, http://www2.nict.go.jp/r/r312/EDR/.

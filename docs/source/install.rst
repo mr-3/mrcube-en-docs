@@ -7,18 +7,18 @@ Installation
 
 Requirements
 ------------
-MR\ :sup:`3` \ is implemented by Java language. JRE (Java Runtime Environment) 18 or later is required to execute. In ver. 22.5.2, JRE 18 is embedded, so there is no need to install a JRE.
+MR\ :sup:`3` \ is implemented by Java language. In ver. 25.3.1, JRE (Java Runtime Environment) 21 is embedded, so there is no need to install a JRE.
 
 We confirmed MR\ :sup:`3` \ following environemnt.
 
-* MS Windows 11 + openjdk version "18.0.1.1"
-* macOS 14.4.1 + openjdk version "18.0.1.1" 
+* Windows 11
+* macOS Tahoe 26.4
 
 How to Install
 --------------
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Download **mrcube-22.5.2.msi** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and open the file.
+#. Download **mrcube-25.3.1.msi** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and open the file.
 #. The message "Windows protected your PC" is displayed. Then, click on the "More info" link.
 #. Click the "Run anyway" button.
 #. "Do you want to allow this app from an unknown publisher to make changes to your device?" is displayed in the dialog box. Then, Click "Yes" button.
@@ -26,23 +26,25 @@ Windows
 
 macOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Download and extract **mrcube-22.5.2-x64.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **mrcube-22.5.2.app** to the 'Applications' folder.
-#. Run **mrcube-22.5.2.app**.
-#.  The message "\"mrcube-22.5.2.app\" is an app downloaded from the Internet. Are you sure you want to open it?" is displayed. Then, click the "Open" button.
+#. Download and extract **mrcube-25.3.1.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **mrcube-25.3.1.app** to the 'Applications' folder.
+#. Run **mrcube-25.3.1.app**.
+#. Open System Settings.
+#. Click Privacy & Security, scroll down, and click the Open Anyway button.
+#. The warning prompt reappears and click Open button.
 
 How to Uninstall
 ----------------
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Select the Apps menu from the Settings screen, select **mrcube-22.5.2** from the list of installed apps and uninstall it.
+Select the Apps menu from the Settings screen, select **mrcube-25.3.1** from the list of installed apps and uninstall it.
 
 macOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Delete **mrcube-22.5.2.app** from the applications folder.
+Delete **mrcube-25.3.1.app** from the applications folder.
 
 
 Used libraries
---------------
+--------------------------
 MR\ :sup:`3` \ uses the following libraries: 
 
 * `FlatLaf - Flat Look and Feel <https://www.formdev.com/flatlaf/>`_ (`License <http://www.apache.org/licenses/LICENSE-2.0>`__)

@@ -67,7 +67,7 @@ When the users input a prefix in the **[Prefix]** text field, input a namespace 
    bob,  http://example.org/bob#
    alice,  http://example.org/alice#
 
-.. |nstable| image:: figures/toolbar/namespace_table.png
+.. |nstable| image:: figures/toolbar/namespace_table.svg
 
 .. _top-down-step1:
 .. figure:: figures/top-down-step1.png
@@ -196,7 +196,7 @@ In order to edit an RDF property, the **[Attribute Dialog]** is used. The **[Att
 
 :numref:`top-down-step6-2` shows a screenshot of the **[Attribute Dialog]** when the users select **foaf:knows** RDF property. An RDF property can be edited by selecting a prefix from the **[Prefix]** combobox, selecting an id from **[Property ID]** list, and selecting **[Apply]** button.
 
-.. |attr-dialog| image:: figures/toolbar/attribute_dialog.png 
+.. |attr-dialog| image:: figures/toolbar/attribute_dialog.svg 
 
 .. _top-down-step6-2:
 .. figure:: figures/top-down-step6-2.png
@@ -221,8 +221,8 @@ As a result, the following RDFS classes, RDFS properties, and an RDF model are c
 
 To see how the RDF(S) contents you created is output, show the **RDF Source Code Viewer**. :numref:`top-down-step7-2` shows a screenshot of the **RDF Source Code Viewer**. The **[RDF Source Code Viewer]** is shown by clicking |code_viewer| icon in the toolbar or selecting **[RDF Source Code Viewer]** sub menu on the **Tools** menu. The users can select **Turtle**, **JSONLD**, **XML**, and **N-Triples** formats as the syntax from the radio button. Selecting the radio button will display the RDF source code with the specified syntax.
 
-.. |code_viewer| image:: figures/toolbar/code.png 
-.. |export| image:: figures/toolbar/saveas.png 
+.. |code_viewer| image:: figures/toolbar/code.svg 
+.. |export| image:: figures/toolbar/save_as.svg 
 
 .. _top-down-step7-2:
 .. figure:: figures/top-down-step7-2.png

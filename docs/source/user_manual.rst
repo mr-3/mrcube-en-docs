@@ -13,7 +13,7 @@ Implementation architecture
 .. _mr3-architecture:
 
 .. figure:: figures/implementation_architecture_of_mr3.svg
-   :scale: 40 %
+   :scale: 80 %
    :alt: Implementation architecture of |MR3|
    :align: center
 
@@ -21,12 +21,12 @@ Implementation architecture
 
 System overview
 ----------------------------------------
-:numref:`system-overview` shows the system overview of |MR3| . |MR3| consists of the **Parser**, **Generator**, **RDF(S) Management**, and **Graphical Modeler**. The **Graphical Modeler** mainly consists of the **RDF Editor**, **Class Editor**, and **Property Editor**. The user edits the RDFs description visually via the **Graphical Modeler**. The input and output of |MR3| are RDFs documents. The **Parser** analyzes input RDFs documents and makes further operations possible by transforming the RDFs document into a Jena model. Then, the **Parser** changes the Jena model into an internal data expression, and RDF(S) management is performed. The **Generator** changes the internal data expression into a Jena model. Finally, the Jena model is changed into an RDFs document.
+:numref:`system-overview` shows the system overview of |MR3| . |MR3| consists of the **Parser**, **Generator**, **RDF(S) Management**, and **Graphical Modeler**. The **Graphical Modeler** mainly consists of the **Instance Editor**, **Class Editor**, and **Property Editor**. The user edits the RDFs description visually via the **Graphical Modeler**. The input and output of |MR3| are RDFs documents. The **Parser** analyzes input RDFs documents and makes further operations possible by transforming the RDFs document into a Jena model. Then, the **Parser** changes the Jena model into an internal data expression, and RDF(S) management is performed. The **Generator** changes the internal data expression into a Jena model. Finally, the Jena model is changed into an RDFs document.
 
 .. _system-overview:
 
 .. figure:: figures/system_overview_of_mr3.svg
-   :scale: 40 %
+   :scale: 80 %
    :alt: System overview of |MR3| 
    :align: center
 
@@ -34,7 +34,7 @@ System overview
 
 Overview of the Graphical Modeler
 ---------------------------------------
-:numref:`mr3-screenshot` shows a typical screen showing the **Graphical Modeler** of |MR3| . The **Graphical Modeler** consists of **RDF Editor**, **Class Editor**, **Property Editor**, **Attribute Dialog**, **Namespace Table**, **Remove Dialog**, **Find Resource Dialog**, **Import Dialog**, and **Export Dialog**. 
+:numref:`mr3-screenshot` shows a typical screen showing the **Graphical Modeler** of |MR3| . The **Graphical Modeler** consists of **Instance Editor**, **Class Editor**, **Property Editor**, **Attribute Dialog**, **Namespace Table**, **Remove Dialog**, **Find Resource Dialog**, **Import Dialog**, and **Export Dialog**. 
 
 The details of the **Graphical Modeler** are shown in the following sections.
 
@@ -48,64 +48,64 @@ The details of the **Graphical Modeler** are shown in the following sections.
    
 .. index:: RDF Editor
 
-RDF Editor
---------------
-The **RDF Editor** allows the user to express the relationship between an RDF resource, RDF property, and RDF literal using a directed graph, and also allows the attributes of each element to be edited. The attributes of an RDF resource consist of a URI, the URI type, and the RDF resource type. The RDF resource type can be chosen using the **Class Editor**. The URI type can be chosen from either a URI or can be set as anonymous. 
+Instance Editor
+---------------------
+The **Instance Editor** allows the user to express the relationship between an RDF resource, RDF property, and RDF literal using a directed graph, and also allows the attributes of each element to be edited. The attributes of an RDF resource consist of a URI, the URI type, and the RDF resource type. The RDF resource type can be chosen using the **Class Editor**. The URI type can be chosen from either a URI or can be set as anonymous. 
 
-As shown in :numref:`rdf-editor`, RDF resources are represented as ellipses, RDF properties are represented as arrows, and RDF literals are represented as rectangles in the **RDF editor**. Types of RDF resources are shown at the upper left part of the RDF resources.
+As shown in :numref:`instance-editor`, RDF resources are represented as ellipses, RDF properties are represented as arrows, and RDF literals are represented as rectangles in the **Instance editor**. Types of RDF resources are shown at the upper left part of the RDF resources.
 
-.. _rdf-editor:
-.. figure:: figures/rdf_editor.png
+.. _instance-editor:
+.. figure:: figures/instance_editor.png
    :scale: 25 %
-   :alt: RDF Editor
+   :alt: Instance Editor
    :align: center
 
-   RDF Editor
+   Instance Editor
 
-Toolbar in the RDF Editor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Icons in the toolbar in the **RDF Editor** and the corresponding functions are shown in the following table.
+Toolbar in the Instance Editor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Icons in the toolbar in the **Instance Editor** and the corresponding functions are shown in the following table.
 
 .. csv-table::
    :header: Icon, Function
    :align: center
    :widths: 3, 10 
 
-   .. figure:: figures/toolbar/resource.png, Insert an RDF resource
-   .. figure:: figures/toolbar/literal.png, Insert an RDF literal
-   .. figure:: figures/toolbar/copy.png, Copy nodes
-   .. figure:: figures/toolbar/cut.png, Cut nodes
-   .. figure:: figures/toolbar/paste.png, Paste nodes
-   .. figure:: figures/toolbar/delete.png, Remove nodes
-   .. figure:: figures/toolbar/undo.png, Undo
-   .. figure:: figures/toolbar/redo.png, Redo
-   .. figure:: figures/toolbar/export_graph_img.png, Save the RDF graph as image file
-   .. figure:: figures/toolbar/l_to_r_layout.png, Automatically layout the RDF graph
-   .. figure:: figures/toolbar/open_resource.png, Open a selected RDF resource
+   .. figure:: figures/toolbar/instance_node.svg, Insert an RDF resource
+   .. figure:: figures/toolbar/literal_node.svg, Insert an RDF literal
+   .. figure:: figures/toolbar/copy.svg, Copy nodes
+   .. figure:: figures/toolbar/cut.svg, Cut nodes
+   .. figure:: figures/toolbar/paste.svg, Paste nodes
+   .. figure:: figures/toolbar/delete.svg, Remove nodes
+   .. figure:: figures/toolbar/undo.svg, Undo
+   .. figure:: figures/toolbar/redo.svg, Redo
+   .. figure:: figures/toolbar/save_image.svg, Save the RDF graph as image file
+   .. figure:: figures/toolbar/left_to_right.svg, Automatically layout the RDF graph
+   .. figure:: figures/toolbar/open_resource.svg, Open a selected RDF resource
 
-Popup menu in the RDF editor
+Popup menu in the Instance editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When users right click in the **RDF Editor**, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. Popup menus are shown as follows.
+When users right click in the **Instance Editor**, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. Popup menus are shown as follows.
 
-.. figure:: figures/popup_menu_rdf_editor.png
+.. figure:: figures/popup_menu_instance_editor.png
    :scale: 60 %
-   :alt: Popup menu when nodes in the RDF Editor are not selected.
+   :alt: Popup menu when nodes in the Instance Editor are not selected.
    :align: center
 
-   Popup menu when nodes in the RDF Editor are not selected.
+   Popup menu when nodes in the Instance Editor are not selected.
 
-.. figure:: figures/popup_menu_selected_rdf_editor.png
+.. figure:: figures/popup_menu_selected_instance_editor.png
    :scale: 60 %
-   :alt: Popup menu when nodes in the RDF Editor are selected.
+   :alt: Popup menu when nodes in the Instance Editor are selected.
    :align: center
 
-   Popup menu when nodes in the RDF Editor are selected.
+   Popup menu when nodes in the Instance Editor are selected.
 
-Insert RDF Resource
+Insert Instance
     Insert an RDF resource to the position that mouse is right clicked.
-Insert RDF Literal
+Insert Literal
     Insert an RDF literal to the position that mouse is right clicked.
-Change Resource Type
+Change Instance Type
     Convert an RDF resource type to a class selected in the **Class Editor**.
 Transform from RDF to Class
     Transform the selected RDF resource to an RDFS class.
@@ -124,7 +124,7 @@ Attribute Dialog
 
 Editing attributes of RDF resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When users select an RDF resource in the **RDF Editor*, the attributes of the RDF resource are shown in the **Attribute Dialog** ( :numref:`attr-rdf-res-uri` to :numref:`attr-rdf-res-comment` ). The attributes of RDF resources are URI, rdf:type, blank node or not, rdfs:label, and rdfs:comment. Here the blank nodes are RDF resources that are not named by URIs. Blank nodes can not be acceced from external documents.  However, the blank nodes can be subjects or objects of statements. They are used to represent RDF resources that are difficult to name or structure RDF contents.
+When users select an RDF resource in the **Instance Editor**, the attributes of the RDF resource are shown in the **Attribute Dialog** ( :numref:`attr-rdf-res-uri` to :numref:`attr-rdf-res-comment` ). The attributes of RDF resources are URI, rdf:type, blank node or not, rdfs:label, and rdfs:comment. Here the blank nodes are RDF resources that are not named by URIs. Blank nodes can not be acceced from external documents.  However, the blank nodes can be subjects or objects of statements. They are used to represent RDF resources that are difficult to name or structure RDF contents.
 
 If users would like to set a URI of an RDF resource, they should select URI from the left side menus in the **Attribute Dialog** as shown in :numref:`attr-rdf-res-uri`. Prefixes that are registered in the **Namespace Table** are shown in the **[Prefix]** combo box. When users select one of the prefixes in the combo box, the corresponding namespace is shown in the **[RDF Resource]** text field. The users can input any URI in the text field. If the users would like to set an RDF resource as a blank node, the users should check the **[blank node]** checkbox. 
 
@@ -142,7 +142,7 @@ When the users click the **[Select Type]** button, **[Select Resource Type Dialo
 
 When the users input a URI that is not defined in the **[Class Editor]**, **[RDF(S) contents management]** dialog is shown as shown in :numref:`rdf-and-rdfs-management-dialog`. In the RDF(S) contents management dialog, the users can select Rename or Create. 
 
-When the users click the **[ClassEdit]** button, the type of an RDF resource is selected and the attributes of the type of the RDF resource are shown in the **Attribute Dialog**. 
+When the users click the **[Class Edit]** button, the type of an RDF resource is selected and the attributes of the type of the RDF resource are shown in the **Attribute Dialog**. 
 
 .. _attr-rdf-res-type:
 .. figure:: figures/attribute_dialog_rdf_resource_type.png
@@ -192,13 +192,13 @@ First input language in the **[Lang]** text field and comment in the **[Comment]
 
 Editing attributes of RDF properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If the users select an RDF property in the **RDF Editor**, the attributes of the RDF property are shown in the **Attribute Dialog** (:numref:`attr-rdf-property`). The users can edit the URI of the selected RDF property. 
+If the users select an RDF property in the **Instance Editor**, the attributes of the RDF property are shown in the **Attribute Dialog** (:numref:`attr-rdf-property`). The users can edit the URI of the selected RDF property. 
 
 When the users input a URI which is not defined in the **Property Editor**, **[RDF(S) contents management]** dialog is shown as shown in :numref:`rdf-and-rdfs-management-dialog`. In the **[RDF(S) contents management]** dialog, the users can select rename the RDFS property or create an RDFS property. 
 
 When the users select one of the prefixes in the dialog, IDs of RDFS properties that are defined in the **Property Editor** and the namespace is correspond to the selected prefix are shown in the **[Property ID]** list. 
 
-When the users select one of the Property IDs and click **[RDFSPropertyEdit]** button, the RDFS property is selected and the attributes of the RDFS property are shown in the **Attribute Dialog**.
+When the users select one of the Property IDs and click **[RDFSProperty]** button, the RDFS property is selected and the attributes of the RDFS property are shown in the **Attribute Dialog**.
 
 .. _attr-rdf-property:
 .. figure:: figures/attribute_dialog_rdf_property.png
@@ -211,7 +211,7 @@ When the users select one of the Property IDs and click **[RDFSPropertyEdit]** b
 
 Editing attributes of RDF literals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When the users select an RDF literal in the **RDF Editor**, the attributes of the RDF literal are shown in the **Attribute Dialog**. (:numref:`attr-rdf-literal`) The users can edit the contents of the literal, the attribute of language (**xml:lang**), and the data type of the literal. In the **[Literal]** text are, the users can input the contents of the literal. The users can also input language in the **[Lang]** text field. If the users set the data type of the literal, the users should check **[Data type]** checkbox and select one of the types in the combobox. Language attribute and data type attribute are exclusive and the users only select one of them. 
+When the users select an RDF literal in the **Instance Editor**, the attributes of the RDF literal are shown in the **Attribute Dialog**. (:numref:`attr-rdf-literal`) The users can edit the contents of the literal, the attribute of language (**xml:lang**), and the data type of the literal. In the **[Literal]** text are, the users can input the contents of the literal. The users can also input language in the **[Lang]** text field. If the users set the data type of the literal, the users should check **[Data type]** checkbox and select one of the types in the combobox. Language attribute and data type attribute are exclusive and the users only select one of them. 
 
 .. _attr-rdf-literal:
 .. figure:: figures/attribute_dialog_rdf_literal.png
@@ -246,17 +246,17 @@ Icons in the toolbar in the **Class Editor** and the corresponding functions are
    :align: center
    :widths: 3, 10 
 
-    .. figure:: figures/toolbar/resource.png, Insert an RDFS class
-    .. figure:: figures/toolbar/copy.png, Copy nodes
-    .. figure:: figures/toolbar/cut.png,  Cut nodes
-    .. figure:: figures/toolbar/paste.png, Paste nodes
-    .. figure:: figures/toolbar/delete.png, Remove nodes
-    .. figure:: figures/toolbar/undo.png, Undo
-    .. figure:: figures/toolbar/redo.png, Redo
-    .. figure:: figures/toolbar/export_graph_img.png, Save the class graph as an image file
-    .. figure:: figures/toolbar/l_to_r_layout.png, Automatically layout the class graph (lef to right)
-    .. figure:: figures/toolbar/u_to_d_layout.png, Automatically layout the class graph (up to down)         
-    .. figure:: figures/toolbar/open_resource.png, Open a selected RDFS class
+    .. figure:: figures/toolbar/class_node.svg, Insert an RDFS class
+    .. figure:: figures/toolbar/copy.svg, Copy nodes
+    .. figure:: figures/toolbar/cut.svg,  Cut nodes
+    .. figure:: figures/toolbar/paste.svg, Paste nodes
+    .. figure:: figures/toolbar/delete.svg, Remove nodes
+    .. figure:: figures/toolbar/undo.svg, Undo
+    .. figure:: figures/toolbar/redo.svg, Redo
+    .. figure:: figures/toolbar/save_image.svg, Save the class graph as an image file
+    .. figure:: figures/toolbar/left_to_right.svg, Automatically layout the class graph (lef to right)
+    .. figure:: figures/toolbar/up_to_down.svg, Automatically layout the class graph (up to down)         
+    .. figure:: figures/toolbar/open_resource.svg, Open a selected RDFS class
 
 Popup menu in the Class Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -350,23 +350,23 @@ Icons in the toolbar in the **Property Editor** and the corresponding functions 
    :align: center
    :widths: 3, 10 
      
-   .. figure:: figures/toolbar/resource.png, Insert an RDFS property
-   .. figure:: figures/toolbar/copy.png, Copy nodes
-   .. figure:: figures/toolbar/cut.png, Cut nodes
-   .. figure:: figures/toolbar/paste.png, Paste nodes
-   .. figure:: figures/toolbar/delete.png, Remove nodes
-   .. figure:: figures/toolbar/undo.png, Undo
-   .. figure:: figures/toolbar/redo.png, Redo
-   .. figure:: figures/toolbar/export_graph_img.png, Save the property graph as an image file
-   .. figure:: figures/toolbar/l_to_r_layout.png, Automatically layout the RDFS property graph (left to right)
-   .. figure:: figures/toolbar/u_to_d_layout.png, Automatically layout the RDFS property graph (up to down)
-   .. figure:: figures/toolbar/open_resource.png, Open a selected RDFS property
+   .. figure:: figures/toolbar/property_node.svg, Insert an RDFS property
+   .. figure:: figures/toolbar/copy.svg, Copy nodes
+   .. figure:: figures/toolbar/cut.svg, Cut nodes
+   .. figure:: figures/toolbar/paste.svg, Paste nodes
+   .. figure:: figures/toolbar/delete.svg, Remove nodes
+   .. figure:: figures/toolbar/undo.svg, Undo
+   .. figure:: figures/toolbar/redo.svg, Redo
+   .. figure:: figures/toolbar/save_image.svg, Save the property graph as an image file
+   .. figure:: figures/toolbar/left_to_right.svg, Automatically layout the RDFS property graph (left to right)
+   .. figure:: figures/toolbar/up_to_down.svg, Automatically layout the RDFS property graph (up to down)
+   .. figure:: figures/toolbar/open_resource.svg, Open a selected RDFS property
 
 Popup menu in the Property Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When users right click in the **Property Editor**, a popup menu is shown. The contents of the popu menu is different when nodes are selected or not. The popup menus are shown as follows.
 
-.. figure:: figures/popup_menu_selected_property_editor.png
+.. figure:: figures/popup_menu_property_editor.png
    :scale: 60 %
    :alt: Popup menu when nodes in the Property Editor are not selected.
    :align: center
@@ -417,19 +417,19 @@ When the users select an RDFS property in the **Property Editor**, the attribute
    
    Attribute Dialog (Instances of RDFS property)
   
-.. index:: Resource Search Dialog
+.. index:: Find Resource Dialog
 
-Resource Search Dialog
+Find Resource Dialog
 --------------------------
-The users can find resources (RDF resources, RDF properties, RDFS classes, and RDFS properties) by using **Resource Search Dialog**. :numref:`resource-search-dialog` shows a screenshot of the **Resource Search Dialog**. When the users enter a string in the **[Keyword]** text field, the corresponding resource list is displayed in the **[Find Result]** list at the bottom of :numref:`resource-search-dialog`. The serach targets are URIs, labels, and comments of RDFS classes, properties, and RDF resources. When the users select the one of the items in the list, corresponding resource is selected and the attributes of the resource are shown in the **Attribute Dialog**. 
+The users can find resources (RDF resources, RDF properties, RDFS classes, and RDFS properties) by using **Find Resource Dialog**. :numref:`resource-search-dialog` shows a screenshot of the **Find Resource Dialog**. When the users enter a string in the **[Keyword]** text field, the corresponding resource list is displayed in the **[Find Result]** list at the bottom of :numref:`resource-search-dialog`. The serach targets are URIs, labels, and comments of RDFS classes, properties, and RDF resources. When the users select the one of the items in the list, corresponding resource is selected and the attributes of the resource are shown in the **Attribute Dialog**. 
 
  .. _resource-search-dialog:
  .. figure:: figures/resource_search_dialog.png
    :scale: 50 %
-   :alt: A screenshot of the Resource search dialog
+   :alt: A screenshot of the Find Resource Dialog
    :align: center
 
-   A screenshot of the Resource search dialog
+   A screenshot of the Find Resource Dialog
  
 .. index:: Namespace Table
 
@@ -450,9 +450,9 @@ The users can register perfixes and the corresponding namespaces in the **Namesp
 
 Remove Dialog
 -----------------
-If an RDFS class is referred by a type of a resource or a domain or a range of a property, it is inconsistency when the RDFS class is removed. If an RDFS property is reffered in the RDF editor, it is inconsistency when the RDFS property is removed. In these cases, when the users remove those RDFS classes or properties, the **Remove Dialog** as shown in :numref:`remove-dialog` is shown before removing them actually.
+If an RDFS class is referred by a type of a resource or a domain or a range of a property, it is inconsistency when the RDFS class is removed. If an RDFS property is reffered in the Instance Editor, it is inconsistency when the RDFS property is removed. In these cases, when the users remove those RDFS classes or properties, the **Remove Dialog** as shown in :numref:`remove-dialog` is shown before removing them actually.
 
-Removed RDFS classes or properties are shown in the upper part of :numref:`remove-dialog`. RDF resources that referred the removed RDFS classes as their type are shown in the **[RDF Editor]** tab in the lower part of :numref:`remove-dialog`. RDF properties that referred the removed RDFS properties are also shown in the **[RDF Editor]** tab. RDFS properties that refer removed RDFS classes as their domains or ranges are shown in the **[Property Editor]** tab in the lower part of :numref:`remove-dialog`.
+Removed RDFS classes or properties are shown in the upper part of :numref:`remove-dialog`. RDF resources that referred the removed RDFS classes as their type are shown in the **[Instance Editor]** tab in the lower part of :numref:`remove-dialog`. RDF properties that referred the removed RDFS properties are also shown in the **[Instance Editor]** tab. RDFS properties that refer removed RDFS classes as their domains or ranges are shown in the **[Property Editor]** tab in the lower part of :numref:`remove-dialog`.
 
 If the users check the **[Delete Check]** Checkboxes and click **[Apply]** button, RDF resources, RDF properties, and RDFS properties that listed in the lower part of the **Remove Dialog** stop referring to the removed RDFS classes or RDFS properties. Then, the RDFS classes and RDFS properties are actually removed. 
 
@@ -483,7 +483,7 @@ First, select a file that the users want to open. Then, select a file format fro
 
    A screenshot of the Import Dialog
 
-.. |open| image:: figures/toolbar/open.png 
+.. |open| image:: figures/toolbar/open.svg 
 
 If the users select **[All Files]** from the **[Files of Type]**, the file format is automatically detected from the extension of the file. The correspondence between the extension and the file format is shown below.
 
@@ -517,7 +517,7 @@ First, select a file that the users want to save. Then, select a file format fro
 
    A screenshot of the Export Dialog
 
-.. |saveas| image:: figures/toolbar/saveas.png 
+.. |saveas| image:: figures/toolbar/save_as.svg 
 
 .. index:: Option Dialog
 
@@ -698,7 +698,7 @@ Label
 Resource Type
     If the users check the Show Resource Type, the type of RDF resources are shown at the top right of each resource.
 RDF Property Label
-    If the users check the Show RDF Property Label, the label of properties are shown. If it is not checked, the label properties are not shown in the RDF editor.
+    If the users check the Show RDF Property Label, the label of properties are shown. If it is not checked, the label properties are not shown in the Instance Editor.
 ToolTips
     If the users check the Show ToolTips, tooltips are shown when the users mouse over the resources.
 RDF Graph Layout (Left to Right)
@@ -714,22 +714,22 @@ Property Graph Layout (Up to Down)
 
 Window
 ~~~~~~~~~~
-RDF Editor Overview
-    The overview of the RDF editor is shown in the dialog. When the users drag a red rectangle, part of the RDF graph in the red rectangle are shown in the RDF editor. The users can change the size of the red rectangle by dragging the right down part. It is enabled to expand and reduce the editor.
+Instance Editor Overview
+    The overview of the Instance Editor is shown in the dialog. When the users drag a red rectangle, part of the RDF graph in the red rectangle are shown in the Instance Editor. The users can change the size of the red rectangle by dragging the right down part. It is enabled to expand and reduce the editor.
 Class Editor Overview
-    The overview of the Class editor is shown in the dialog. The functions of the dialog is as same as RDF Editor Overview.
+    The overview of the Class editor is shown in the dialog. The functions of the dialog is as same as Instance Editor Overview.
 Property Editor Overview
-    The overview of the Property editor is shown in the dialog. The functions of the dialog is as same as RDF Editor Overview.
+    The overview of the Property editor is shown in the dialog. The functions of the dialog is as same as Instance Editor Overview.
 Attribute Dialog
     Show Attribute Dialog to the front.       
 Namespace Table
     Show Namespace Table to the front.
 Deploy Windows (C,P,R)
-    Show the RDF editor, the Property editor, and the Class editor.
+    Show the Instance Editor, the Property editor, and the Class editor.
 Deploy Windows (C,R)
-    Show the Class editor and the RDF editor.
+    Show the Class editor and the Instance Editor.
 Deploy Windows (P,R)
-    Show the Property editor and the RDF editor.
+    Show the Property editor and the Instance Editor.
 
 Tool
 ~~~~~~~~~~~~~~~~~~~~~
@@ -765,26 +765,18 @@ Toolbar
    :align: center
    :widths: 3, 10
 
-   .. figure:: figures/toolbar/new.png, New MR\ :sup:`3` \ project
-   .. figure:: figures/toolbar/open.png, Open MR\ :sup:`3` \ project file
-   .. figure:: figures/toolbar/save.png, Save MR\ :sup:`3` \ project file
-   .. figure:: figures/toolbar/saveas.png, Save as MR\ :sup:`3` \ project file
-   .. figure:: figures/toolbar/find.png, Show Resource Search Dialog
-   .. figure:: figures/toolbar/rdf_editor.png, Show RDF Editor Overview to the front
-   .. figure:: figures/toolbar/class_editor.png, Show Class Editor Overview to the fornt
-   .. figure:: figures/toolbar/property_editor.png, Show Property Editor Overview to the front
-   .. figure:: figures/toolbar/attribute_dialog.png, Show Attribute Dialog to the front
-   .. figure:: figures/toolbar/namespace_table.png, Show Namespace Table to the front
-   .. figure:: figures/toolbar/cpr.png, "Show Class, Property, and RDF editors"
-   .. figure:: figures/toolbar/cr.png, "Show Class and RDF editors"
-   .. figure:: figures/toolbar/pr.png, "Show Property and RDF editors"
-   .. figure:: figures/toolbar/code.png, Show RDF source codes
-   .. figure:: figures/toolbar/accept.png, Validate RDFs contents
-   .. figure:: figures/toolbar/information.png, Show Project Information
-   .. figure:: figures/toolbar/history_management.png, Show History Manager
-   .. figure:: figures/toolbar/log_console.png, Show Log Console
-   .. figure:: figures/toolbar/cog.png, Show Option Dialog
-   .. figure:: figures/toolbar/help.png, Show about MR\ :sup:`3` \
+   .. figure:: figures/toolbar/new.svg, New MR\ :sup:`3` \ project
+   .. figure:: figures/toolbar/open.svg, Open MR\ :sup:`3` \ project file
+   .. figure:: figures/toolbar/save.svg, Save MR\ :sup:`3` \ project file
+   .. figure:: figures/toolbar/save_as.svg, Save as MR\ :sup:`3` \ project file   
+   .. figure:: figures/toolbar/attribute_dialog.svg, Show Attribute Dialog to the front
+   .. figure:: figures/toolbar/namespace_table.svg, Show Namespace Table to the front
+   .. figure:: figures/toolbar/search.svg, Show Find Resource Dialog
+   .. figure:: figures/toolbar/code.svg, Show RDF source codes
+   .. figure:: figures/toolbar/history.svg, Show History Manager
+   .. figure:: figures/toolbar/verified.svg, Validate RDFs contents
+   .. figure:: figures/toolbar/info.svg, Show Project Information
+   .. figure:: figures/toolbar/settings.svg, Show Option Dialog
 
 Shortcut keys
 -------------------
@@ -804,9 +796,9 @@ Shortcut keys that can be used in |MR3|
     Ctrl + Q | Command + Q, Quit |MR3|.
     Ctrl + Shift + A | Command + Shift + A, Show the Attribute Dialog.
     Ctrl + Shift + N | Command + Shift + N, Show the Namespace Table.
-    Ctrl + 1 | Command + 1, "Show Class, Property, and RDF editors."
-    Ctrl + 2 | Command + 2, "Show Class and RDF editors."
-    Ctrl + 3 | Command + 3, "Show Property and RDF editors."
+    Ctrl + 1 | Command + 1, "Show Class, Property, and Instance Editors."
+    Ctrl + 2 | Command + 2, "Show Class and Instance Editors."
+    Ctrl + 3 | Command + 3, "Show Property and Instance Editors."
     Ctrl + R | Command + R, Show the RDF Source Code Viewer.
     Ctrl + F | Command + F, Show the Find Resource Dialog.
     Ctrl + Shift + F | Command + Shift + F, Show the SPARQL Query Dialog.
