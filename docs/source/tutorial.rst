@@ -16,7 +16,9 @@ There are two ways to build RDF(S) documents by using |MR3|. One is a top down m
 
 The other is a bottom up method. In the bottom up method. the users can create RDFS classes and properties when they build RDF contents by using RDF(S) contents management facilities.
 
-In this tutorial, we introduce how to build up the RDF(S) document shown below using top down and bottom up methods. You can also check how to build the RDF(S) document from `the videos page <https://mr-3.github.io/videos>`_ in the |MR3| web site. 
+In this tutorial, we introduce how to build up the RDF(S) document shown below using top down and bottom up methods. 
+
+.. You can also check how to build the RDF(S) document from `the videos page <https://mr-3.github.io/videos>`_ in the |MR3| web site. 
 
 .. code-block:: turtle
 
