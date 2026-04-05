@@ -16,7 +16,7 @@ There are two ways to build RDF(S) documents by using |MR3|. One is a top down m
 
 The other is a bottom up method. In the bottom up method. the users can create RDFS classes and properties when they build RDF contents by using RDF(S) contents management facilities.
 
-In this tutorial, we introduce how to build up the RDF(S) document shown below using top down and bottom up methods. You can also check how to build the RDF(S) document from `the videos page <http://mrcube.org/videos.html>`_ in the |MR3| web site. 
+In this tutorial, we introduce how to build up the RDF(S) document shown below using top down and bottom up methods. You can also check how to build the RDF(S) document from `the videos page <https://mr-3.github.io/videos>`_ in the |MR3| web site. 
 
 .. code-block:: turtle
 
@@ -133,7 +133,7 @@ In |MR3|, an RDF property can be selected from the properties in the **Property 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the following steps, we build RDF contents based on the RDFS class and the RDFS properties built by above steps.
 
-First, insert an RDF resource in the **RDF Editor**. When the users click a right mouse button in the **RDF Editor**, a popup menu is shown. :numref:`top-down-step4-1` shows a screenshot showing the popup menu.
+First, insert an RDF resource in the **Instance Editor**. When the users click a right mouse button in the **Instance Editor**, a popup menu is shown. :numref:`top-down-step4-1` shows a screenshot showing the popup menu.
 
 .. _top-down-step4-1:
 .. figure:: figures/top-down-step4-1.png
@@ -151,14 +151,14 @@ After selecting **[Insert RDF Resource]** menu, the **[Insert RDF Resource]** di
 
    Top down step 4-2
 
-In the same way, insert **alice:me**, **wd:Q12418**, **http://dbpedia.org/resource/Leonardo_da_Vinci**, **http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619** as RDF resources in the **RDF Editor**. Select empty as the type of resources.
+In the same way, insert **alice:me**, **wd:Q12418**, **http://dbpedia.org/resource/Leonardo_da_Vinci**, **http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619** as RDF resources in the **Instance Editor**. Select empty as the type of resources.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 5. Inserting RDF literals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In this step, insert "1990-07-04"^^xsd:date と "Mona Lisa" RDF literals in the **RDF Editor**. 
+In this step, insert "1990-07-04"^^xsd:date と "Mona Lisa" RDF literals in the **Instance Editor**. 
 
-When the users click a right mouse button in the **RDF Editor** and select **[Insert Literal]** menu in the popup menu (:numref:`top-down-step5-1`), the **[Insert Literal]** dialog is shown. 
+When the users click a right mouse button in the **Instance Editor** and select **[Insert Literal]** menu in the popup menu (:numref:`top-down-step5-1`), the **[Insert Literal]** dialog is shown. 
 
 .. _top-down-step5-1:
 .. figure:: figures/top-down-step5-1.png
@@ -179,7 +179,7 @@ When the users click a right mouse button in the **RDF Editor** and select **[In
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 6. Inserting RDF properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In this step, insert RDF properties in the **RDF Editor**. First, move the mouse cursor to the center of a source (subject) RDF resource. At that time, the shape of mouse cursor changes from arrow to cross. After that, drag the mouse cursor to the center of a target (object) RDF resource or RDF literal. When the shape of mouse cursor changes from arrow to cross, drop the mouse cursor. Then, two nodes are connected with an RDF property. If the users do not select one of the RDFS properties in the **Property Editor**, the RDF property becomes **mr3:nil** which is the default RDF property in |MR3|. If the users select one of the RDFS properties, the selected RDFS property is used for the RDF property.
+In this step, insert RDF properties in the **Instance Editor**. First, move the mouse cursor to the center of a source (subject) RDF resource. At that time, the shape of mouse cursor changes from arrow to cross. After that, drag the mouse cursor to the center of a target (object) RDF resource or RDF literal. When the shape of mouse cursor changes from arrow to cross, drop the mouse cursor. Then, two nodes are connected with an RDF property. If the users do not select one of the RDFS properties in the **Property Editor**, the RDF property becomes **mr3:nil** which is the default RDF property in |MR3|. If the users select one of the RDFS properties, the selected RDFS property is used for the RDF property.
 
 Here, connect **bob:me** RDF resource and **alice:me** RDF resource with **foaf:knows** RDF property. :numref:`top-down-step6-1` shows the screenshot of connecting these nodes.
 
@@ -192,7 +192,7 @@ In the same way，connect **bob:me** RDF resourcre and **"1990-07-04"** literal 
 
    Top down step 6-1
 
-In order to edit an RDF property, the **[Attribute Dialog]** is used. The **[Attribute Dialog]** is shown by clicking |attr-dialog| icon in the toolbar or selecting **[Attribute Dialog]** menu in the popup menu in the **RDF Editor**.
+In order to edit an RDF property, the **[Attribute Dialog]** is used. The **[Attribute Dialog]** is shown by clicking |attr-dialog| icon in the toolbar or selecting **[Attribute Dialog]** menu in the popup menu in the **Instance Editor**.
 
 :numref:`top-down-step6-2` shows a screenshot of the **[Attribute Dialog]** when the users select **foaf:knows** RDF property. An RDF property can be edited by selecting a prefix from the **[Prefix]** combobox, selecting an id from **[Property ID]** list, and selecting **[Apply]** button.
 
