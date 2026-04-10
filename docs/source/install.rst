@@ -7,7 +7,7 @@ Installation
 
 Requirements
 ------------
-MR\ :sup:`3` \ is implemented by Java language. In ver. 25.3.1, JRE (Java Runtime Environment) 21 is embedded, so there is no need to install a JRE.
+MR\ :sup:`3` \ is implemented by Java language. In ver. 26.4.1, `Liberica Standard JDK 21 <https://bell-sw.com/pages/downloads/#jdk-21-lts>`_ is embedded, so there is no need to install a JRE.
 
 We confirmed MR\ :sup:`3` \ following environemnt.
 
@@ -18,16 +18,14 @@ How to Install
 --------------
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Download **mrcube-25.3.1.msi** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and open the file.
-#. The message "Windows protected your PC" is displayed. Then, click on the "More info" link.
-#. Click the "Run anyway" button.
-#. "Do you want to allow this app from an unknown publisher to make changes to your device?" is displayed in the dialog box. Then, Click "Yes" button.
-#. Run the shortcut that is created on the desktop.
+#. Go to the MRCube page on the Microsoft Store <https://apps.microsoft.com/detail/9nmgtwtl1fvg?hl=en-US>_ and click the "View in Microsoft Store" button.
+#. Click the "Install" button.
+#. Run the shortcut created on your desktop.
 
 macOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Download and extract **mrcube-25.3.1.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **mrcube-25.3.1.app** to the 'Applications' folder.
-#. Run **mrcube-25.3.1.app**.
+#. Download and extract **mrcube-26.4.1.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **mrcube-26.4.1.app** to the 'Applications' folder.
+#. Run **mrcube-26.4.1.app**.
 #. Open System Settings.
 #. Click Privacy & Security, scroll down, and click the Open Anyway button.
 #. The warning prompt reappears and click Open button.
@@ -36,11 +34,11 @@ How to Uninstall
 ----------------
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Select the Apps menu from the Settings screen, select **mrcube-25.3.1** from the list of installed apps and uninstall it.
+Select the Apps menu from the Settings screen, select **MRCube** from the list of installed apps and uninstall it.
 
 macOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Delete **mrcube-25.3.1.app** from the applications folder.
+Delete **mrcube-26.4.1.app** from the applications folder.
 
 
 Used libraries
