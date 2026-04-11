@@ -24,8 +24,8 @@ Windows
 
 macOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Download and extract **mrcube-26.4.2.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **mrcube-26.4.2.app** to the 'Applications' folder.
-#. Run **mrcube-26.4.2.app**.
+#. Download and extract **mrcube-26.4.2.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **MRCube.app** to the 'Applications' folder.
+#. Run **MRCube.app**.
 #. Open System Settings.
 #. Click Privacy & Security, scroll down, and click the Open Anyway button.
 #. The warning prompt reappears and click Open button.
@@ -38,7 +38,7 @@ Select the Apps menu from the Settings screen, select **MRCube** from the list o
 
 macOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Delete **mrcube-26.4.2.app** from the applications folder.
+Delete **MRCube.app** from the applications folder.
 
 
 Used libraries
