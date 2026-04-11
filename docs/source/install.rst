@@ -18,7 +18,7 @@ How to Install
 --------------
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Go to the MRCube page on the Microsoft Store <https://apps.microsoft.com/detail/9nmgtwtl1fvg?hl=en-US>_ and click the "View in Microsoft Store" button.
+#. Go to the MRCube page on the `Microsoft Store <https://apps.microsoft.com/detail/9nmgtwtl1fvg?hl=en-US>`_ and click the "View in Microsoft Store" button.
 #. Click the "Install" button.
 #. Run the shortcut created on your desktop.
 
