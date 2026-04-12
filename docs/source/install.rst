@@ -22,13 +22,18 @@ Windows
 #. Click the "Install" button.
 #. Run the shortcut created on your desktop.
 
-macOS
+macOS (dmg download)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Download and extract **mrcube-26.4.2.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **MRCube.app** to the 'Applications' folder.
 #. Run **MRCube.app**.
-#. Open System Settings.
-#. Click Privacy & Security, scroll down, and click the Open Anyway button.
-#. The warning prompt reappears and click Open button.
+#. When the message '"MRCube" is an application downloaded from the Internet. Are you sure you want to open it?' appears, click the "Open" button.
+
+macOS (Homebrew)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Install `Homebrew <https://brew.sh/>`_.
+#. Run ``brew tap mr-3/tap`` and ``brew install --cask mrcube`` in Terminal.app.
+#. Launch "MRCube.app" from your Applications directory.
+#. When the message '"MRCube" is an application downloaded from the Internet. Are you sure you want to open it?' appears, click the "Open" button.
 
 How to Uninstall
 ----------------
