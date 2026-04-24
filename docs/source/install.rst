@@ -7,7 +7,7 @@ Installation
 
 Requirements
 ------------
-MR\ :sup:`3` \ is implemented by Java language. In ver. 26.4.2, `Liberica Standard JDK 21 <https://bell-sw.com/pages/downloads/#jdk-21-lts>`_ is embedded, so there is no need to install a JRE.
+MR\ :sup:`3` \ is implemented by Java language. In ver. 26.4.3, `Liberica Standard JDK 25 <https://bell-sw.com/pages/downloads/#jdk-25-lts>`_ is embedded, so there is no need to install a JRE.
 
 We confirmed MR\ :sup:`3` \ following environemnt.
 
@@ -24,7 +24,7 @@ Windows
 
 macOS (dmg download)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Download and extract **mrcube-26.4.2.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **MRCube.app** to the 'Applications' folder.
+#. Download and extract **mrcube-26.4.3.dmg** from the `download page <https://github.com/mr-3/mrcube/releases>`_ and copy **MRCube.app** to the 'Applications' folder.
 #. Run **MRCube.app**.
 #. When the message '"MRCube" is an application downloaded from the Internet. Are you sure you want to open it?' appears, click the "Open" button.
 
