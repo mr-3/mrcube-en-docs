@@ -497,7 +497,7 @@ If the users select **[All Files]** from the **[Files of Type]**, the file forma
    jsonld, JSONLD
    n3, N-Triples
    rdf, RDF/XML
-   mr3, MR^3 project
+   mr3, MR\ :sup:`3` \ project
 
 
 .. index:: Export Dialog
@@ -652,9 +652,9 @@ When the users select Show **[Log Console]** sub menu in the **[Tool]** menu, th
 
    Log Console
 
-About MR^3
-----------------
-When the users select About **[MR^3]** sub menu in the **[Help]** menu, the dialog as shown in :numref:`about-mr3` is shown. The developer, version, license, project web site, contact, and libraries used in |MR3| are shown in the dialog.
+About MR\ :sup:`3` \
+----------------------------
+When the users select About **[MR**\ :sup:`3` \ **]** sub menu in the **[Help]** menu, the dialog as shown in :numref:`about-mr3` is shown. The developer, version, license, project web site, contact, and libraries used in |MR3| are shown in the dialog.
 
 .. _about-mr3:
 .. figure:: figures/about_dialog.png
@@ -662,7 +662,7 @@ When the users select About **[MR^3]** sub menu in the **[Help]** menu, the dial
    :alt: About MR3
    :align: center
 
-   About MR^3
+   About MR\ :sup:`3` \
 
 
 Menu
